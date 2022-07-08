@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('guest_id')->cascadeOnDelete();
             $table->foreignId('booking_id')->cascadeOnDelete();
-            $table->varchar('charge_name');
-            $table->varchar('description');
-            $table->int('amount');
+            $table->string('charge_name');
+            $table->string('description');
+            $table->integer('amount');
             $table->timestamps();
         });
     }

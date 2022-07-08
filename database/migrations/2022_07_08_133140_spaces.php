@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('space_type');
             $table->text('description');
             $table->text('special_request');
-            $table->int('capacity');
+            $table->integer('capacity');
             $table->boolean('space_reserved');
             $table->timestamps();
         });
