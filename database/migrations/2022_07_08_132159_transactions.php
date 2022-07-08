@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('booking_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('booking_id')->cascadeOnDelete();
             $table->foreignId('additional_charges_id');
             $table->foreignId('guest_id');
             $table->timestamps();
