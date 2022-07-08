@@ -12,7 +12,7 @@
     <div id="root"></div>
 
     
-        <script src="{{ mix('js/finalProject.js') }}"></script>
+    <script src="{{ mix('js/finalProject.js') }}"></script>
     
 </body>
 </html>
