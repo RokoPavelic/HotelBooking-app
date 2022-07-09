@@ -19,6 +19,8 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "compass": "^0.1.1",
+        "compass-mixins": "^0.12.12",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     }

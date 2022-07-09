@@ -7,6 +7,9 @@
         <title>Laravel/React</title>
     </head>
     <body class="antialiased">
+        <header>
+            @include('components/navbar')
+        </header>
         
         <div id="root"></div>
         <script src="{{ mix('js/finalProject.js') }}"></script>
