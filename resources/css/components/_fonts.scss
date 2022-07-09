@@ -1,0 +1,39 @@
+@use '_colors';
+@font-face {
+    font-family: "Koldby";
+    src: url('../fonts/Koldby-Light.otf')
+}
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+
+/* to use the headline1 for example, you have to import the fonts like so:
+@use '_fonts';
+then to use it in your stylesheet:
+h1{
+  @include headline1;
+}*/
+
+@mixin headline1 {
+    font-family: "Koldby", serif;
+    font-size: 2rem;
+    color: $clr-gray;    
+}
+
+@mixin headline2 {
+    font-family: "Koldby", serif;
+    font-size: 1.5rem;
+    color: $clr-gray;    
+}
+
+@mixin bolder-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $clr-gray;    
+}
+
+@mixin regular-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: $clr-gray;    
+}

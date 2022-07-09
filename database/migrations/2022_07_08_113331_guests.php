@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contact_info_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('booking_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('contact_info_id')->cascadeOnDelete();
+            $table->foreignId('booking_id')->cascadeOnDelete();
             $table->timestamps();
         });
     }

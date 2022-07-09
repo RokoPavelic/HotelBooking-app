@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('addtional_charges', function (Blueprint $table) {
+        Schema::create('additional_charges', function (Blueprint $table) {
             $table->id();
             $table->foreignId('additional_charge_id');
-            $table->varchar('charge_name');
-            $table->varchar('description');
-            $table->int('amount');
+            $table->string('charge_name');
+            $table->string('description');
+            $table->integer('amount');
             $table->timestamps();
         });
     }
