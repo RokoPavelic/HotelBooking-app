@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-
-@font-face {
-    font-family: "Koldby";
-    src: url('./fonts/Koldby-Light.otf') format("opentype");
-}
+@use "sass:color";
+@import '~compass-mixins/lib/compass/css3';
+@import './components/colors';
+@import './components/fonts';
 
 *,
 *::before,
@@ -14,3 +12,51 @@
 h1 {
     font-family: "Koldby";
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $clr-gray;
+    
+
+    &__links-left {
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+      }
+    }
+
+    &__links-right {
+      width: 100%;
+      ul {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none; 
+      }
+    }
+
+    a {
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: $clr-gray;
+      @include headline2;
+      padding: 0.1em 1.2em;
+      transition: 0.5s;
+
+      &:hover {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+      }
+
+      &:focus {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+      }
+    }
+
+    
+  }
