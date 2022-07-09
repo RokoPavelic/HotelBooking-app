@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function() {
-    return view('final-project');
+    return view('components/layout');
 });
 

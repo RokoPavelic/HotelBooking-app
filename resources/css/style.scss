@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+@font-face {
+    font-family: "Koldby";
+    src: url('./fonts/Koldby-Light.otf') format("opentype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Koldby";
+}
