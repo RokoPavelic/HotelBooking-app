@@ -8,6 +8,6 @@ class FinalProjectController extends Controller
 {
     public function index()
     {
-        return view('final-project');
+        return view('layouts/welcome');
     } 
 }

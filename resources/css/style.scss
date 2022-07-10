@@ -1,0 +1,110 @@
+@use "sass:color";
+@import '~compass-mixins/lib/compass/css3';
+@import './components/colors';
+@import './components/fonts';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Koldby";
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $clr-gray;
+    
+
+    &__links-left {
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+      }
+    }
+
+    &__links-right {
+      width: 100%;
+      ul {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none; 
+      }
+    }
+
+    a {
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: $clr-gray;
+      @include headline2;
+      padding: 0.1em 1.2em;
+      transition: 0.5s;
+
+      &:hover {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+      }
+
+      &:focus {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+      }
+    }
+
+    
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: $clr-gray;
+    color: $clr-smokewhite;
+    h3 {
+        @include headline3;   
+    }
+}
+
+.footer-address {
+     
+    padding-left: 0.5em;
+
+    h5 {
+        @include bolder-text-white;
+    }
+
+    ul {
+        margin-left: -2.5em;
+        list-style: none;
+        li{
+            @include bolder-text-white;
+            line-height: 1.5em;
+        }
+    } 
+    
+}
+
+.footer-social {
+    padding: 4em 1em;
+    
+    ul {
+        height: 100%;
+        list-style: none;
+        line-height: 2em;
+    }
+    
+    a{ 
+        text-decoration: none;
+        @include bolder-text-white;
+        transition: 0.5s;
+        &:hover {
+            color: scale-color($clr-gray, $lightness: 50%)
+        }
+    }
+}
