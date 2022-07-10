@@ -24,6 +24,13 @@ h1{
     color: $clr-gray;    
 }
 
+@mixin headline3 {
+    font-family: "Koldby", serif;
+    font-weight: 100;
+    font-size: 2rem;
+    color: $clr-smokewhite;    
+}
+
 @mixin bolder-text {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
@@ -31,9 +38,17 @@ h1{
     color: $clr-gray;    
 }
 
+
 @mixin regular-text {
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
     font-size: 0.75rem;
     color: $clr-gray;    
+}
+
+@mixin bolder-text-white {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $clr-smokewhite;    
 }

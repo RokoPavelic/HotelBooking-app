@@ -5,16 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "icon" type = "image/png" href = "./images/logo.png">
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="
+        ./css/footer.css">
         <title>Château Třebešice</title>
-        <script src="./js/burger-icon.js"></script>
+        
     </head>
     <body class="container">
-        <header>
+        {{-- <header>
             
             @include('components/navbar')
-        </header>
+        </header> --}}
         
-        {{-- <div id="root"></div>
-        <script src="{{ mix('js/finalProject.js') }}"></script> --}}
+        <div id="root"></div>
+        <script src="{{ mix('js/finalProject.js') }}"></script>
     </body>
 </html>
