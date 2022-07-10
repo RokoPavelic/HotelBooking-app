@@ -7,19 +7,20 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="
         css/footer.css">
+        <link rel="stylesheet" href="css/contact-us.css">
         <title>Château Třebešice</title>
         
     </head>
     <body class="container">
-        <header>
+        {{-- <header>
             @include('components/navbar')
         </header>
 
         
-            @include('components/footer')
+            @include('components/footer') --}}
         
         
-        {{-- <div id="root"></div>
-        <script src="{{ mix('js/finalProject.js') }}"></script> --}}
+        <div id="root"></div>
+        <script src="{{ mix('js/finalProject.js') }}"></script>
     </body>
 </html>
