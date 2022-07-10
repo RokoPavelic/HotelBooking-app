@@ -45,7 +45,8 @@ mix
  
 // Examples:
 mix.sass('resources/css/style.scss', 'public/css')
-   .sass('resources/css/pages/footer.scss', 'public/css');
+   .sass('resources/css/pages/footer.scss', 'public/css')
+   .sass('resources/css/pages/contact-us.scss', 'public/css');
 // mix.js('resources/js/library.js', 'public/js');
 // mix.js('resources/js/app.js', 'public/js').react();
 mix.js('resources/js/finalProject.js', 'public/js').react();
