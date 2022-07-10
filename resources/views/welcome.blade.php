@@ -6,17 +6,20 @@
         <link rel = "icon" type = "image/png" href = "./images/logo.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="
-        ./css/footer.css">
+        css/footer.css">
         <title>Château Třebešice</title>
         
     </head>
     <body class="container">
-        {{-- <header>
-            
+        <header>
             @include('components/navbar')
-        </header> --}}
+        </header>
+
         
-        <div id="root"></div>
-        <script src="{{ mix('js/finalProject.js') }}"></script>
+            @include('components/footer')
+        
+        
+        {{-- <div id="root"></div>
+        <script src="{{ mix('js/finalProject.js') }}"></script> --}}
     </body>
 </html>
