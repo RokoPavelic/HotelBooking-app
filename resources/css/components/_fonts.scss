@@ -5,6 +5,31 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Light-webfont.woff');
+    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    font-weight: normal;
+    font-style: light;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Regular-webfont.woff');
+    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Bold-webfont.woff');
+    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    font-weight: bold;
+    font-style:  bold;
+}
+
 /* to use the headline1 for example, you have to import the fonts like so:
 @use '_fonts';
 then to use it in your stylesheet:
@@ -51,4 +76,12 @@ h1{
     font-weight: 400;
     font-size: 0.75rem;
     color: $clr-smokewhite;    
+}
+
+@mixin regular-roboto {
+    font-family: 'roboto', 'sans-serif';
+    font-weight: lighter;
+    font-size: 1rem;
+    color: $clr-smokewhite;  
+    
 }

@@ -12,7 +12,7 @@
                 </ul>
             </div>
             <div class="navbar__logo">
-                <img src="./images/logo.png" alt="logo" width="50px">
+                <img src="./images/logo-green.svg" alt="logo" width="50px">
             </div>
             <div class="navbar__links-right">
                 <ul>

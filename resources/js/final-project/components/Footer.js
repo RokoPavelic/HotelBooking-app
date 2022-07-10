@@ -4,13 +4,12 @@ export default function Footer() {
       <footer className="footer">
         <div className="footer-address">
             <h3>Chateau Trebesice</h3>
-            <h5>ADDRESS:</h5>
-            <ul>
-                <li>Zámek</li>
-                <li>Třebešice</li>
-                <li>28601 Čáslav</li>
-                <li>Czech Republic</li>
-            </ul>
+            <p className="footer-address">
+                Address:<br></br>
+                Zámek <br></br>
+            Třebešice, 28601 Čáslav<br></br>
+            Czech Republic
+            </p>
         </div>
         <div className="footer-social">
             <ul>
