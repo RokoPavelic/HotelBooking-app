@@ -7,6 +7,7 @@ import Events from "./components/pages/Events";
 import Experience from "./components/pages/Experience";
 import Gallery from "./components/pages/Gallery";
 import Contacts from "./components/pages/Contacts";
+import Footer from "./components/Footer";
 
 
 
@@ -22,10 +23,11 @@ export default function App() {
                 <Route exact path="/gallery" element={ <Gallery /> } />
                 <Route exact path="/contacts" element={ <Contacts /> } />
            </Routes>
+           <Footer />
             
 
          
-          <h1>Ciao Ciao</h1>
+         
         </>
     )
 }
