@@ -14,7 +14,13 @@ export default function Contacts() {
                         </iframe>
                     </div>
                 </div>
-
+            </div>
+            <div className="form">
+                <h3>Contact Us</h3>
+                <form>
+                    
+                    
+                </form>
             </div>
         </main>
     )
