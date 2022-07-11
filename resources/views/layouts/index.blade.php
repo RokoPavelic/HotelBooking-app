@@ -58,7 +58,7 @@
             <a href="#">Events</a>
             <a href="#">Experience</a>
             <a href="#">Gallery</a>
-            <a href="#">Contacts</a>
+            <a href="/contact">Contacts</a>
         </div>
         <div class="footer-info">
 

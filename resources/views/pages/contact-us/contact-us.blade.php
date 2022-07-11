@@ -2,8 +2,8 @@
 
 @section('title', 'Contact Us')
 @section('content')
-    <main>
-        <div class="container">
+    <main class="contact">
+            
                        <!-- Success message -->
             @if(Session::has('success'))
                 <div class="alert alert-success" x-data="{show: true}" x-init="setTimeout(() => show = false, 5000)" x-show="show">
@@ -13,7 +13,7 @@
                 </div>
             @endif
            
-           <div class="contact">
+         
                 <div class="contact-hero">
           
                     <h1 class="contact__title">Contact Us</h1>
@@ -46,57 +46,58 @@
     
                <div class="form">
                    
-                    <form action="" method="post" action="{{ route('contact.store') }}">
-                        <h3>Contact Us</h3>
+                    <form method="post" action="{{ route('contact.store') }}">
                         @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name" placeholder='Name'>
+                        <h3>Contact Us</h3>
+                        
+                            <p>Name</p>
+                            <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name" >
                             <!-- Error -->
                             @if ($errors->has('name'))
                             <div class="error">
                                 {{ $errors->first('name') }}
                             </div>
                             @endif
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Email">
+                        
+                            <p>Email</p>
+                            <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" >
                             @if ($errors->has('email'))
                             <div class="error">
                                 {{ $errors->first('email') }}
                             </div>
                             @endif
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="Phone">
+                        
+                            <p>Phone</p>
+                            <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone">
                             @if ($errors->has('phone'))
                             <div class="error">
                                 {{ $errors->first('phone') }}
                             </div>
                             @endif
-                        </div>
-                        <div class="form-group">
-                            
+                        
+                        
+                            <p>Subject</p>
                             <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject"
-                                id="subject" placeholder="Subject">
+                                id="subject">
                             @if ($errors->has('subject'))
                             <div class="error">
                                 {{ $errors->first('subject') }}
                             </div>
                             @endif
-                        </div>
-                        <div class="form-group">
+                        
+                            
                             <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" id="message"
-                                rows="6" placeholder="Message"></textarea>
+                                rows="6"></textarea>
                             @if ($errors->has('message'))
                             <div class="error">
                                 {{ $errors->first('message') }}
                             </div>
                             @endif
-                        </div>
+                        
                         <button type="submit" name="send" value="Submit" class="form-button">Submit</button>
                     </form>
                </div>
-           </div>
-        </div>
+           
+        
 </main>
 @endsection
