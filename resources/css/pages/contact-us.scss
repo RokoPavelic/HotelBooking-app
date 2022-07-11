@@ -74,22 +74,22 @@
 .form {
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    margin-top: 5rem;
     width: 100%;
-    height: 100%;
     @include regular-text;
-    padding-right: 30%;
+    // padding-right: 30%;
 
     h3 {
-        width: 100%;
+        width: 80%;
         @include regular-text-big;
         margin-bottom: 1em;
         text-align: center;
     }
 
     input {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        // height: 100%;
         border: none;
         border-bottom: 1px solid $clr-d-green;
         margin-bottom: 1em;
@@ -97,16 +97,16 @@
     }
 
     textarea {
-        width: 100%;
+        width: 80%;
         border: 1px solid $clr-d-green;
-        margin-bottom: 1em;
+        margin: 1em 0;
         outline: none;
 
         
     }
 
     &-button {
-        width: 100%;
+        width: 80%;
         color: $clr-smokewhite;
         background-color: $clr-d-green;
         padding: 0.5em 0;
@@ -130,12 +130,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    // position: absolute;
-    // z-index: 10;
-    // top: 50%;
-    
-
     background-color: $clr-white;
     min-width: 37.5rem;
     min-height: 18.75rem;

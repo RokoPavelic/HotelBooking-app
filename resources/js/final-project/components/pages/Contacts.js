@@ -1,6 +1,31 @@
 
 
 export default function Contacts() {
+    const [values, setValues] = useState({
+        name: 'name',
+        email: 'email',
+        phone: 'phone',
+        subject: 'subject',
+        textarea: 'textarea'
+    });
+ 
+    const handleChange = (event) => {
+        setValues(previous_values => {
+            return ({...previous_values, 
+                [event.target.name]: event.target.value
+            });
+        });
+    }
+
+   
+
+    const handleSubmit = (event) => {
+        // prevent the default event behaviour
+        event.preventDefault();
+
+     axios.post('/contact', values);
+       
+    }
     return (
         <main className="contact">
             <div className="contact-hero">
@@ -35,7 +60,8 @@ export default function Contacts() {
             </div>
             <div className="form">
                 
-                <form>
+                <form  method='POST' onSubmit={(e)=>{
+                    handleSubmit(e)}}>
                     <h3>Contact Us</h3>
                     <p>Name</p>
                     <input type="text" name="name" id="name" required/>
