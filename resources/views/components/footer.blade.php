@@ -3,7 +3,7 @@
     <div class="footer__logo">
         <img src="./images/logo-smoke.svg" alt="logo" width="50px">
     </div>
-    <div className="footer-nav">
+    <div class="footer-nav">
         
         <a href="#">Home</a>
         <a href="#">Rooms</a>
@@ -12,7 +12,7 @@
         <a href="#">Gallery</a>
         <a href="#">Contacts</a>
     </div>
-    <div className="footer-info">
+    <div class="footer-info">
 
         <p>Privacy Policy | Cookie Policy</p>
         <p> © 2022 Chateau Trebesice Zámek -Třebešice  -28601 Čáslav -Czech Republic

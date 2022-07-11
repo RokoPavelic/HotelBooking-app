@@ -22,7 +22,9 @@ export default function App() {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contacts" element={<Contacts />} />
             </Routes>
+            
             <Footer />
         </>
+
     );
 }
