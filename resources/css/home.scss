@@ -1,0 +1,20 @@
+@use "sass:color";
+@import '~compass-mixins/lib/compass/css3';
+@import '../components/colors';
+@import '../components/fonts';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.homeHero{
+
+    max-width: 100%;
+    height: auto;
+
+}
+
+h1{
+    color:red;
+}
