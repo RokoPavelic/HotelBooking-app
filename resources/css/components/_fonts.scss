@@ -7,8 +7,7 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Light-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: light;
 
@@ -16,16 +15,14 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Regular-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Regular-webfont.woff')format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Bold-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style:  bold;
 }
@@ -75,6 +72,20 @@ h1{
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
     font-size: 0.75rem;
+    color: $clr-gray;    
+}
+
+@mixin regular-text-medium {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $clr-gray;    
+}
+
+@mixin regular-text-big {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
     color: $clr-gray;    
 }
 

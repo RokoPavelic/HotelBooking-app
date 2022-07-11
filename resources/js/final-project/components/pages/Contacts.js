@@ -18,7 +18,14 @@ export default function Contacts() {
             <div className="form">
                 <h3>Contact Us</h3>
                 <form>
-                    
+                    <p>Name</p>
+                    <input type="text" name="name" id="name" required/>
+                    <p>Email</p>
+                    <input type="email" name="email" id="email" required />
+                    <p>Phone</p>
+                    <input type="text" id="phone" name="phone" />
+                    <textarea id="textarea" name="textarea" rows="5" cols="50">Message</textarea>
+                    <button>Submit</button>
                     
                 </form>
             </div>
