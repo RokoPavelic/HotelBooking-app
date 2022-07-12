@@ -28,7 +28,7 @@ Route::get('/home', function() {
 // });
 
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
-Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 
 
