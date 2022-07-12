@@ -7,8 +7,7 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Light-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: light;
 
@@ -16,16 +15,14 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Regular-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Regular-webfont.woff')format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Bold-webfont.woff');
-    src: url('Roboto-Light-webfont.eot?#iefix') format('woff');
+    src: url('../fonts/Roboto-Bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style:  bold;
 }
@@ -62,6 +59,13 @@ h1{
     color: $clr-white;    
 }
 
+@mixin headline4 {
+    font-family: "Koldby", serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    color: $clr-white;    
+}
+
 @mixin bolder-text {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
@@ -83,6 +87,20 @@ h1{
     color: $clr-white;    
 }
 
+@mixin regular-text-medium {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $clr-gray;    
+}
+
+@mixin regular-text-big {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: $clr-gray;    
+}
+
 @mixin bolder-text-white {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
@@ -94,6 +112,5 @@ h1{
     font-family: 'roboto', 'sans-serif';
     font-weight: lighter;
     font-size: 1rem;
-    color: $clr-smokewhite;  
-    
+    color: $clr-smokewhite;    
 }

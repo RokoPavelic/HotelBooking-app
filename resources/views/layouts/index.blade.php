@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang={{ str_replace('_', '-', app()->getLocale()) }}>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +11,9 @@
         <title>Château Třebešice</title>
         
     </head>
-    <body class="container">
-        {{-- <header>
-            @include('components/navbar')
-        </header>
+<body>
+    @yield('content')
 
-        
-            @include('components/footer') --}}
-        
-        
-        <div id="root"></div>
-        <script src="{{ mix('js/finalProject.js') }}"></script>
-    </body>
-</html> 
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinalProjectController;
+use App\Http\Controllers\ContactUsFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,13 @@ Route::get('/', function () {
 Route::get('/home', function() {
     return view('components/layout');
 });
+
+// Route::get('/about', function() {
+//     return view('about');
+// });
+
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 
 
