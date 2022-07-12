@@ -1,20 +1,158 @@
 @use "sass:color";
-@import '~compass-mixins/lib/compass/css3';
-@import '../components/colors';
-@import '../components/fonts';
+@import "~compass-mixins/lib/compass/css3";
+@import "./components/colors";
+@import "./components/fonts";
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+ .home{
+    display: flex;
+    flex-direction: column;
+    
+ }
+.home-hero {
+    height: 40rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/main_hero.jpeg");
+    background-position: 60% 40%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.homeHero{
+.home__title {
+    // position: absolute;
+    // top: 50%;
+    // width: 100%;
+    // text-align: center;
+    @include headline4;
+}
+.home-events {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/main_wedding_reception.jpeg");
+    background-position: 60% 40%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    position: relative;
 
-    max-width: 100%;
-    height: auto;
+        .home__events_title{
+            @include headline4;
+        }
+
+        p{
+            @include regular-text-white;
+        }
+}
+.home-button {
+    padding: 6px;
+    margin-top: 1rem;
+    background-color: $clr-d-green;
+    text-align: center;
+    border: none;
+    @include regular-text-white;
+
+    &:hover {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+    }
+    &:active {
+        color: $clr-d-green;
+        background-color: $clr-l-green;
+    }
+}
+.home-about{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 5%;
+    max-width: 100rem;
+
 
 }
-
-h1{
-    color:red;
+.home_about_description{
+    padding: 2rem;
+    h3{
+        @include headline2;
+    }
+    p{
+        @include regular-text;
+    }
 }
+
+// Carousel 
+
+
+.pic-ctn {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    height: 500px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        position: absolute;
+        bottom: 100px;
+    }
+  }
+  
+  @keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+  }
+  
+
+  
+  .pic-ctn > img {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+  }
+  
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+  img:nth-child(5) {
+    animation-delay: 8s;
+  }
+
+  .btn-gallery{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+  }
