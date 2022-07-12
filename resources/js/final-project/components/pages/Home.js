@@ -54,7 +54,7 @@ export default function Home() {
                     will be made exactly tailored for you and your needs. Over
                     the high quality framework
                 </p>
-                <button>Events</button>
+                <button onClick={() => navigate("/events")}>Events</button>
             </div>
 
             <div class="pic-ctn">
