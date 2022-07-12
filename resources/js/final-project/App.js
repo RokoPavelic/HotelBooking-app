@@ -57,6 +57,7 @@ export default function App() {
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contacts" element={<Contacts />} />
+                
             </Routes>
 
             <Footer />
