@@ -7,11 +7,7 @@ import axios from "axios";
 const RoomDetail = ({ rooms }) => {
     const navigate = useNavigate();
 
-    const [values, setValues] = useState({
-        name: "name",
-        email: "email",
-        phone: "phone",
-    });
+    const [values, setValues] = useState({});
 
     const { id } = useParams();
     const room = rooms?.find((room) => room.id === id);
@@ -27,6 +23,24 @@ const RoomDetail = ({ rooms }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        console.log(values);
+
+        fetch("https://www.google.com/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+        })
+            .then((response) => response.json())
+            .then(() => {
+                console.log("Success:");
+                navigate("/reserved");
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
     };
 
     return (
@@ -74,12 +88,23 @@ const RoomDetail = ({ rooms }) => {
                                     handleChange(e);
                                 }}
                             />
-                            <button
-                                onClick={() => navigate("/reserved")}
-                                variant="outlined"
-                            >
-                                Book now!
-                            </button>
+                            <input
+                                type="date"
+                                id="from"
+                                name="from"
+                                onChange={(e) => {
+                                    handleChange(e);
+                                }}
+                            />
+                            <input
+                                type="date"
+                                id="to"
+                                name="to"
+                                onChange={(e) => {
+                                    handleChange(e);
+                                }}
+                            />
+                            <input type="submit" value="Book now!" />
                         </form>
                     </div>
                 </Wrap1>
