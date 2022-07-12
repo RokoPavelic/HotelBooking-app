@@ -24,6 +24,7 @@
         "axois": "^0.0.1-security",
         "compass": "^0.1.1",
         "compass-mixins": "^0.12.12",
+        "fullcalendar": "^5.11.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.3.0",

@@ -1,13 +1,13 @@
 @use '_colors';
 @font-face {
     font-family: "Koldby";
-    src: url('../fonts/Koldby-Light.otf')
+    src: url('./fonts/Koldby-Light.otf')
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Light-webfont.woff') format('woff');
+    src: url('./fonts/Roboto-Light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: light;
 
@@ -15,14 +15,14 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Regular-webfont.woff')format('woff');
+    src: url('./fonts/Roboto-Regular-webfont.woff')format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Bold-webfont.woff') format('woff');
+    src: url('./fonts/Roboto-Bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style:  bold;
 }
@@ -52,6 +52,12 @@ h1{
     font-size: 2rem;
     color: $clr-smokewhite;    
 }
+@mixin headline4 {
+    font-family: "Koldby", serif;
+    font-weight: 100;
+    font-size: 2.5rem;
+    color: $clr-white;    
+}
 
 @mixin headline4 {
     font-family: "Koldby", serif;
@@ -73,6 +79,12 @@ h1{
     font-weight: 300;
     font-size: 0.75rem;
     color: $clr-gray;    
+}
+@mixin regular-text-white {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: $clr-white;    
 }
 
 @mixin regular-text-medium {

@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel = "icon" type = "image/png" href = "./images/logo.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="
         css/footer.css">
         <link rel="stylesheet" href="css/contact-us.css">
+        @yield('header')
         <title>Château Třebešice</title>
         
     </head>
@@ -43,8 +45,8 @@
     </nav>
    </header>
     
-
-    <div id="root">@yield('content')</div>
+    @yield('content')
+    <div id="root"></div>
 
     
    <footer class="footer">
@@ -66,9 +68,7 @@
             <p> © 2022 Chateau Trebesice Zámek -Třebešice  -28601 Čáslav -Czech Republic
                 info@ct.com +420 732 7977 <br>
                 <br>
-                
-
-
+            
             </p>
         </div>
    </footer>

@@ -17,3 +17,6 @@ yarn-error.log
 /public/mix-manifest.json
 /public/mix.js.map
 /public/images
+.DS_Store
+public/.DS_Store
+U	public/images/.DS_Store
