@@ -1,33 +1,29 @@
 import React from "react";
 // import "../../../../css/pages/gallery.scss";
-import App from '../Gallery/App';
+import App from "../Gallery/App";
 import styled from "styled-components";
 
-
 export default function Gallery() {
-
     return (
-//     <main className="gallery-page">
-//        <div className="gallery-header">
-// {/* <Banner> */}
-//            <h1 className="gallery__title">Gallery</h1>
-// {/* </Banner> */}
-//         </div>
+        //     <main className="gallery-page">
+        //        <div className="gallery-header">
+        // {/* <Banner> */}
+        //            <h1 className="gallery__title">Gallery</h1>
+        // {/* </Banner> */}
+        //         </div>
 
-//         <div className="gallery__content">
-//             <h2 className="gallery__subtitle">Enhance Your Experience</h2>
-//             <p className="gallery__text">
-//             Discover the unique magic of a place, where past and present, history and future, nature and culture are bound together in an unique mix. 
-//             </p>
-//         </div>
+        //         <div className="gallery__content">
+        //             <h2 className="gallery__subtitle">Enhance Your Experience</h2>
+        //             <p className="gallery__text">
+        //             Discover the unique magic of a place, where past and present, history and future, nature and culture are bound together in an unique mix.
+        //             </p>
+        //         </div>
 
-        
-//             <App />
-            
-        
-//     </main>
+        //             <App />
 
-       <Wrap>
+        //     </main>
+
+        <Wrap>
             <Banner>
                 <p>Gallery</p>
             </Banner>
@@ -35,17 +31,18 @@ export default function Gallery() {
                 <h1>Image Your Experience</h1>
             </Title>
             <Text>
-                <p>Discover the unique magic of a place, where past and present, history and future, nature and culture are bound together in an unique mix.</p>
+                <p>
+                    Discover the unique magic of a place, where past and
+                    present, history and future, nature and culture are bound
+                    together in an unique mix.
+                </p>
             </Text>
             <Container>
                 <App />
             </Container>
         </Wrap>
-
-
-)
+    );
 }
-
 
 const Wrap = styled.div`
     display: flex;
