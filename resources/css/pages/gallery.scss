@@ -1,0 +1,69 @@
+@use "sass:color";
+@import "~compass-mixins/lib/compass/css3";
+@import "../components/colors";
+@import "../components/fonts";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.gallery-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-header {
+    width: 100%;
+    height: 40rem;
+    min-height: 20rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/events_gallery_gathering.jpeg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+}
+
+.gallery__title {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.gallery__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.gallery__slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.gallery__subtitle {
+    font-size: em;
+    margin: 2em;
+    color: #4f4f4f;
+}
+
+.gallery__text {
+    color: #4f4f4f;
+    max-width: 90%;
+}
