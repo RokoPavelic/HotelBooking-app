@@ -36,4 +36,9 @@ class ContactUsFormController extends Controller {
         // ->with('success', 'Your message was sent
         // Our staff will contact you shortly');
     }
+
+    public function app()
+    {
+        return view('pages/contact-us/contact-us');
+    }
 }

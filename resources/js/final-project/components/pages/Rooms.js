@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Room from "./Room";
 import React from "react";
 
-const Rooms = () => {
+const Rooms = ({ rooms }) => {
     return (
         <Wrap>
             <Banner>
@@ -12,26 +12,9 @@ const Rooms = () => {
                 <h1>Our Rooms</h1>
             </Title>
             <Container>
-                <Room
-                    backgroundImg="room_classic_decor.jpeg"
-                    name="Classic Monochrome"
-                    description="Decoration from the 19th and first years of 20th century, whick we discovered during reconstruction"
-                />
-                <Room
-                    backgroundImg="room_blue_decor.jpeg"
-                    name="Cyan Room"
-                    description="Decoration from the 19th and first years of 20th century, whick we discovered during reconstruction"
-                />
-                <Room
-                    backgroundImg="room_geo_decor.jpeg"
-                    name="Geographical Suite"
-                    description="The main interest of renaud is geography for the art.The large circular installation in the middle."
-                />
-                <Room
-                    backgroundImg="room_gold_decor.jpeg"
-                    name="Golden Sunrise"
-                    description="The main interest of renaud is geography for the art.The large circular installation in the middle."
-                />
+                {rooms.map((room, index) => (
+                    <Room room={room} key={index} />
+                ))}
             </Container>
         </Wrap>
     );

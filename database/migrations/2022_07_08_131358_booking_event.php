@@ -17,6 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('guest_id')->cascadeOnDelete();
             $table->foreignId('booking_id')->cascadeOnDelete();
+            $table->foreignId('admin_id')->cascadeOnDelete();
+            $table->foreignId('contact_info_id')->cascadeOnDelete();
+            $table->string('event_name');
+            $table->dateTime('event_start');
+            $table->dateTime('event_end');
+            $table->text('event_description');
             $table->timestamps();
         });
     }

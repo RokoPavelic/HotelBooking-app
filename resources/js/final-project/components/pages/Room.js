@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { Link, Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Room = ({ name, description, backgroundImg }) => {
+const Room = ({ room }) => {
+    const navigate = useNavigate();
+    const { name, description, backgroundImg, id } = room;
     return (
         <Container>
             <Wrap bgImage={backgroundImg}></Wrap>
             <div>
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <button>More</button>
+                <button onClick={() => navigate(`/room/${id}`)}>More</button>
             </div>
         </Container>
     );
@@ -28,9 +32,6 @@ const Wrap = styled.div`
     overflow: hidden;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     transition: transform 100ms ease-in;
-    :hover {
-        transform: scale(1.07);
-    }
 `;
 const Container = styled.div`
     width: 500px;
@@ -56,14 +57,16 @@ const Container = styled.div`
 
         button {
             margin-top: 1em;
+            padding-top: 0.2em;
             background-color: #587563;
             width: 150px;
             height: 30px;
             border: none;
-            border-radius: 10px;
             cursor: pointer;
-            color: white;
             font-weight: bold;
+            text-align: center;
+            color: white !important;
+            text-decoration: none !important;
         }
     }
 `;
