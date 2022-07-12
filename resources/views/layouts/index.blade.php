@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="
         css/footer.css">
         <link rel="stylesheet" href="css/contact-us.css">
-        
+        @yield('header')
         <title>Château Třebešice</title>
         
     </head>
@@ -45,8 +45,8 @@
     </nav>
    </header>
     
-
-    <div id="root">@yield('content')</div>
+    @yield('content')
+    <div id="root"></div>
 
     
    <footer class="footer">
@@ -60,17 +60,7 @@
             <a href="#">Events</a>
             <a href="#">Experience</a>
             <a href="#">Gallery</a>
-            <a href="/contact
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            ">Contacts</a>
+            <a href="/contact">Contacts</a>
         </div>
         <div class="footer-info">
 
@@ -78,9 +68,7 @@
             <p> © 2022 Chateau Trebesice Zámek -Třebešice  -28601 Čáslav -Czech Republic
                 info@ct.com +420 732 7977 <br>
                 <br>
-                
-
-
+            
             </p>
         </div>
    </footer>

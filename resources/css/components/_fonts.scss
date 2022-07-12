@@ -1,13 +1,13 @@
 @use '_colors';
 @font-face {
     font-family: "Koldby";
-    src: url('../fonts/Koldby-Light.otf')
+    src: url('./fonts/Koldby-Light.otf')
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Light-webfont.woff') format('woff');
+    src: url('./fonts/Roboto-Light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: light;
 
@@ -15,14 +15,14 @@
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Regular-webfont.woff')format('woff');
+    src: url('./fonts/Roboto-Regular-webfont.woff')format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'roboto';
-    src: url('../fonts/Roboto-Bold-webfont.woff') format('woff');
+    src: url('./fonts/Roboto-Bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style:  bold;
 }

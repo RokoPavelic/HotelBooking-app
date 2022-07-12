@@ -8,6 +8,6 @@ class EventController extends Controller
 {
     public function index(Request $request)
     {
-        return view('layouts/event_layout');
+        return view('pages/event/event');
     }
 }

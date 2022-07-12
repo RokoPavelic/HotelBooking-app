@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="
         css/footer.css">
         <link rel="stylesheet" href="css/contact-us.css">
+        <link rel="stylesheet" href="css/home.css">
         <title>Château Třebešice</title>
         
     </head>

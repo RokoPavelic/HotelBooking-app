@@ -1,4 +1,4 @@
-import "/Users/marsaldana/web/Ch-teau-T-ebe-ice/resources/css/Home.scss";
+
 
 export default function Home() {
     return (
