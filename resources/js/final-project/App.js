@@ -57,12 +57,8 @@ export default function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contacts" element={<Contacts />} />
-<<<<<<< HEAD
-                
-=======
                 <Route path="/reserved" element={<Reserved />} />
                 <Route path="/feedback" element={<Feedback />} />
->>>>>>> main
             </Routes>
 
             <Footer />

@@ -48,9 +48,14 @@ const RoomDetail = ({ rooms }) => {
             <Tittle>{room.name}</Tittle>
             <Container>
                 <Wrap1>
-                    <p>asasdiajfjnajsfnkasmdkasmk</p>
-                    <p>askmdkasmdkasmkdmaskl</p>
-                    <p>Price: 100$ per night</p>
+                    <Info>
+                        <p>{room.description}</p>
+                        <br />
+
+                        <strong>
+                            <p>Price: 100$ per night</p>{" "}
+                        </strong>
+                    </Info>
                     <div className="form">
                         <form
                             method="POST"
@@ -59,6 +64,7 @@ const RoomDetail = ({ rooms }) => {
                             }}
                         >
                             <h3>Fill the info</h3>
+
                             <p>Name</p>
                             <input
                                 type="text"
@@ -88,6 +94,10 @@ const RoomDetail = ({ rooms }) => {
                                     handleChange(e);
                                 }}
                             />
+                            <strong>
+                                <p>Enter a date FROM - TO</p>
+                            </strong>
+                            <br />
                             <input
                                 type="date"
                                 id="from"
@@ -104,7 +114,11 @@ const RoomDetail = ({ rooms }) => {
                                     handleChange(e);
                                 }}
                             />
-                            <input type="submit" value="Book now!" />
+                            <input
+                                className="submitForm"
+                                type="submit"
+                                value="Book now!"
+                            />
                         </form>
                     </div>
                 </Wrap1>
@@ -126,8 +140,12 @@ const Wrap2 = styled.div`
     justify-content: center;
 
     img {
-        width: 300px;
-        height: 200px;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        transition: transform 100ms ease-in;
     }
 `;
 
@@ -136,12 +154,42 @@ const Wrap1 = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    width: 50%;
+
+    .form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .submitForm {
+            background-color: #587563;
+            height: 50px;
+            width: 150px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+             box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+             transition: transform 100ms ease-in;
+
+                :hover {
+                    transform: scale(1.07);
+                }
+            }
+        }
+
+        form {
+            width: 100%;
+        }
+    }
 `;
 const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 20px;
+    width: 90%;
 `;
 
 const Wrapper = styled.div`
@@ -150,6 +198,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 3em;
+    width: 100%;
 `;
 const Tittle = styled.div`
     font-size: 2em;
@@ -157,4 +206,11 @@ const Tittle = styled.div`
     padding-top: 1em;
     text-align: center;
     color: #4f4f4f;
+`;
+
+const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    width: 80%;
 `;

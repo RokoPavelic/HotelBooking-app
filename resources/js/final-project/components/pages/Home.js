@@ -57,7 +57,7 @@ export default function Home() {
                 <button onClick={() => navigate("/events")}>Events</button>
             </div>
 
-            <div class="pic-ctn">
+            <div className="pic-ctn">
                 <img
                     src="./images/room_blue_bed.jpeg"
                     alt=""
