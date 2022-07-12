@@ -1,11 +1,18 @@
-
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+    const navigate = useNavigate();
     return (
         <div className="home">
             <div className="home-hero">
                 <h1 className="home__title">A Memorable Experience.</h1>
-                <button className="home-button"> Reserve Now</button>
+                <button
+                    onClick={() => navigate("/rooms")}
+                    className="home-button"
+                >
+                    {" "}
+                    Reserve Now
+                </button>
             </div>
             <div className="home-about">
                 <div className="home_about_description">
@@ -25,7 +32,12 @@ export default function Home() {
                         kilometers from Kutná Hora monuments, one of the most
                         beautiful cities in EUROPE.
                     </p>
-                    <button className="home-button">Read more</button>
+                    <button
+                        onClick={() => navigate("/about")}
+                        className="home-button"
+                    >
+                        Read more
+                    </button>
                 </div>
                 <img
                     src="./images/interior_library.jpeg"
@@ -42,49 +54,46 @@ export default function Home() {
                     will be made exactly tailored for you and your needs. Over
                     the high quality framework
                 </p>
+                <button>Events</button>
             </div>
 
             <div class="pic-ctn">
                 <img
-                    src="./images/img/interior_library.jpeg"
-                    alt=""
-                    width="500px"
-                    height="500px"
-                    className="pic"
-                />
-                <img
                     src="./images/room_blue_bed.jpeg"
                     alt=""
-                    width="500px"
+                    width="700px"
                     height="500px"
                     className="pic"
                 />
                 <img
                     src="./images/room_gold_decor.jpeg"
                     alt=""
-                    width="500px"
+                    width="700px"
                     height="500px"
                     className="pic"
                 />
                 <img
                     src="./images/exterior_garden.jpeg"
                     alt=""
-                    width="500px"
+                    width="700px"
                     height="500px"
                     className="pic"
                 />
                 <img
                     src="./images/exterior_nightview.jpeg"
                     alt=""
-                    width="500px"
+                    width="700px"
                     height="500px"
                     className="pic"
                 />
-
-                
             </div>
-<div className= "btn-gallery">
-            <button className="home-button"> View More </button>
+            <div className="btn-gallery">
+                <button
+                    onClick={() => navigate("/gallery")}
+                    className="home-button"
+                >
+                    View More{" "}
+                </button>
             </div>
         </div>
     );

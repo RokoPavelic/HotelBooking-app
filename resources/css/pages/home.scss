@@ -50,12 +50,15 @@
     }
 }
 .home-button {
+    width: 150px;
+    height: 30px;
     padding: 6px;
     margin-top: 1rem;
     background-color: $clr-d-green;
     text-align: center;
     border: none;
     @include regular-text-white;
+    font-size: 14px;
 
     &:hover {
         color: $clr-d-green;
@@ -81,6 +84,7 @@
     }
     p {
         @include regular-text;
+        font-size: larger;
     }
 }
 
@@ -98,6 +102,9 @@
     button {
         position: absolute;
         bottom: 100px;
+        width: 150px;
+        height: 30px;
+        font-size: 14px;
     }
 }
 
@@ -124,12 +131,42 @@
     }
 }
 
+.home-events {
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        margin-top: 8em;
+        width: 150px;
+        height: 30px;
+        background-color: #587563;
+        color: white;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        margin-top: 2em;
+        box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+        transition: transform 100ms ease-in;
+        &:hover {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
+        }
+        &:active {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
+        }
+    }
+}
 .pic-ctn > img {
     position: absolute;
     top: 0;
-    left: calc(50% - 100px);
+    left: calc(110% - 1100px);
     opacity: 0;
     animation: display 10s infinite;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 100ms ease-in;
 }
 
 img:nth-child(2) {
