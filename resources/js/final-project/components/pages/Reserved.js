@@ -29,6 +29,8 @@ const Container = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-top: 5em;
+    margin-bottom: 5em;
     button {
         width: 250px;
         height: 50px;
