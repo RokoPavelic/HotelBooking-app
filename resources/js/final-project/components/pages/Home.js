@@ -43,7 +43,7 @@ export default function Home() {
                     src="./images/interior_library.jpeg"
                     alt="Main Library"
                     width="500px"
-                    height="500px"
+                    height="400px"
                 />
             </div>
             <div className="home-events">
