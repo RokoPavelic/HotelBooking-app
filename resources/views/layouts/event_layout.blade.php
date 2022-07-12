@@ -9,7 +9,23 @@
         <link rel="stylesheet" href="
         css/footer.css">
         <link rel="stylesheet" href="css/contact-us.css">
-        
+        <link href='css/calender/main.css' rel='stylesheet' />
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet'>
+        <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+        <script src='js/main.js' defer></script>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+            });
+
+        </script>
         <title>Château Třebešice</title>
         
     </head>
@@ -44,11 +60,11 @@
         </div>
     </nav>
    </header>
-    
+    <main>
 
-    <div id="root">@yield('content')</div>
-
-    
+        <div id="root">@yield('content')</div>
+        <div id='calendar'></div>
+    </main>
    <footer class="footer">
         <div class="footer__logo">
             <img src="./images/logo-smoke.svg" alt="logo" width="50px">
@@ -84,8 +100,20 @@
             </p>
         </div>
    </footer>
-    
 
+  
+    
+    <script>
+        $(document).reday(function () {
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content');
+                }
+            });
+
+            let calender = $('#calender').fullCalender();
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
 </body>
 </html>
