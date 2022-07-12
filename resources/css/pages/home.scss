@@ -3,11 +3,10 @@
 @import "../components/colors";
 @import "../components/fonts";
 
- .home{
+.home {
     display: flex;
     flex-direction: column;
-    
- }
+}
 .home-hero {
     height: 40rem;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -42,13 +41,13 @@
     background-repeat: no-repeat;
     position: relative;
 
-        .home__events_title{
-            @include headline4;
-        }
+    .home__events_title {
+        @include headline4;
+    }
 
-        p{
-            @include regular-text-white;
-        }
+    p {
+        @include regular-text-white;
+    }
 }
 .home-button {
     padding: 6px;
@@ -67,28 +66,25 @@
         background-color: $clr-l-green;
     }
 }
-.home-about{
+.home-about {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
     padding: 5%;
     max-width: 100rem;
-
-
 }
-.home_about_description{
+.home_about_description {
     padding: 2rem;
-    h3{
+    h3 {
         @include headline2;
     }
-    p{
+    p {
         @include regular-text;
     }
 }
 
-// Carousel 
-
+// Carousel
 
 .pic-ctn {
     display: flex;
@@ -99,60 +95,58 @@
     justify-content: center;
     align-items: center;
 
-    button{
+    button {
         position: absolute;
         bottom: 100px;
     }
-  }
-  
-  @keyframes display {
+}
+
+@keyframes display {
     0% {
-      transform: translateX(200px);
-      opacity: 0;
+        transform: translateX(200px);
+        opacity: 0;
     }
     10% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
     20% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
     30% {
-      transform: translateX(-200px);
-      opacity: 0;
+        transform: translateX(-200px);
+        opacity: 0;
     }
     100% {
-      transform: translateX(-200px);
-      opacity: 0;
+        transform: translateX(-200px);
+        opacity: 0;
     }
-  }
-  
+}
 
-  
-  .pic-ctn > img {
+.pic-ctn > img {
     position: absolute;
     top: 0;
     left: calc(50% - 100px);
     opacity: 0;
     animation: display 10s infinite;
-  }
-  
-  img:nth-child(2) {
-    animation-delay: 2s;
-  }
-  img:nth-child(3) {
-    animation-delay: 4s;
-  }
-  img:nth-child(4) {
-    animation-delay: 6s;
-  }
-  img:nth-child(5) {
-    animation-delay: 8s;
-  }
+}
 
-  .btn-gallery{
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+
+.btn-gallery {
     margin: 2rem;
     display: flex;
     justify-content: center;
-  }
+}
