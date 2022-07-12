@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Room = ({ room }) => {
+    const navigate = useNavigate();
     const { name, description, backgroundImg, id } = room;
     return (
         <Container>
@@ -10,7 +12,7 @@ const Room = ({ room }) => {
             <div>
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <Link to={`/room/${id}`}>More</Link>{" "}
+                <button onClick={() => navigate(`/room/${id}`)}>More</button>
             </div>
         </Container>
     );
@@ -53,7 +55,7 @@ const Container = styled.div`
             color: #4f4f4f;
         }
 
-        a {
+        button {
             margin-top: 1em;
             padding-top: 0.2em;
             background-color: #587563;

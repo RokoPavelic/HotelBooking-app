@@ -8,8 +8,8 @@ import Gallery from "./components/pages/Gallery";
 import Contacts from "./components/pages/Contacts";
 import Footer from "./components/Footer";
 import RoomDetail from "./components/pages/RoomDetail";
-
-
+import Reserved from "./components/pages/Reserved";
+import Feedback from "./components/pages/feedback";
 
 const rooms = [
     {
@@ -57,6 +57,8 @@ export default function App() {
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contacts" element={<Contacts />} />
+                <Route path="/reserved" element={<Reserved />} />
+                <Route path="/feedback" element={<Feedback />} />
             </Routes>
 
             <Footer />
