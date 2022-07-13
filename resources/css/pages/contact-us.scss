@@ -1,7 +1,8 @@
 @use "sass:color";
-@import '~compass-mixins/lib/compass/css3';
-@import '../components/colors';
-@import '../components/fonts';
+@import "~compass-mixins/lib/compass/css3";
+@import "../functions/colors";
+@import "../functions/fonts";
+
 
 .contact {
     display: grid;
