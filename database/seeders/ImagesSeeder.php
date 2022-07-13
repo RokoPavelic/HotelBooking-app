@@ -22,68 +22,68 @@ class ImagesSeeder extends Seeder
         $images = [
             1 => [
                 [
-                    "src" => "https://drive.google.com/file/d/1QBT1LuY-fsrcG4G_VJS4NskwGYVrAG4Z/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1QBT1LuY-fsrcG4G_VJS4NskwGYVrAG4Z",
                     "alt" => "room classic decor",
                     "slug"=> "room_classic_decor",
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1FLGeWWW0gYGYa8ibWYWuGCJpDslN1NKM/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1FLGeWWW0gYGYa8ibWYWuGCJpDslN1NKM",
                     "alt" => "room classic bathroom",
                     "slug"=> "room_classic_bathroom"
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1LGFA_elSSOdbglOOutsMj6060xFwNsQ1/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1LGFA_elSSOdbglOOutsMj6060xFwNsQ1",
                     "alt" => "room classic bed",
                     "slug"=> "room_classic_bed"
                 ],
             ],
             2 => [
                 [
-                    "src" => "https://drive.google.com/file/d/14GT6dRH_AwahameR7XCq4X7e2DOh0PVV/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=14GT6dRH_AwahameR7XCq4X7e2DOh0PVV",
                     "alt" => "room cyan decor",
                     "slug"=> "room_cyan_decor",
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/14TRsMBkha87QGgXILnp-Hm0VcnaTh7IN/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=14TRsMBkha87QGgXILnp-Hm0VcnaTh7IN",
                     "alt" => "room cyan bathroom",
                     "slug"=> "room_cyan_bathroom"
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1Kn6x48P0wry52kfCazsvqNXdlyuMx-hg/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1Kn6x48P0wry52kfCazsvqNXdlyuMx-hg",
                     "alt" => "room cyan bed",
                     "slug"=> "room_cyan_bed"
                 ],
             ],
             3 => [
                 [
-                    "src" => "https://drive.google.com/file/d/1up3vUr_ItPFszt83dgOW-xbqfgM5eFdQ/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1up3vUr_ItPFszt83dgOW-xbqfgM5eFdQ",
                     "alt" => "room cave decor",
                     "slug"=> "room_cave_decor",
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/12VjhYWRQxgTUqL63Cz2ekHSSU86t_VZD/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=12VjhYWRQxgTUqL63Cz2ekHSSU86t_VZD",
                     "alt" => "room cave bathroom",
                     "slug"=> "room_cave_bathroom"
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1pnZ7_ih3rfyTZ-9qMVunCu-hNDP9U4zy/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1pnZ7_ih3rfyTZ-9qMVunCu-hNDP9U4zy",
                     "alt" => "room cave bed",
                     "slug"=> "room_cave_bed"
                 ],
             ],
             4 => [
                 [
-                    "src" => "https://drive.google.com/file/d/1Kvquu-cSbh2vDF1z9jUauYRtXAl2ZSQd/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1Kvquu-cSbh2vDF1z9jUauYRtXAl2ZSQd",
                     "alt" => "room gold decor",
                     "slug"=> "room_gold_decor",
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1nWgNG2d4NVWNBb64K7dKWv8K5z7b4vZ2/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1nWgNG2d4NVWNBb64K7dKWv8K5z7b4vZ2",
                     "alt" => "room gold bathroom",
                     "slug"=> "room_gold_bathroom"
                 ],
                 [
-                    "src" => "https://drive.google.com/file/d/1QFQkIwHHFPijAh_lYePGLEGJk_qROA8t/view?usp=sharing",
+                    "src" => "http://drive.google.com/uc?export=view&id=1QFQkIwHHFPijAh_lYePGLEGJk_qROA8t",
                     "alt" => "room gold bed",
                     "slug"=> "room_gold_bed"
                 ],

@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        return view('welcome');
+        $events = Event::get();
+
+        if ($events == []) {
+            return "there are no events";
+        } else {
+           return $events;
+        }
+
+        
     }
 
     

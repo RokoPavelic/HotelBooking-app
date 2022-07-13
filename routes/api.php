@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/rooms', [RoomsController::class, 'index']);
 
 Route::post('/book/event', [BookingController::class, 'store']);
+Route::get('/events', [EventController::class, 'index']);
