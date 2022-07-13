@@ -8,11 +8,12 @@
     flex-direction: column;
 }
 .home-hero {
-    height: 40rem;
+    width: 100%;
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/main_hero.jpeg");
     background-position: 60% 40%;
-    background-size: 100rem;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
@@ -37,7 +38,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/main_wedding_reception.jpeg");
     background-position: 60% 40%;
-    background-size: 100rem;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 
