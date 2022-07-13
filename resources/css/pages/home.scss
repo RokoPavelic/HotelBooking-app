@@ -54,7 +54,6 @@
     }
 }
 
-
 .home-button {
     width: 150px;
     height: 30px;
@@ -79,30 +78,26 @@
 
     padding: 5%;
     max-width: 100rem;
-    img{
+    img {
         margin: 1rem;
-        opacity: 0.5;
+
         border-radius: 8px;
     }
 }
 .home_about_description {
-   
-
     .lowlight {
         @include headline2;
     }
     p {
         @include subtext-roboto;
-       margin: 2rem;
+        margin: 2rem;
     }
-    .highlight{
+    .highlight {
         color: $clr-d-green;
     }
- 
 }
 
-.bottom-p{
-    
+.bottom-p {
     padding-bottom: 4rem;
     border-bottom: $clr-d-green solid 2px;
 }
@@ -130,7 +125,6 @@
         &:hover {
             transform: scale(1.1);
         }
-
     }
 }
 
