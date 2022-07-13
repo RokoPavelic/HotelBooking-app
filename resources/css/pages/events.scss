@@ -1,7 +1,7 @@
 @use "sass:color";
 @import "~compass-mixins/lib/compass/css3";
-@import "../components/colors";
-@import "../components/fonts";
+@import "../functions/colors";
+@import "../functions/fonts";
 
 .events {
     display: flex;
@@ -12,7 +12,7 @@
 
 .events-hero {
     width: 100%;
-    height: 100vh;
+    height:  20rem;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/events_hero.jpeg");
     background-position: 60% 40%;
@@ -24,8 +24,9 @@
     justify-content: center;
     align-items: center;
 
-    h3{
+    h1{
         @include headline4;
+        
     }
 }
 
@@ -36,13 +37,13 @@
     text-align: center;
 
     h3 {
-        @include roboto-title1;
+        @include headline2;
         margin-bottom: 5%;
     }
     p {
         margin-left: 5%;
         margin-left: 5%;
-        @include regular-roboto-grey;
+        @include subtext-roboto;
     }
 }
 
@@ -73,6 +74,7 @@ button {
 
 .services {
     display: flex;
+    margin: 4rem;
 }
 
 .services-container {
