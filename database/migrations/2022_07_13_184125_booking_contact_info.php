@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contact_info', function (Blueprint $table) {
+        Schema::create('booking_contact_info', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('lastname');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
-            $table->string('phone_number');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->foreignId('contact_info_id')->cascadeOnDelete();
+            $table->foreignId('booking_id')->cascadeOnDelete();
         });
     }
 

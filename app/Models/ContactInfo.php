@@ -5,16 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class ContactInfo extends Model
 {
     use HasFactory;
 
-    public function events()
-    {
-        return $this->belongsToMany(Booking::class);
-    }
+    protected $guarded = [];
+    
+    protected $fillable = [
+        'name',
+        'lastname', 
+        'email', 
+        'phone_number', 
+    ];
 
-    public function contacts()
+    public function bookings()
     {
         return $this->belongsToMany(Contact::class);
     }

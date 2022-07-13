@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Room = ({ room }) => {
     const navigate = useNavigate();
     const { name, description, images, id, facilities } = room;
+    console.log(room)
     return (
         <Container>
             <Picture>

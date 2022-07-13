@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinalProjectController;
 use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ReactAppController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,4 @@ Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm']
 
 
 
-Route::get('/contacts/{path?}', [ContactUsFormController::class, 'app'])->where('path', '.*');
+Route::get('/{path?}', [ReactAppController::class, 'app'])->where('path', '.*');
