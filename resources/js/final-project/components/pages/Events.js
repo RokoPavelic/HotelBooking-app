@@ -18,19 +18,19 @@ export default function Events() {
                 <img
                     className="gallery_img"
                     src="./images/events_gallery_garden.jpeg"
-                    width="300px"
+                    width="400px"
                     height="300px"
                 />
                 <img
                     className="gallery_img"
                     src="./images/events_gallery_gathering.jpeg"
-                    width="300px"
+                    width="400px"
                     height="300px"
                 />
                 <img
                     className="gallery_img"
                     src="./images/events_hero.jpeg"
-                    width="300px"
+                    width="400px"
                     height="300px"
                 />
             </div>
