@@ -4,7 +4,7 @@ import Buttons from "./Buttons";
 
 const Wrapper = styled.div`
     position: relative;
-    width: 50%;
+    width: 60%;
     overflow: hidden;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
     background-size: cover;
@@ -18,7 +18,7 @@ const Slide = styled.div`
     transition: transform 0.6s ease-in-out;
     transform: ${(props) => `translateX(${props.xPosition}px)`}; // (*)
     img {
-        width: 100%;
+        aspectRatio: 3/2;
         height: 100%;
     }
 `;
