@@ -12,8 +12,8 @@ const Rooms = ({ rooms }) => {
                 <h1>Our Rooms</h1>
             </Title>
             <Container>
-                {rooms.map((room, index) => (
-                    <Room room={room} key={index} />
+                {rooms.map((room, id) => (
+                    <Room room={room} key={id} />
                 ))}
             </Container>
         </Wrap>

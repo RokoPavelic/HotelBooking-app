@@ -53,7 +53,7 @@ const RoomDetail = ({ rooms }) => {
                         <br />
 
                         <strong>
-                            <p>Price: 100$ per night</p>{" "}
+                            <p>Price: 100$ per night</p>
                         </strong>
                     </Info>
                     <div className="form">
