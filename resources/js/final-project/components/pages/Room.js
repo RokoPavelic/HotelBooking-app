@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Room = ({ room }) => {
     const navigate = useNavigate();
     const { name, description, images, id, facilities } = room;
-    console.log(room)
+    console.log(room);
     return (
         <Container>
             <Picture>
@@ -37,6 +37,13 @@ const Picture = styled.div`
         background-size: contain;
         width: 500px;
         height: 400px;
+    }
+
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;
 const Container = styled.div`
@@ -74,5 +81,11 @@ const Container = styled.div`
             color: white !important;
             text-decoration: none !important;
         }
+    }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;

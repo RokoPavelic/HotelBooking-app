@@ -26,6 +26,12 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Banner = styled.div`
@@ -46,6 +52,12 @@ const Banner = styled.div`
     p {
         font-size: 3em;
     }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Title = styled.div`
@@ -55,6 +67,12 @@ const Title = styled.div`
         margin: 2em;
         color: #4f4f4f;
     }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Container = styled.div`
@@ -63,4 +81,10 @@ const Container = styled.div`
     margin-bottom: 4em;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;

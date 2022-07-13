@@ -167,6 +167,12 @@ const Wrap2 = styled.div`
             transform: scale(1.5);
         }
     }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Wrap1 = styled.div`
@@ -203,6 +209,12 @@ const Wrap1 = styled.div`
             width: 100%;
         }
     }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 const Container = styled.div`
     display: flex;
@@ -210,6 +222,12 @@ const Container = styled.div`
     justify-content: center;
 
     width: 90%;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Wrapper = styled.div`
@@ -219,6 +237,12 @@ const Wrapper = styled.div`
     justify-content: center;
     margin-bottom: 3.5em;
     width: 100%;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 const Tittle = styled.div`
     font-size: 2em;
@@ -226,6 +250,12 @@ const Tittle = styled.div`
     padding-top: 1em;
     text-align: center;
     color: #4f4f4f;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Info = styled.div`
@@ -233,4 +263,10 @@ const Info = styled.div`
     flex-direction: column;
 
     width: 80%;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;

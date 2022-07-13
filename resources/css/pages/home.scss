@@ -42,6 +42,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     .home__events_title {
         font-size: 3em;
