@@ -2,17 +2,16 @@ export default function Events() {
     return (
         <div className="events">
             <div className="events-hero">
-            <h1> Let us host your events</h1> {" "}
+                <p> Let us host your events</p>{" "}
             </div>
             <div className="content">
-                
                 <p>
-                    We count with experianced staff to make your event a one in a
-                    lifetime experiance. 
-                     Let our enchanting atmospher be the setting
-                    for your special day,<br/>
-                     let our award winning chef add an
-                    all-involving sensory experiance for your guests.
+                    We count with experianced staff to make your event a one in
+                    a lifetime experiance. Let our enchanting atmospher be the
+                    setting for your special day,
+                    <br />
+                    let our award winning chef add an all-involving sensory
+                    experiance for your guests.
                 </p>
             </div>
             <div className="gallery_cont">
