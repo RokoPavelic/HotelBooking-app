@@ -25,6 +25,11 @@ h1{
     font-family: "Koldby", serif;
     font-size: 1.5rem;
     color: $clr-gray;    
+
+}@mixin headline2-white {
+    font-family: "Koldby", serif;
+    font-size: 1rem;
+    color: $clr-white;    
 }
 
 @mixin headline3 {
@@ -40,12 +45,6 @@ h1{
     color: $clr-white;    
 }
 
-@mixin headline4 {
-    font-family: "Koldby", serif;
-    font-weight: 100;
-    font-size: 2.5rem;
-    color: $clr-white;    
-}
 
 @mixin bolder-text {
     font-family: 'Work Sans', sans-serif;
@@ -100,9 +99,9 @@ h1{
 
 @mixin roboto-title1{
     font-family: 'roboto';
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: $clr-d-green;
 }
 
@@ -127,4 +126,12 @@ h1{
     font-style: italic;
     font-size: 1rem;
     color: $clr-gray;   
+}
+
+@mixin subtext-roboto-white{
+    font-family: 'roboto', 'Work Sans';
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1rem;
+    color: $clr-white;   
 }

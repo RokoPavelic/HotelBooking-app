@@ -24,7 +24,9 @@
     justify-content: center;
     align-items: center;
 
-    @include headline4;
+    h3{
+        @include headline4;
+    }
 }
 
 .content {
@@ -35,8 +37,11 @@
 
     h3 {
         @include roboto-title1;
+        margin-bottom: 5%;
     }
     p {
+        margin-left: 5%;
+        margin-left: 5%;
         @include regular-roboto-grey;
     }
 }
@@ -48,6 +53,8 @@
 
     .gallery_img {
         margin: 1rem;
+        opacity: 0.5;
+        border-radius: 8px;
     }
 }
 

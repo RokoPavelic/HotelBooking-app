@@ -28,7 +28,7 @@ export default function Events() {
                 />
                 <img
                     className="gallery_img"
-                    src="./images/events_gallery_gathering.jpeg"
+                    src="./images/events_hero.jpeg"
                     width="300px"
                     height="300px"
                 />
