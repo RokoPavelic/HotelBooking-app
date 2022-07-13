@@ -5,14 +5,20 @@ export default function Events() {
                 <p className="events__title">A Memorable Experience.</p>
             </div>
             <div className="content">
+<<<<<<< HEAD
                 <strong>
                     <p className="content_title"> Let us host you events</p>{" "}
                 </strong>
+=======
+                <h3> Let us host your events</h3>
+>>>>>>> style/updates
                 <p>
-                    We count with experitse staff to make your event one in a
-                    life experiance Let out enchanting atmospher be the setting
-                    for your special day let our award winning chef add and
-                    all-involving sensory experiance for your guests
+                    We count with experianced staff to make your event a one in a
+                    lifetime experiance. 
+                     Let our enchanting atmospher be the setting
+                    for your special day,<br/>
+                     let our award winning chef add an
+                    all-involving sensory experiance for your guests.
                 </p>
             </div>
             <div className="gallery_cont">
