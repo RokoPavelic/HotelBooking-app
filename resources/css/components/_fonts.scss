@@ -5,27 +5,8 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
-@font-face {
-    font-family: 'roboto';
-    src: url('./fonts/Roboto-Light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: light;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&family=Roboto:ital,wght@0,100;0,400;0,700;1,100&display=swap');
 
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('./fonts/Roboto-Regular-webfont.woff')format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('./fonts/Roboto-Bold-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style:  bold;
-}
 
 /* to use the headline1 for example, you have to import the fonts like so:
 @use '_fonts';
@@ -108,9 +89,42 @@ h1{
     color: $clr-smokewhite;    
 }
 
+@mixin bolder-text-green {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $clr-d-green;    
+}
+
+
+
+@mixin roboto-title1{
+    font-family: 'roboto';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2rem;
+    color: $clr-d-green;
+}
+
 @mixin regular-roboto {
-    font-family: 'roboto', 'sans-serif';
-    font-weight: lighter;
-    font-size: 1rem;
+    font-family: 'roboto', 'Work Sans';
+    font-weight: 200;
+    font-style: italic;
+    font-size: 0.75rem;
     color: $clr-smokewhite;    
+}
+
+@mixin regular-roboto-grey {
+    font-family: 'roboto', 'Work Sans';
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: $clr-gray;    
+}
+@mixin subtext-roboto{
+    font-family: 'roboto', 'Work Sans';
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1rem;
+    color: $clr-gray;   
 }

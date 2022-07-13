@@ -6,18 +6,76 @@
 .events {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
 .events-hero {
-    height: 40rem;
+    width: 100%;
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/events_hero.jpeg");
     background-position: 60% 40%;
-    background-size: 100rem;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include headline4;
+}
+
+.content {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+        @include roboto-title1;
+    }
+    p {
+        @include regular-roboto-grey;
+    }
+}
+
+.gallery_cont {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    .gallery_img {
+        margin: 1rem;
+    }
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    padding: 6px;
+    margin-top: 1rem;
+    background-color: $clr-d-green;
+    text-align: center;
+    border: none;
+    @include regular-text-white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.services {
+    display: flex;
+}
+
+.services-container {
+    margin: 3rem;
+    display: flex;
+    align-items: baseline;
+        h3{
+            @include roboto-title1;
+        }
+        li{
+            @include subtext-roboto;
+        }
 }
