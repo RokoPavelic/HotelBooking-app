@@ -51,11 +51,9 @@ const RoomDetail = ({ rooms }) => {
                 <Wrap1>
                     <Info>
                         <p>
-                            {" "}
                             <strong>Location: </strong> {room.location}
                         </p>
                         <br />
-
                         <ul>
                             <strong>Amenities: </strong>
                             <li> {room.amenities}</li>
