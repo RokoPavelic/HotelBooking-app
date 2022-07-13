@@ -1,7 +1,7 @@
 @use "sass:color";
 @import "~compass-mixins/lib/compass/css3";
-@import "../components/colors";
-@import "../components/fonts";
+@import "../functions/colors";
+@import "../functions/fonts";
 
 .events {
     display: flex;

@@ -7,17 +7,23 @@
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    
 }
 
 .contact-hero {
     grid-column: 1/3;
+    
     height: 40rem;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/ContactUs_hero.jpg');
     // background-image: url('../images/ContactUs_hero.jpg');
     background-position: 60% 40%;
-    background-size: 100rem;
+    background-size: cover;
     background-repeat: no-repeat;
-    position: relative;   
+    
+    position: relative; 
+  
 }
 
 .contact__contacts {
