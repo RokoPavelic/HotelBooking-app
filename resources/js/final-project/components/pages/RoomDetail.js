@@ -10,7 +10,8 @@ const RoomDetail = ({ rooms }) => {
     const [values, setValues] = useState({});
 
     const { id } = useParams();
-    const room = rooms?.find((room) => room.id === id);
+    const room = rooms?.find((room) => room.id.toString() === id);
+    console.log(id);
 
     const handleChange = (event) => {
         setValues((previous_values) => {
@@ -49,9 +50,22 @@ const RoomDetail = ({ rooms }) => {
             <Container>
                 <Wrap1>
                     <Info>
-                        <p>{room.description}</p>
+                        <p>
+                            {" "}
+                            <strong>Location: </strong> {room.location}
+                        </p>
                         <br />
 
+                        <ul>
+                            <strong>Amenities: </strong>
+                            <li> {room.amenities}</li>
+                        </ul>
+                        <br />
+                        <ul>
+                            <strong>Facilities: </strong>
+                            <li> {room.facilities}</li>
+                        </ul>
+                        <br />
                         <strong>
                             <p>Price: 100$ per night</p>
                         </strong>
@@ -124,7 +138,9 @@ const RoomDetail = ({ rooms }) => {
                 </Wrap1>
 
                 <Wrap2>
-                    <img src={`/images/${room?.backgroundImg}`} />
+                    <img src={room.images[0].src} />
+                    <img src={room.images[2].src} />
+                    <img src={room.images[1].src} />
                 </Wrap2>
             </Container>
         </Wrapper>
@@ -136,16 +152,22 @@ export default RoomDetail;
 const Wrap2 = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: space-between;
     justify-content: center;
 
     img {
-        width: 400px;
-        height: 300px;
+        width: 350px;
+        height: 250px;
         border-radius: 10px;
+        margin-bottom: 0.5em;
+
         overflow: hidden;
         box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
         transition: transform 100ms ease-in;
+
+        :hover {
+            transform: scale(1.5);
+        }
     }
 `;
 
@@ -188,7 +210,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+
     width: 90%;
 `;
 
@@ -197,12 +219,12 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3em;
+    margin-bottom: 3.5em;
     width: 100%;
 `;
 const Tittle = styled.div`
     font-size: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 3em;
     padding-top: 1em;
     text-align: center;
     color: #4f4f4f;
@@ -211,6 +233,6 @@ const Tittle = styled.div`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
-    padding-top: 2rem;
+
     width: 80%;
 `;

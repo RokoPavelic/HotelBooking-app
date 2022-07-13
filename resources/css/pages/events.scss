@@ -1,8 +1,3 @@
-@use "sass:color";
-@import "~compass-mixins/lib/compass/css3";
-@import "../components/colors";
-@import "../components/fonts";
-
 .events {
     display: flex;
     flex-direction: column;
@@ -24,8 +19,9 @@
     justify-content: center;
     align-items: center;
 
-    h3{
-        @include headline4;
+    p {
+        color: white;
+        font-size: 3em;
     }
 }
 
@@ -35,14 +31,15 @@
     flex-direction: column;
     text-align: center;
 
-    h3 {
-        @include roboto-title1;
+    .content_title {
         margin-bottom: 5%;
+        color: #4f4f4f;
+        font-size: 2em;
     }
     p {
         margin-left: 5%;
         margin-left: 5%;
-        @include regular-roboto-grey;
+        color: #4f4f4f;
     }
 }
 
@@ -53,8 +50,26 @@
 
     .gallery_img {
         margin: 1rem;
-        opacity: 0.5;
+
         border-radius: 8px;
+    }
+}
+
+.about {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .about_title {
+        margin-bottom: 5%;
+        color: #4f4f4f;
+        font-size: 2em;
+    }
+    p {
+        margin-left: 5%;
+        margin-left: 5%;
+        color: #4f4f4f;
     }
 }
 
@@ -63,12 +78,17 @@ button {
     height: 30px;
     padding: 6px;
     margin-top: 1rem;
-    background-color: $clr-d-green;
+    background-color: #567563;
+    color: white;
     text-align: center;
     border: none;
-    @include regular-text-white;
     font-size: 14px;
     cursor: pointer;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 100ms ease-in;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .services {
@@ -79,10 +99,4 @@ button {
     margin: 3rem;
     display: flex;
     align-items: baseline;
-        h3{
-            @include roboto-title1;
-        }
-        li{
-            @include subtext-roboto;
-        }
 }

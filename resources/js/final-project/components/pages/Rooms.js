@@ -9,7 +9,7 @@ const Rooms = ({ rooms }) => {
                 <p>A Unique Experince</p>
             </Banner>
             <Title>
-                <h1>Our Rooms</h1>
+                <p>Our Rooms</p>
             </Title>
             <Container>
                 {rooms.map((room, id) => (
@@ -49,7 +49,7 @@ const Banner = styled.div`
 `;
 
 const Title = styled.div`
-    h1 {
+    p {
         text-align: center;
         font-size: 3em;
         margin: 2em;

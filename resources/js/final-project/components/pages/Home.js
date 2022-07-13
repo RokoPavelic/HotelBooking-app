@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <div className="home">
             <div className="home-hero">
-                <h1 className="home__title">A Memorable Experience.</h1>
+                <p className="home__title">A Memorable Experience.</p>
                 <button
                     onClick={() => navigate("/rooms")}
                     className="home-button"
@@ -47,7 +47,7 @@ export default function Home() {
                 />
             </div>
             <div className="home-events">
-                <h1 className="home__events_title">Events</h1>
+                <p className="home__events_title">Events</p>
                 <p>
                     We can make sure you remember your celebration for their
                     life. We can offer you a luxury ,private celebration that

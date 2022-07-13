@@ -17,6 +17,9 @@ if (!mix.inProduction()) {
     //     add source maps
     mix.webpackConfig({
         devtool: "source-map",
+        stats: {
+            children: true,
+        },
     }).sourceMaps();
 }
 
