@@ -1,0 +1,39 @@
+@use "sass:color";
+@import "~compass-mixins/lib/compass/css3";
+@import "../functions/colors";
+@import "../functions/fonts";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.footer {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $clr-gray;
+    color: $clr-smokewhite;
+    
+    a{
+    padding: 30px;
+    color: $clr-smokewhite;
+    text-decoration: none;
+    transition: 0.5s;
+
+        &:hover {
+        color: $clr-d-green;
+      }
+    }
+
+    p{
+        text-align: center;
+        font-family: 'Roboto';
+        margin-top: 1em;
+    }
+}
+
+
+

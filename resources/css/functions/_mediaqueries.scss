@@ -1,0 +1,33 @@
+/* this is a function for media queries. To use it you have to import this file like so:
+@ use '_mediaqueries' 
+
+then
+
+body {
+    @include mq(small) {
+        "your content"
+}*/
+
+$breakpoints: (
+    xsmall: 640px,
+    small: 768px,
+    medium: 960px,
+    large: 1024px,
+    xlarge: 1200px
+);
+
+@mixin mq1($key) {
+    $size: map.get($breakpoints, $key);
+
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin mq2($key) {
+    $size: map.get($breakpoints, $key);
+
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
