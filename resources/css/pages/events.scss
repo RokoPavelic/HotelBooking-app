@@ -1,0 +1,23 @@
+@use "sass:color";
+@import "~compass-mixins/lib/compass/css3";
+@import "../components/colors";
+@import "../components/fonts";
+
+.events {
+    display: flex;
+    flex-direction: column;
+}
+
+.events-hero {
+    height: 40rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/events_hero.jpeg");
+    background-position: 60% 40%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
