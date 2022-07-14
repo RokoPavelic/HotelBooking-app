@@ -1,8 +1,8 @@
 @use "sass:color";
 @use "sass:map";
-@import '~compass-mixins/lib/compass/css3';
-@import './functions/colors';
-@import './functions/fonts';
+@import "~compass-mixins/lib/compass/css3";
+@import "./functions/colors";
+@import "./functions/fonts";
 @import "./functions/mediaqueries";
 
 *,
@@ -14,7 +14,6 @@
 
 body {
     @include mq2(medium) {
-        
         margin-top: 4.5rem;
     }
 }
@@ -22,6 +21,3 @@ body {
 h1 {
     font-family: "Koldby";
 }
-
-
-

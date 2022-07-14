@@ -12,8 +12,6 @@ export default function Contacts() {
         message: "",
     });
 
-  
-
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
         event.preventDefault();
@@ -29,10 +27,13 @@ export default function Contacts() {
         // });
         // const response_data = await response.json();
 
-        const response = await axios.post("/contact/submit", values);
+        const response = await axios.post(
+            "http://localhost:3000/contact/submit",
+            values
+        );
         const response_data = response.data;
         // console.log(response.data)
-        navigate("/feedback")
+        navigate("/feedback");
     };
 
     const handleChange = (event) => {
@@ -98,7 +99,7 @@ export default function Contacts() {
                 <form
                     action="/contact/submit"
                     method="POST"
-                    onSubmit= { handleSubmit }
+                    onSubmit={handleSubmit}
                 >
                     <h3>Contact Us</h3>
                     <p>Name</p>
@@ -106,10 +107,8 @@ export default function Contacts() {
                         type="text"
                         name="name"
                         id="name"
-                        value={ values.name }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.name}
+                        onChange={handleChange}
                         required
                     />
                     <p>Email</p>
@@ -117,10 +116,8 @@ export default function Contacts() {
                         type="email"
                         name="email"
                         id="email"
-                        value={ values.email } 
-                        onChange={
-                            handleChange
-                        }
+                        value={values.email}
+                        onChange={handleChange}
                         required
                     />
                     <p>Phone</p>
@@ -128,21 +125,17 @@ export default function Contacts() {
                         type="text"
                         id="phone"
                         name="phone"
-                        value={ values.phone } 
-                        onChange={
-                            handleChange
-                        }
+                        value={values.phone}
+                        onChange={handleChange}
                     />
+                    <p>Subject</p>
                     <input
                         type="text"
                         class="form-control"
                         name="subject"
                         id="subject"
-                        value={ values.subject } 
-                        onChange={
-                            handleChange
-                        }
-                        placeholder="Subject"
+                        value={values.subject}
+                        onChange={handleChange}
                     />
 
                     <textarea
@@ -150,10 +143,8 @@ export default function Contacts() {
                         name="message"
                         rows="5"
                         cols="50"
-                        value={ values.message } 
-                        onChange={
-                            handleChange
-                        }
+                        value={values.message}
+                        onChange={handleChange}
                     ></textarea>
                     <button
                         // onClick={() => navigate("/feedback")}

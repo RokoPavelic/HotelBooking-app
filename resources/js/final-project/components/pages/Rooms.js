@@ -3,7 +3,7 @@ import Room from "./Room";
 import React from "react";
 
 const Rooms = ({ rooms }) => {
-    console.log(rooms)
+    console.log(rooms);
     return (
         <Wrap>
             <Banner>
@@ -32,6 +32,8 @@ const Wrap = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        owerflow-x: hidden;
     }
 `;
 
@@ -87,5 +89,7 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        overflow-x: hidden;
     }
 `;
