@@ -23,24 +23,20 @@ class ContactUsFormController extends Controller {
          ]
         );
         
+
         $contact_infos = ContactInfo::create([
             'name'=> $request->name,
             'email'=>$request->email,
             'phone_number'=>$request->phone,
         ]);
-       
-       
+        
+        
         $message = Message::create([
             'subject'=>$request->subject,
             'message'=>$request->message,
+            'contact_info_id'=>$contact_infos->id,
         ]);
-
-        $message->contactInfo()->id;
-        
-      
-        
-        
-
+       
         
         //  Store data in database
         
