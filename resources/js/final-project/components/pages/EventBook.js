@@ -77,6 +77,7 @@ const EventBook = () => {
                             handleChange(e);
                         }}
                     />
+                    <p>Event Name</p>
                     <input
                         type="text"
                         className="form-control"
@@ -85,7 +86,6 @@ const EventBook = () => {
                         onChange={(e) => {
                             handleChange(e);
                         }}
-                        placeholder="Event Name"
                     />
 
                     <input
@@ -127,6 +127,13 @@ const Form = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
     .form {
         width: 80%;
@@ -140,6 +147,13 @@ const Form = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
+            @media screen and (max-width: 720px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
 
             input {
                 margin-bottom: 1.5em;
