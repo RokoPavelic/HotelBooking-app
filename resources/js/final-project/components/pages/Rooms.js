@@ -3,6 +3,7 @@ import Room from "./Room";
 import React from "react";
 
 const Rooms = ({ rooms }) => {
+    console.log(rooms);
     return (
         <Wrap>
             <Banner>
@@ -31,6 +32,8 @@ const Wrap = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        owerflow-x: hidden;
     }
 `;
 
@@ -77,14 +80,16 @@ const Title = styled.div`
 
 const Container = styled.div`
     display: flex;
-    width: 100%;
+    width: 80%;
     margin-bottom: 4em;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     @media screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        overflow-x: hidden;
     }
 `;

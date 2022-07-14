@@ -5,12 +5,36 @@ import { useNavigate } from "react-router-dom";
 export default function Contacts() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
-        name: "name",
-        email: "email",
-        phone: "phone",
-        subject: "subject",
-        message: "message",
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
     });
+
+    const handleSubmit = async (event) => {
+        // prevent the default event behaviour
+        event.preventDefault();
+
+        // const response = await fetch('/contact/submit', {
+        //     method: 'POST',
+        //     body: JSON.stringify(values),
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-type': 'application/json',
+        //         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        //     }
+        // });
+        // const response_data = await response.json();
+
+        const response = await axios.post(
+            "http://localhost:3000/contact/submit",
+            values
+        );
+        const response_data = response.data;
+        // console.log(response.data)
+        navigate("/feedback");
+    };
 
     const handleChange = (event) => {
         setValues((previous_values) => {
@@ -21,12 +45,6 @@ export default function Contacts() {
         });
     };
 
-    const handleSubmit = (event) => {
-        // prevent the default event behaviour
-        event.preventDefault();
-
-        axios.post("/contact/submit", values);
-    };
     return (
         <main className="contact">
             <div className="contact-hero">
@@ -35,7 +53,7 @@ export default function Contacts() {
             </div>
 
             <div className="contact__contacts">
-                <div class="contact__contacts-phone">
+                <div className="contact__contacts-phone">
                     <img
                         src="../images/phone-full.svg"
                         alt="phone icon"
@@ -43,7 +61,7 @@ export default function Contacts() {
                     />
                     <p>+420 732 79090</p>
                 </div>
-                <div class="contact__contacts-email">
+                <div className="contact__contacts-email">
                     <img
                         src="../images/mail-full.svg"
                         alt="mail icon"
@@ -51,7 +69,7 @@ export default function Contacts() {
                     />
                     <p>contact@ctt.com</p>
                 </div>
-                <div class="contact__contacts-location">
+                <div className="contact__contacts-location">
                     <img
                         src="../images/location-full.svg"
                         alt="location icon"
@@ -62,8 +80,8 @@ export default function Contacts() {
                         <p>Czech Republic</p>
                     </div>
                 </div>
-                <div class="mapouter">
-                    <div class="gmap_canvas">
+                <div className="mapouter">
+                    <div className="gmap_canvas">
                         <iframe
                             width="600"
                             height="500"
@@ -79,10 +97,9 @@ export default function Contacts() {
             </div>
             <div className="form">
                 <form
+                    action="/contact/submit"
                     method="POST"
-                    onSubmit={(e) => {
-                        handleSubmit(e);
-                    }}
+                    onSubmit={handleSubmit}
                 >
                     <h3>Contact Us</h3>
                     <p>Name</p>
@@ -90,9 +107,8 @@ export default function Contacts() {
                         type="text"
                         name="name"
                         id="name"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={values.name}
+                        onChange={handleChange}
                         required
                     />
                     <p>Email</p>
@@ -100,9 +116,8 @@ export default function Contacts() {
                         type="email"
                         name="email"
                         id="email"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={values.email}
+                        onChange={handleChange}
                         required
                     />
                     <p>Phone</p>
@@ -110,32 +125,29 @@ export default function Contacts() {
                         type="text"
                         id="phone"
                         name="phone"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={values.phone}
+                        onChange={handleChange}
                     />
+                    <p>Subject</p>
                     <input
                         type="text"
                         class="form-control"
                         name="subject"
                         id="subject"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
-                        placeholder="Subject"
+                        value={values.subject}
+                        onChange={handleChange}
                     />
 
                     <textarea
                         id="textarea"
-                        name="textarea"
+                        name="message"
                         rows="5"
                         cols="50"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={values.message}
+                        onChange={handleChange}
                     ></textarea>
                     <button
-                        onClick={() => navigate("/feedback")}
+                        // onClick={() => navigate("/feedback")}
                         className="form-button"
                     >
                         Submit

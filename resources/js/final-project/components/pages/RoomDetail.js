@@ -111,6 +111,7 @@ const RoomDetail = ({ rooms }) => {
                             </strong>
                             <br />
                             <input
+                                className="date"
                                 type="date"
                                 id="from"
                                 name="from"
@@ -119,6 +120,7 @@ const RoomDetail = ({ rooms }) => {
                                 }}
                             />
                             <input
+                                className="date"
                                 type="date"
                                 id="to"
                                 name="to"
@@ -166,13 +168,19 @@ const Wrap2 = styled.div`
         :hover {
             transform: scale(1.5);
         }
-    }
-    @media screen and (max-width: 720px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+        @media screen and (max-width: 720px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+            transition: transform 100ms ease-in;
+
+            :hover {
+                transform: scale(1.07);
+            }
+        }
     }
 `;
 
@@ -189,6 +197,16 @@ const Wrap1 = styled.div`
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+
+        .date {
+            @media screen and (max-width: 720px) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 100%;
+            }
+        }
 
         .submitForm {
             background-color: #587563;

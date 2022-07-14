@@ -13,10 +13,11 @@ class Message extends Model
     protected $fillable = [
         'subject', 
         'message',
+        'contact_info_id'
     ];
 
-    public function contactInfo()
+    public function contact_info()
     {
-        return $this->belongsTo(ContactInfo::class);
+        return $this->belongsTo(ContactInfo::class, 'contact_info_id');
     }
 }
