@@ -78,10 +78,10 @@ const Title = styled.div`
 
 const Container = styled.div`
     display: flex;
-    width: 100%;
+    width: 80%;
     margin-bottom: 4em;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     @media screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;

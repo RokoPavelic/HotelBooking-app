@@ -5,12 +5,34 @@ import { useNavigate } from "react-router-dom";
 export default function Contacts() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
-        name: "name",
-        email: "email",
-        phone: "phone",
-        subject: "subject",
-        message: "message",
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
     });
+
+  
+
+    const handleSubmit = async (event) => {
+        // prevent the default event behaviour
+        event.preventDefault();
+
+        // const response = await fetch('/contact/submit', {
+        //     method: 'POST',
+        //     body: JSON.stringify(values),
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-type': 'application/json',
+        //         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        //     }
+        // });
+        // const response_data = await response.json();
+
+        const response = await axios.post("/contact/submit", values);
+        const response_data = response.data;
+        console.log(response.data)
+    };
 
     const handleChange = (event) => {
         setValues((previous_values) => {
@@ -21,26 +43,6 @@ export default function Contacts() {
         });
     };
 
-    const handleSubmit = (event) => {
-        // prevent the default event behaviour
-        event.preventDefault();
-
-        fetch("http://localhost:3000/contact/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-        })
-            .then((response) => response.json())
-            .then(() => {
-                console.log("Success:");
-                navigate("/feedback");
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    };
     return (
         <main className="contact">
             <div className="contact-hero">
@@ -77,7 +79,7 @@ export default function Contacts() {
                     </div>
                 </div>
                 <div className="mapouter">
-                    <div class="gmap_canvas">
+                    <div className="gmap_canvas">
                         <iframe
                             width="600"
                             height="500"
@@ -93,10 +95,9 @@ export default function Contacts() {
             </div>
             <div className="form">
                 <form
+                    action="/contact/submit"
                     method="POST"
-                    onSubmit={(e) => {
-                        handleSubmit(e);
-                    }}
+                    onSubmit= { handleSubmit }
                 >
                     <h3>Contact Us</h3>
                     <p>Name</p>
@@ -104,9 +105,10 @@ export default function Contacts() {
                         type="text"
                         name="name"
                         id="name"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={ values.name }
+                        onChange={
+                            handleChange
+                        }
                         required
                     />
                     <p>Email</p>
@@ -114,9 +116,10 @@ export default function Contacts() {
                         type="email"
                         name="email"
                         id="email"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={ values.email } 
+                        onChange={
+                            handleChange
+                        }
                         required
                     />
                     <p>Phone</p>
@@ -124,35 +127,39 @@ export default function Contacts() {
                         type="text"
                         id="phone"
                         name="phone"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={ values.phone } 
+                        onChange={
+                            handleChange
+                        }
                     />
                     <input
                         type="text"
                         class="form-control"
                         name="subject"
                         id="subject"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={ values.subject } 
+                        onChange={
+                            handleChange
+                        }
                         placeholder="Subject"
                     />
 
                     <textarea
                         id="textarea"
-                        name="textarea"
+                        name="message"
                         rows="5"
                         cols="50"
-                        onChange={(e) => {
-                            handleChange(e);
-                        }}
+                        value={ values.message } 
+                        onChange={
+                            handleChange
+                        }
                     ></textarea>
-                    <input
-                        className="submitForm"
-                        type="submit"
-                        value="Submit"
-                    />
+                    <button
+                        // onClick={() => navigate("/feedback")}
+                        className="form-button"
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         </main>
