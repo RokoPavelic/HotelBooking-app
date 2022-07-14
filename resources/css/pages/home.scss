@@ -12,7 +12,6 @@
     height: 20rem;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/main_hero.jpeg");
-    background-position: 60% 40%;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -22,12 +21,8 @@
     align-items: center;
 }
 .home__title {
-    // position: absolute;
-    // top: 50%;
-    // width: 100%;
-    // text-align: center;
-    font-size: 3em;
-    color: white;
+    text-align: center;
+    @include headline4;
 }
 .home-events {
     position: relative;
@@ -208,4 +203,39 @@ img:nth-child(5) {
     margin: 2rem;
     display: flex;
     justify-content: center;
+}
+
+
+@media (max-width: 700px){
+
+    .home-about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding: 5%;
+        max-width: 100rem;}
+        img{
+            margin: 0;
+            max-width: 300px;
+            max-height: 300px;
+            opacity: 0.5;
+            border-radius: 8px;
+            position: static;
+        }
+    
+        .pic-ctn{
+
+          display:none;
+        }
+       .about-img{
+            display: none;
+        }
+
+        .btn-gallery {
+            margin: 2rem;
+            display: flex;
+            justify-content: center;
+            position:static;
+        }
 }

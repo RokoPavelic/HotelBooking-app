@@ -60,13 +60,13 @@ export default function Events() {
             </button>
 
             <div className="services">
+            <h3 className="services-title"> Our Services Include:</h3>
+            
                 <div className="services-container">
-                    <strong>
-                        <p className="services-title">Our Services Include:</p>
-                    </strong>
+                    
                     <ul>
                         <li>Catering</li>
-                        <li>Professiona Chef</li>
+                        <li>Professional Chef</li>
                         <li>Accommodation for guests</li>
                     </ul>
                 </div>

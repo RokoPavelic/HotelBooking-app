@@ -3,6 +3,7 @@
 @import "../functions/colors";
 @import "../functions/fonts";
 
+
 .events {
     display: flex;
     flex-direction: column;
@@ -24,9 +25,8 @@
     justify-content: center;
     align-items: center;
 
-    p {
-        font-size: 3em;
-        color: white;
+    h1 {
+        @include headline4;
     }
 }
 
@@ -100,10 +100,34 @@
 .services {
     display: flex;
     margin: 4rem;
+    h3 {
+        @include roboto-title1;
+    }
+
 }
 
 .services-container {
     margin: 3rem;
     display: flex;
     align-items: baseline;
+ 
+    li {
+        @include subtext-roboto;
+    }
+}
+
+
+
+@media (max-width: 700px){
+
+    .gallery_cont{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
 }
