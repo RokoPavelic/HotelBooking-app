@@ -25,21 +25,7 @@ export default function Contacts() {
         // prevent the default event behaviour
         event.preventDefault();
 
-        fetch("https://www.google.com/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-        })
-            .then((response) => response.json())
-            .then(() => {
-                console.log("Success:");
-                navigate("/feedback");
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
+        axios.post("/contact/submit", values);
     };
     return (
         <main className="contact">
@@ -148,11 +134,12 @@ export default function Contacts() {
                             handleChange(e);
                         }}
                     ></textarea>
-                    <input
-                        className="submitForm"
-                        type="submit"
-                        value="Submit"
-                    />
+                    <button
+                        onClick={() => navigate("/feedback")}
+                        className="form-button"
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         </main>
