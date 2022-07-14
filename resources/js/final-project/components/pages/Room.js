@@ -5,10 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 const Room = ({ room }) => {
     const navigate = useNavigate();
-    const { name, description, backgroundImg, id } = room;
+    const { name, description, images, id, facilities } = room;
+    console.log(room);
     return (
         <Container>
-            <Wrap bgImage={backgroundImg}></Wrap>
+            <Picture>
+                <img src={images[0].src} />
+            </Picture>
             <div>
                 <h3>{name}</h3>
                 <p>{description}</p>
@@ -20,18 +23,28 @@ const Room = ({ room }) => {
 
 export default Room;
 
-const Wrap = styled.div`
+const Picture = styled.div`
     width: 500px;
     height: 400px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: ${(props) => `url("/images/${props.bgImage}")`};
+
     margin: 10px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     transition: transform 100ms ease-in;
+
+    img {
+        background-size: contain;
+        width: 500px;
+        height: 400px;
+    }
+
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 const Container = styled.div`
     width: 500px;
@@ -68,5 +81,11 @@ const Container = styled.div`
             color: white !important;
             text-decoration: none !important;
         }
+    }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;

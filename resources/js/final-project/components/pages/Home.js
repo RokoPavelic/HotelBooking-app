@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <div className="home">
             <div className="home-hero">
-                <h1 className="home__title">A Memorable Experience.</h1>
+                <p className="home__title">A Memorable Experience.</p>
                 <button
                     onClick={() => navigate("/rooms")}
                     className="home-button"
@@ -16,7 +16,7 @@ export default function Home() {
             </div>
             <div className="home-about">
                 <div className="home_about_description">
-                    <h3>About Chateau Trebesice</h3>
+                    <h3 className="lowlight"> About <strong className="highlight">Chateau Trebesice</strong></h3>
                     <p>
                         <strong>
                             Discover the unique magic of a place where the past
@@ -24,7 +24,7 @@ export default function Home() {
                             are combined in one unique mix.
                         </strong>
                     </p>
-                    <p>
+                    <p className="bottom-p">
                         Château Třebešice is a small Renaissance rural mansion
                         with its own home farm, a beautiful complex of rural
                         buildings from various historical periods on large land
@@ -47,11 +47,11 @@ export default function Home() {
                 />
             </div>
             <div className="home-events">
-                <h1 className="home__events_title">Events</h1>
+                <p className="home__events_title">Events</p>
                 <p>
                     We can make sure you remember your celebration for their
-                    life. We can offer you a luxury ,private celebration that
-                    will be made exactly tailored for you and your needs. Over
+                    life.<br/>We can offer you a luxury ,private celebration that
+                    will be made exactly tailored for you and your needs.<br/>Over
                     the high quality framework
                 </p>
                 <button onClick={() => navigate("/events")}>Events</button>

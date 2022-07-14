@@ -9,11 +9,11 @@ const Rooms = ({ rooms }) => {
                 <p>A Unique Experince</p>
             </Banner>
             <Title>
-                <h1>Our Rooms</h1>
+                <p>Our Rooms</p>
             </Title>
             <Container>
-                {rooms.map((room, index) => (
-                    <Room room={room} key={index} />
+                {rooms.map((room, id) => (
+                    <Room room={room} key={id} />
                 ))}
             </Container>
         </Wrap>
@@ -26,11 +26,17 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Banner = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,14 +52,26 @@ const Banner = styled.div`
     p {
         font-size: 3em;
     }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Title = styled.div`
-    h1 {
+    p {
         text-align: center;
         font-size: 3em;
         margin: 2em;
         color: #4f4f4f;
+    }
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -63,4 +81,10 @@ const Container = styled.div`
     margin-bottom: 4em;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;

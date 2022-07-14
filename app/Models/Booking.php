@@ -13,4 +13,9 @@ class Booking extends Model
     {
         return $this->belongsToMany(Booking::class);
     }
+
+    public function contactsInfo()
+    {
+        return $this->belongsToMany(Contact::class);
+    }
 }

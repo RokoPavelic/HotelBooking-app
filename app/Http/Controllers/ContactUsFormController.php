@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use App\Models\ContactInfo;
+use App\Models\Message;
 use Mail;
 class ContactUsFormController extends Controller {
     // Create Contact Form
@@ -10,16 +11,40 @@ class ContactUsFormController extends Controller {
     }
     // Store Contact Form data
     public function ContactUsForm(Request $request) {
+
+        // dd($request);
         // Form validation
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'subject'=>'required',
+            'subject'=> 'required',
             'message' => 'required'
-         ]);
+         ]
+        );
+        
+        $contact_infos = ContactInfo::create([
+            'name'=> $request->name,
+            'email'=>$request->email,
+            'phone_number'=>$request->phone,
+        ]);
+       
+       
+        $message = Message::create([
+            'subject'=>$request->subject,
+            'message'=>$request->message,
+        ]);
+
+        $message->contactInfo()->id;
+        
+      
+        
+        
+
+        
         //  Store data in database
-        Contact::create($request->all());
+        
+        // ContactInfo::create($request->all());
         //  Send mail to admin
         \Mail::send('pages/contact-us/email', array(
             'name' => $request->get('name'),

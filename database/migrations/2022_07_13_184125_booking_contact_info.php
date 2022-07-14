@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
+        Schema::create('booking_contact_info', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->text('description');
-            $table->text('location');
-            $table->text('amenities');
-            $table->string('facilities');
-            $table->timestamps();
+            $table->foreignId('contact_info_id')->cascadeOnDelete();
+            $table->foreignId('booking_id')->cascadeOnDelete();
         });
     }
 
