@@ -6,8 +6,13 @@ export default function Events() {
     return (
         <div className="events">
             <div className="events-hero">
-                <p> Let us host your events</p>{" "}
+                {/* KEEP AS H1 */}
+                <h1> A Memorable Experiance</h1>{" "}
+                 {/* KEEP AS H1 */}
             </div>
+            <h3 className="about_title">
+                        Let us host you event
+                    </h3>
             <div className="content">
                 <p>
                     We count with experianced staff to make your event a one in
@@ -38,19 +43,7 @@ export default function Events() {
                     height="300px"
                 />
             </div>
-            <div className="about">
-                <strong>
-                    <p className="about_title">
-                        Speak with us about your event
-                    </p>
-                </strong>
-                <p>
-                    We cont with exerience staff to make your event one in a
-                    life exerience. <br /> Let out enchanting atmospher be the
-                    setting for your special day <br /> let our award winning
-                    chef add and all-involving sensory exerience for your guests
-                </p>
-            </div>
+         
 
             <button
                 onClick={() => navigate(`/eventbook`)}
