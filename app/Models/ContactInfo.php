@@ -12,14 +12,18 @@ class ContactInfo extends Model
     protected $guarded = [];
     
     protected $fillable = [
-        'name',
-        'lastname', 
+        'name', 
         'email', 
         'phone_number', 
     ];
 
     public function bookings()
     {
-        return $this->belongsToMany(Contact::class);
+        return $this->belongsToMany(Booking::class);
+    }
+
+    public function message()
+    {
+        return $this->hasOne(Message::class);
     }
 }
