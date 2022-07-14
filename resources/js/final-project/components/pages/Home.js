@@ -1,72 +1,102 @@
-export default function Events() {
-    return (
-        <div className="events">
-            <div className="events-hero">
-                <h1 className="events__title">A Memorable Experience.</h1>
-            </div>
-            <div className="content">
-                <h3> Let us host your events</h3>
-                <p>
-                    We count with experienced staff to make your event a one in a
-                    lifetime experience.
-                     Let our enchanting atmosphere be the setting
-                    for your special day,<br/>
-                     let our award winning chef add an
-                    all-involving sensory experience for your guests.
-                </p>
-            </div>
-            <div className="gallery_cont">
-                <img
-                    className="gallery_img"
-                    src="./images/events_gallery_garden.jpeg"
-                    width="300px"
-                    height="300px"
-                />
-                <img
-                    className="gallery_img"
-                    src="./images/events_gallery_gathering.jpeg"
-                    width="300px"
-                    height="300px"
-                />
-                <img
-                    className="gallery_img"
-                    src="./images/events_hero.jpeg"
-                    width="300px"
-                    height="300px"
-                />
-            </div>
-            <button className="events-btn">Book Consultation</button>
-  
-            <div className="services">
-            <h3 className="services-title"> Our Services Include:</h3>
-           
-                <div className="services-container">
-                   
-                    <ul>
-                        <li>Catering</li>
-                        <li>Professional Chef</li>
-                        <li>Accommodation for guests</li>
-                    </ul>
-                </div>
-                <div className="services-container">
-                    <ul>
-                        <li>Seating- staging</li>
-                        <li>Custom Decoration</li>
-                        <li>Professional Photographer</li>
-                    </ul>
-                </div>
-                <div className="services-container">
-                    <ul>
-                        <li>Florist and Baker</li>
-                        <li>Professional Organizer</li>
-                        <li>Hosting services</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    );
- }
-  
+import { useNavigate } from "react-router-dom";
  
+export default function Home() {
+   const navigate = useNavigate();
+   return (
+       <div className="home">
+           <div className="home-hero">
+               <p className="home__title">A Memorable Experience.</p>
+               <button
+                   onClick={() => navigate("/rooms")}
+                   className="home-button"
+               >
+                   {" "}
+                   Reserve Now
+               </button>
+           </div>
+           <div className="home-about">
+               <div className="home_about_description">
+                   <h3 className="lowlight"> About <strong className="highlight">Chateau Trebesice</strong></h3>
+                   <p>
+                       <strong>
+                           Discover the unique magic of a place where the past
+                           and presence, history and future, nature and culture
+                           are combined in one unique mix.
+                       </strong>
+                   </p>
+                   <p className="bottom-p">
+                       Château Třebešice is a small Renaissance rural mansion
+                       with its own home farm, a beautiful complex of rural
+                       buildings from various historical periods on large land
+                       rich in water features and beautiful gardens, just 5
+                       kilometers from Kutná Hora monuments, one of the most
+                       beautiful cities in EUROPE.
+                   </p>
+                   <button
+                       onClick={() => navigate("/about")}
+                       className="home-button"
+                   >
+                       Read more
+                   </button>
+               </div>
+               <img className="about-img"
+                   src="./images/interior_library.jpeg"
+                   alt="Main Library"
+                   width="500px"
+                   height="400px"
+               />
+           </div>
+           <div className="home-events">
+               <p className="home__events_title">Events</p>
+               <p>
+                   We can make sure you remember your celebration for their
+                   life.<br/>We can offer you a luxury ,private celebration that
+                   will be made exactly tailored for you and your needs.<br/>Over
+                   the high quality framework
+               </p>
+               <button onClick={() => navigate("/events")}>Events</button>
+           </div>
  
+           <div className="pic-ctn">
+               <img
+                   src="./images/room_blue_bed.jpeg"
+                   alt=""
+                   width="700px"
+                   height="500px"
+                   className="pic"
+               />
+               <img
+                   src="./images/room_gold_decor.jpeg"
+                   alt=""
+                   width="700px"
+                   height="500px"
+                   className="pic"
+               />
+               <img
+                   src="./images/exterior_garden.jpeg"
+                   alt=""
+                   width="700px"
+                   height="500px"
+                   className="pic"
+               />
+               <img
+                   src="./images/exterior_nightview.jpeg"
+                   alt=""
+                   width="700px"
+                   height="500px"
+                   className="pic"
+               />
+           </div>
+           <div className="btn-gallery">
+               <button
+                   onClick={() => navigate("/gallery")}
+                   className="home-button"
+               >
+                   View More{" "}
+               </button>
+           </div>
+       </div>
+   );
+}
  
+
