@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('booking_id');
             $table->string('event_name');
-            $table->dateTime('event_start');
-            $table->dateTime('event_end');
+            $table->date('event_date')->nullable();
+            $table->dateTime('event_start')->nullable();
+            $table->dateTime('event_end')->nullable();
             $table->text('event_description');
             $table->timestamps();
         });    
