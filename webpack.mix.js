@@ -48,8 +48,8 @@ mix.sass('resources/css/style.scss', 'public/css')
    .sass('resources/css/components/footer.scss', 'public/css')
    .sass('resources/css/pages/contact-us.scss', 'public/css')
    .sass('resources/css/pages/home.scss', 'public/css')
-   .sass('resources/css/pages/burger-icon.scss', 'public/css')
-   .sass('resources/css/components/navbar.scss', 'public/css');
+//    .sass('resources/css/pages/burger-icon.scss', 'public/css')
+   .sass('resources/css/components/navbar.scss', 'public/css')
    .sass('resources/css/pages/events.scss', 'public/css')
    .sass('resources/css/pages/burger-icon.scss', 'public/css');
 // mix.js('resources/js/library.js', 'public/js');
