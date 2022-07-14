@@ -33,7 +33,7 @@ Route::get('/contact', [ContactUsFormController::class, 'createForm']);
 Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 
-
+// Route::get('/feedback', [ReactAppController::class, 'app']);
 
 
 Route::get('/{path?}', [ReactAppController::class, 'app'])->where('path', '.*');

@@ -10,7 +10,7 @@ class RoomsController extends Controller
     public function index()
     {
         $rooms =Room::with('images')->get();
-
+        
         return $rooms;
     }
 }

@@ -3,6 +3,7 @@
 @import "../functions/colors";
 @import "../functions/fonts";
 
+//  dont edit styles
 .events {
     display: flex;
     flex-direction: column;
@@ -24,12 +25,12 @@
     justify-content: center;
     align-items: center;
 
-    p {
-        font-size: 3em;
-        color: white;
+    h1 {
+        @include headline4;
     }
 }
 
+//  dont edit styles
 .content {
     padding: 5%;
     display: flex;
@@ -39,8 +40,6 @@
     h3 {
         @include headline2;
         margin-bottom: 5%;
-        color: #4f4f4f;
-        font-size: 2em;
     }
     p {
         margin-left: 5%;
@@ -49,6 +48,7 @@
     }
 }
 
+//  dont edit styles
 .gallery_cont {
     margin: 3rem;
     display: flex;
@@ -56,42 +56,22 @@
 
     .gallery_img {
         margin: 1rem;
-
+        opacity: 0.5;
         border-radius: 8px;
     }
 }
 
-.about {
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    .about_title {
-        margin-bottom: 5%;
-        color: #4f4f4f;
-        font-size: 2em;
-    }
-    p {
-        margin-left: 5%;
-        margin-left: 5%;
-        color: #4f4f4f;
-    }
-}
-
-.events-btn {
+button {
     width: 150px;
     height: 30px;
     padding: 6px;
     margin-top: 1rem;
-    background-color: #567563;
-    color: white;
+    background-color: $clr-d-green;
     text-align: center;
     border: none;
+    @include regular-text-white;
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-    transition: transform 100ms ease-in;
     &:hover {
         transform: scale(1.1);
     }
@@ -100,16 +80,29 @@
 .services {
     display: flex;
     margin: 4rem;
+    h3 {
+        @include roboto-title1;
+    }
 }
 
 .services-container {
     margin: 3rem;
     display: flex;
     align-items: baseline;
-    h3 {
-        @include roboto-title1;
-    }
     li {
         @include subtext-roboto;
+    }
+}
+
+//  dont edit styles
+
+@media (max-width: 700px) {
+    .gallery_cont {
+        display: flex;
+        flex-direction: column;
+    }
+    .services {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
