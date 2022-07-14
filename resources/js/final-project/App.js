@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import RoomDetail from "./components/pages/RoomDetail";
 import Reserved from "./components/pages/Reserved";
 import Feedback from "./components/pages/feedback";
+import EventBook from "./components/pages/EventBook";
 
 // const rooms = [
 //     {
@@ -77,6 +78,7 @@ export default function App() {
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/reserved" element={<Reserved />} />
                 <Route path="/feedback" element={<Feedback />} />
+                <Route path="/eventbook" element={<EventBook />} />
             </Routes>
 
             <Footer />

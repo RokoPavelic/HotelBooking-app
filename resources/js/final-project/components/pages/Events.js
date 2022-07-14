@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Events() {
+    const navigate = useNavigate();
+
     return (
         <div className="events">
             <div className="events-hero">
@@ -48,7 +52,12 @@ export default function Events() {
                 </p>
             </div>
 
-            <button className="events-btn">Book Consultation</button>
+            <button
+                onClick={() => navigate(`/eventbook`)}
+                className="events-btn"
+            >
+                Book Consultation
+            </button>
 
             <div className="services">
                 <div className="services-container">
