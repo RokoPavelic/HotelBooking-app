@@ -13,20 +13,18 @@ const EventBook = () => {
         event_name: "",
         date: "",
         event_description: "",
-
     });
 
- 
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
         event.preventDefault();
 
         const response = await axios.post("/event/submit", values);
         const response_data = response.data;
-        console.log(response_data)
-        navigate("/feedback")
+        console.log(response_data);
+        navigate("/feedback");
     };
-    
+
     const handleChange = (event) => {
         setValues((previous_values) => {
             return {
@@ -42,32 +40,24 @@ const EventBook = () => {
                 <p>Leave your special event to us </p>
             </Banner>
             <div className="form">
-                <form
-                    onSubmit={
-                        handleSubmit
-                    }
-                >
+                <form onSubmit={handleSubmit}>
                     <h3>Fill the info</h3>
                     <p>Name</p>
                     <input
                         type="text"
                         name="name"
                         id="name"
-                        value={ values.name }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.name}
+                        onChange={handleChange}
                         required
                     />
-                     <p>Last Name</p>
+                    <p>Last Name</p>
                     <input
                         type="text"
                         name="lastname"
                         id="lastname"
-                        value={ values.lastname }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.lastname}
+                        onChange={handleChange}
                         required
                     />
                     <p>Email</p>
@@ -75,10 +65,8 @@ const EventBook = () => {
                         type="email"
                         name="email"
                         id="email"
-                        value={ values.email }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.email}
+                        onChange={handleChange}
                         required
                     />
                     <p>Phone</p>
@@ -86,10 +74,8 @@ const EventBook = () => {
                         type="text"
                         id="phone"
                         name="phone"
-                        value={ values.phone }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.phone}
+                        onChange={handleChange}
                     />
                     <p>Event Name</p>
                     <input
@@ -97,21 +83,16 @@ const EventBook = () => {
                         className="form-control"
                         name="event_name"
                         id="subject"
-                        value={ values.event_name }
-                        onChange={
-                            handleChange
-                        }
-                        placeholder="Event Name"
+                        value={values.event_name}
+                        onChange={handleChange}
                     />
 
                     <input
                         type="date"
                         id="to"
                         name="date"
-                        value={ values.date }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.date}
+                        onChange={handleChange}
                         placeholder="Event Date"
                     />
 
@@ -120,17 +101,11 @@ const EventBook = () => {
                         name="event_description"
                         rows="5"
                         cols="50"
-                        value={ values.event_description }
-                        onChange={
-                            handleChange
-                        }
+                        value={values.event_description}
+                        onChange={handleChange}
                         placeholder="Event Description"
                     ></textarea>
-                    <button
-                        className="form-button"
-                    >
-                        Submit
-                    </button>
+                    <button className="form-button">Submit</button>
                 </form>
             </div>
         </Form>
@@ -176,7 +151,7 @@ const Form = styled.div`
             input {
                 margin-bottom: 1.5em;
             }
-            .submitForm {
+            .form-button {
                 background-color: #587563;
                 height: 30px;
                 width: 150px;
@@ -185,6 +160,7 @@ const Form = styled.div`
                 font-weight: bold;
                 box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
                 transition: transform 100ms ease-in;
+                margin-bottom: 2em;
 
                 :hover {
                     transform: scale(1.07);
