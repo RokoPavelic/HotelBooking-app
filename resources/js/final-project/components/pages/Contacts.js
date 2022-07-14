@@ -25,7 +25,7 @@ export default function Contacts() {
         // prevent the default event behaviour
         event.preventDefault();
 
-        fetch("https://www.google.com/", {
+        fetch("http://localhost:3000/contact/submit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function Contacts() {
             </div>
 
             <div className="contact__contacts">
-                <div class="contact__contacts-phone">
+                <div className="contact__contacts-phone">
                     <img
                         src="../images/phone-full.svg"
                         alt="phone icon"
@@ -57,7 +57,7 @@ export default function Contacts() {
                     />
                     <p>+420 732 79090</p>
                 </div>
-                <div class="contact__contacts-email">
+                <div className="contact__contacts-email">
                     <img
                         src="../images/mail-full.svg"
                         alt="mail icon"
@@ -65,7 +65,7 @@ export default function Contacts() {
                     />
                     <p>contact@ctt.com</p>
                 </div>
-                <div class="contact__contacts-location">
+                <div className="contact__contacts-location">
                     <img
                         src="../images/location-full.svg"
                         alt="location icon"
@@ -76,7 +76,7 @@ export default function Contacts() {
                         <p>Czech Republic</p>
                     </div>
                 </div>
-                <div class="mapouter">
+                <div className="mapouter">
                     <div class="gmap_canvas">
                         <iframe
                             width="600"

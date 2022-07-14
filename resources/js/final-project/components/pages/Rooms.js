@@ -3,6 +3,7 @@ import Room from "./Room";
 import React from "react";
 
 const Rooms = ({ rooms }) => {
+    console.log(rooms)
     return (
         <Wrap>
             <Banner>
