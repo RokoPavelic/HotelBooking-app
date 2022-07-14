@@ -23,6 +23,16 @@ const Slide = styled.div`
     }
 `;
 
+// const data = [
+//     {url: "../images/exterior_nightview.jpeg", width: 987},
+//     {url: "../images/exterior_backview.jpeg", width: 960},
+//     {url: "../images/events_gallery_garden.jpeg", width: 900},
+//     {url: "../images/events_gallery_gathering.jpeg"},
+//     {url: "../images/events_gallery_maids.jpg"},
+//     {url: "../images/events_gallery_table.jpg"},
+//     {url: "../images/events_gallery_toast.jpg"},
+// ];
+
 function ImageSlider({
     images,
     setWidth,
