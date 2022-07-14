@@ -5,149 +5,139 @@
 @import "../functions/fonts";
 @import "../functions/mediaqueries";
 
-
 .navbar {
     display: flex;
     align-items: center;
     width: 100%;
     color: $clr-gray;
-      
+
     @include mq2(medium) {
-     display:none;
+        display: none;
     }
-    
 
     &__links-left {
-      width: 100%;
-      ul {
-        display: flex;
-        justify-content: space-evenly;
-        list-style-type: none;
-      }
+        width: 100%;
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+        }
     }
 
     &__links-right {
-      width: 100%;
-      ul {
-        text-decoration: none;
-        display: flex;
-        justify-content: space-evenly;
-        list-style-type: none; 
-      }
+        width: 100%;
+        ul {
+            text-decoration: none;
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+        }
     }
 
     a {
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      color: $clr-gray;
-      @include headline2;
-      padding: 0.1em 1.2em;
-      transition: 0.5s;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        color: $clr-gray;
+        @include headline2;
+        padding: 0.1em 1.2em;
+        transition: 0.5s;
 
-      &:hover {
-        color: $clr-d-green;
-        background-color: $clr-l-green;
-      }
-
-      &:focus {
-        color: $clr-d-green;
-        background-color: $clr-l-green;
-      }
-    } 
-  }
-
-  .burger {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        
-
-        @include mq1(medium) {
-          display:none;
-         }
-        
-
-          ul {
-            position:absolute;
-            top:4.5rem;
-            background-color: $clr-white;
-            padding: 2em 2em;
-            line-height: 2em;
-            border-bottom: 1px solid $clr-smokewhite;
-            border-right: 1px solid $clr-smokewhite;
-            // -webkit-box-shadow: 13px 25px 36px 5px rgba(0,0,0,0.59); 
-            // box-shadow: 13px 25px 36px 5px rgba(0,0,0,0.59);
-            
-            margin-left: -1em;
-            list-style-type: none;
-
-           
-          }
-
-          a {
-            letter-spacing: 0.01em;
-            text-decoration: none;
-            color: $clr-gray;
-            @include headline2;
-            padding: 0.1em 1.2em;
-            transition: 0.5s;
-      
-            &:hover {
-              color: $clr-d-green;
-              background-color: $clr-l-green;
-            }
-      
-            &:focus {
-              color: $clr-d-green;
-              background-color: $clr-l-green;
-            }
-          } 
-
-          
-          .menu {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            padding: 0;
-          }
-          .line {
-            fill: none;
-            stroke: $clr-gray;;
-            stroke-width: 6;
-            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-          }
-          .line1 {
-            stroke-dasharray: 60 207;
-            stroke-width: 6;
-          }
-          .line2 {
-            stroke-dasharray: 60 60;
-            stroke-width: 6;
-          }
-          .line3 {
-            stroke-dasharray: 60 207;
-            stroke-width: 6;
-          }
-          .opened .line1 {
-            stroke-dasharray: 90 207;
-            stroke-dashoffset: -134;
-            stroke-width: 6;
-          }
-          .opened .line2 {
-            stroke-dasharray: 1 60;
-            stroke-dashoffset: -30;
-            stroke-width: 6;
-          }
-          .opened .line3 {
-            stroke-dasharray: 90 207;
-            stroke-dashoffset: -134;
-            stroke-width: 6;
-          }
+        &:hover {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
         }
-      
 
-  
+        &:focus {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
+        }
+    }
+}
+
+.burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    @include mq1(medium) {
+        display: none;
+    }
+
+    ul {
+        position: absolute;
+        top: 4.5rem;
+        background-color: $clr-white;
+        padding: 2em 2em;
+        line-height: 2em;
+        border-bottom: 1px solid $clr-smokewhite;
+        border-right: 1px solid $clr-smokewhite;
+        // -webkit-box-shadow: 13px 25px 36px 5px rgba(0,0,0,0.59);
+        // box-shadow: 13px 25px 36px 5px rgba(0,0,0,0.59);
+
+        margin-left: -1em;
+        list-style-type: none;
+    }
+
+    a {
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        color: $clr-gray;
+        @include headline2;
+        padding: 0.1em 1.2em;
+        transition: 0.5s;
+
+        &:hover {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
+        }
+
+        &:focus {
+            color: $clr-d-green;
+            background-color: $clr-l-green;
+        }
+    }
+
+    .menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        padding: 0;
+    }
+    .line {
+        fill: none;
+        stroke: $clr-gray;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+    }
+    .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+    }
+    .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+    }
+    .opened .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+    }
+    .opened .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+    }
+    .opened .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+    }
+}
