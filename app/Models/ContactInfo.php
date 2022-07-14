@@ -12,7 +12,8 @@ class ContactInfo extends Model
     protected $guarded = [];
     
     protected $fillable = [
-        'name', 
+        'name',
+        'lastname', 
         'email', 
         'phone_number', 
     ];
@@ -25,5 +26,10 @@ class ContactInfo extends Model
     public function message()
     {
         return $this->hasOne(Message::class);
+    }
+
+    public function event()
+    {
+        return $this->hasOne(Event::class);
     }
 }

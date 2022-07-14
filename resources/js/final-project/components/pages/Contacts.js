@@ -18,17 +18,6 @@ export default function Contacts() {
         // prevent the default event behaviour
         event.preventDefault();
 
-        // const response = await fetch('/contact/submit', {
-        //     method: 'POST',
-        //     body: JSON.stringify(values),
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-type': 'application/json',
-        //         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        //     }
-        // });
-        // const response_data = await response.json();
-
         const response = await axios.post("/contact/submit", values);
         const response_data = response.data;
         // console.log(response.data)
@@ -156,7 +145,6 @@ export default function Contacts() {
                         }
                     ></textarea>
                     <button
-                        // onClick={() => navigate("/feedback")}
                         className="form-button"
                     >
                         Submit

@@ -12,14 +12,21 @@ class Event extends Model
     protected $guarded = [];
     
     protected $fillable = [
+        'booking_id',
         'event_name', 
+        'event_date',
         'event_start', 
         'event_end', 
-        'event_description'
+        'event_description',
     ];
 
     public function bookings()
     {
-        return $this->belongsToMany(Event::class);
+        return $this->belongsTo(Booking::class);
+    }
+
+    public function contact_info()
+    {
+        return $this->belongsTo(ContactInfo::class);
     }
 }

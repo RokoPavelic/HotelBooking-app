@@ -9,9 +9,17 @@ class Booking extends Model
 {
     use HasFactory;
 
-    public function events()
+    protected $guarded = [];
+    
+    protected $fillable = [
+        'date',
+        'date_in',
+        'date_out', 
+    ];
+
+    public function event()
     {
-        return $this->belongsToMany(Booking::class);
+        return $this->hasOne(Event::class);
     }
 
     public function contactsInfo()

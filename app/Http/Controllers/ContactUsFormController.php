@@ -42,16 +42,16 @@ class ContactUsFormController extends Controller {
         
         // ContactInfo::create($request->all());
         //  Send mail to admin
-        \Mail::send('pages/contact-us/email', array(
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'phone' => $request->get('phone'),
-            'subject' => $request->get('subject'),
-            'user_query' => $request->get('message'),
-        ), function($message) use ($request){
-            $message->from($request->email);
-            $message->to('antonello.fois1381@gmail.com', 'Admin')->subject($request->get('subject'));
-        });
+        // \Mail::send('pages/contact-us/email', array(
+        //     'name' => $request->get('name'),
+        //     'email' => $request->get('email'),
+        //     'phone' => $request->get('phone'),
+        //     'subject' => $request->get('subject'),
+        //     'user_query' => $request->get('message'),
+        // ), function($message) use ($request){
+        //     $message->from($request->email);
+        //     $message->to('antonello.fois1381@gmail.com', 'Admin')->subject($request->get('subject'));
+        // });
         $request->session()->flash('success');
         return back();
         // ->with('success', 'Your message was sent

@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinalProjectController;
 use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventFormController;
 use App\Http\Controllers\ReactAppController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +30,14 @@ Route::get('/home', function() {
 // Route::get('/about', function() {
 //     return view('about');
 // });
+Route::post('/event/submit', [EventFormController::class, 'EventForm']);
 
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
 Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 
-// Route::get('/feedback', [ReactAppController::class, 'app']);
+
+
 
 
 Route::get('/{path?}', [ReactAppController::class, 'app'])->where('path', '.*');

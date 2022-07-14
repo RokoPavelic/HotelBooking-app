@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('guest_id');
-            $table->foreignId('booking_id')->cascadeOnDelete();
-            $table->foreignId('additional_charge_id');
-            $table->date('date_in');
-            $table->date('date_out');
-            $table->string('role_description');
+            $table->foreignId('additional_charge_id')->nullable();
+            $table->date('date_in')->nullable();
+            $table->date('date_out')->nullable();
+            $table->string('role_description')->nullable();
             $table->timestamps();
         });
     }
