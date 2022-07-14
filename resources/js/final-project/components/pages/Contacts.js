@@ -31,7 +31,8 @@ export default function Contacts() {
 
         const response = await axios.post("/contact/submit", values);
         const response_data = response.data;
-        console.log(response.data)
+        // console.log(response.data)
+        navigate("/feedback")
     };
 
     const handleChange = (event) => {

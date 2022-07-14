@@ -34,7 +34,7 @@ class ContactUsFormController extends Controller {
         $message = Message::create([
             'subject'=>$request->subject,
             'message'=>$request->message,
-            'contact_info_id'=>$contact_infos->id,
+            'contact_info_id'=>$contact_infos->id
         ]);
        
         
