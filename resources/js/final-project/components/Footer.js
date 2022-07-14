@@ -21,8 +21,6 @@ export default function Footer() {
             info@ct.com +420 732 7977 <br></br>
             <br></br>
             -
-
-
         </p>
     </div>
       </footer>

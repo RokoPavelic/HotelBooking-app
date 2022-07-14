@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('booking_room', function (Blueprint $table) {
+        Schema::create('booking_contact_info', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('guest_id')->cascadeOnDelete();
-            $table->foreignId('room_id')->cascadeOnDelete();
+            $table->foreignId('contact_info_id')->cascadeOnDelete();
             $table->foreignId('booking_id')->cascadeOnDelete();
-            $table->timestamps();
         });
     }
 

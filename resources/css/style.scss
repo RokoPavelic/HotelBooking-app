@@ -1,13 +1,22 @@
 @use "sass:color";
+@use "sass:map";
 @import '~compass-mixins/lib/compass/css3';
 @import './functions/colors';
 @import './functions/fonts';
+@import "./functions/mediaqueries";
 
 *,
 *::before,
 *::after {
     margin: 0%;
     box-sizing: border-box;
+}
+
+body {
+    @include mq2(medium) {
+        
+        margin-top: 4.5rem;
+    }
 }
 
 h1 {

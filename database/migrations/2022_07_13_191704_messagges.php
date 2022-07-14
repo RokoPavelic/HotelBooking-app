@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\ContactInfo;
 
 return new class extends Migration
 {
@@ -13,13 +14,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('booking_room', function (Blueprint $table) {
+        Schema::enableForeignKeyConstraints();
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('guest_id')->cascadeOnDelete();
-            $table->foreignId('room_id')->cascadeOnDelete();
-            $table->foreignId('booking_id')->cascadeOnDelete();
+            $table->foreignIdFor(ContactInfo::class)->constrained();
+            $table->string('subject');
+            $table->text('message');
             $table->timestamps();
         });
+
+       
     }
 
     /**
