@@ -3,6 +3,7 @@
 @import "../functions/colors";
 @import "../functions/fonts";
 
+
 .events {
     display: flex;
     flex-direction: column;
@@ -69,22 +70,42 @@ button {
     @include regular-text-white;
     font-size: 14px;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .services {
     display: flex;
     margin: 4rem;
+    h3 {
+        @include roboto-title1;
+    }
+
 }
 
 .services-container {
     margin: 3rem;
     display: flex;
     align-items: baseline;
-    h3 {
-        @include roboto-title1;
-    }
-
+ 
     li {
         @include subtext-roboto;
+    }
+}
+
+
+
+@media (max-width: 700px){
+
+    .gallery_cont{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+    
     }
 }

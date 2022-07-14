@@ -39,7 +39,7 @@ export default function Home() {
                         Read more
                     </button>
                 </div>
-                <img
+                <img className="about-img"
                     src="./images/interior_library.jpeg"
                     alt="Main Library"
                     width="500px"
