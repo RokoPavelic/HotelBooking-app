@@ -15,12 +15,18 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('room_type');
             $table->string('name')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('location');
-            $table->text('amenities');
-            $table->string('facilities');
+            $table->string('size')->nullable();
+            $table->integer('capacity')->nullable();
+            $table->text('amenities')->nullable();
+            $table->string('facilities')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            $table->index(['deleted_at']);
+
         });
     }
 

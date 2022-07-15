@@ -28,6 +28,7 @@
     "dependencies": {
         "@fullcalendar/daygrid": "^5.11.0",
         "@fullcalendar/react": "^5.11.1",
+        "@hookform/error-message": "^2.0.0",
         "axois": "^0.0.1-security",
         "compass": "^0.1.1",
         "compass-mixins": "^0.12.12",

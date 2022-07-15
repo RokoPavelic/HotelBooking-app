@@ -14,13 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('contact_info_id')->nullable();
-            $table->foreignId('room_id')->nullable();
-            $table->date('date_in')->nullable();
-            $table->date('date_out')->nullable();
+            $table->id()->cascadeOnDelete();
+            $table->foreignId('contact_info_id')->nullable()->cascadeOnDelete();
+            $table->foreignId('room_id')->nullable()->cascadeOnDelete();
+            $table->date('date_in')->nullable()->cascadeOnDelete();
+            $table->date('date_out')->nullable()->cascadeOnDelete();
+            $table->boolean('booked');
             $table->string('role_description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            $table->index(['deleted_at']);
         });
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Booking;
 use App\Models\ContactInfo;
 use App\Models\Room;
@@ -12,9 +12,7 @@ use App\Models\Room;
 class RoomFormController extends Controller
 {
     public function RoomForm(Request $request) {
-    //    dd($request);
-    // $room_id = $request[1];
-    // dd($room_id);
+    
         // Form validation
         $this->validate($request, [
             'name'                => 'required',
@@ -25,8 +23,18 @@ class RoomFormController extends Controller
             'date_out'            => 'required',
          ]
         );
+
+
+        $bookings = Booking::where('room_id', '=', $request->room_id )->whereDate('date_in', '<=', $request->date_out)
+        ->whereDate('date_out', '>=', $request->date_in)->get();
+
         
+        if ($bookings->count()) {
+            return 'these dates are already taken';
+        }
+
         
+            
         $contact_infos = ContactInfo::create([
             'name'          =>$request->name,
             'lastname'      =>$request->lastname,
@@ -40,10 +48,10 @@ class RoomFormController extends Controller
             'date_in'           =>$request->date_in,
             'date_out'          =>$request->date_out,
             'role_description'  =>$request->role_description,
+            'booked'            =>true,
         ]);
 
-     
-       
+        // };
 
         //  Store data in database
     

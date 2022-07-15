@@ -18,6 +18,7 @@ class Booking extends Model
         'contact_info_id',
         'room_id',
         'role_description',
+        'booked',
     ];
 
     public function event()
