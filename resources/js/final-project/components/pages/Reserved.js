@@ -6,7 +6,10 @@ const Reserved = () => {
     const navigate = useNavigate();
     return (
         <Container>
-            <h1>Congratulations you successfully booked a room!</h1>
+            <p>
+                Your room at <span> Hotel Château Třebešice</span> is booked
+            </p>
+
             <button onClick={() => navigate("/")}>Go back</button>
         </Container>
     );
@@ -19,24 +22,26 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 70vh;
     width: 60%;
     border: 5px solid #587563;
     border-radius: 10px;
     margin: auto;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
         url("/images/main_hero.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 5em;
     margin-bottom: 5em;
+
     button {
         width: 250px;
-        height: 50px;
+        height: 40px;
         background-color: #587563;
         color: white;
         font-size: 20px;
+        font-weight: bold;
         border: none;
         cursor: pointer;
         margin-top: 2em;
@@ -48,8 +53,14 @@ const Container = styled.div`
         }
     }
 
-    h1 {
+    p {
         color: white;
         font-weight: bold;
+        font-size: 2em;
+    }
+
+    span {
+        color: white;
+        text-decoration: underline;
     }
 `;
