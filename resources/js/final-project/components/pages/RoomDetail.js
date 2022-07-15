@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 const RoomDetail = ({ rooms }) => {
     const { id } = useParams();
     const room = rooms?.find((room) => room.id.toString() === id);

@@ -10,7 +10,7 @@ const Room = ({ room }) => {
     return (
         <Container>
             <Picture>
-                <img src={images[0].src} />
+                <img src={images[0]?.src} />
             </Picture>
             <div>
                 <h3>{name}</h3>
