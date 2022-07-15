@@ -5,13 +5,32 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const RoomDetail = ({ rooms }) => {
-    const navigate = useNavigate();
-
-    const [values, setValues] = useState({});
-
     const { id } = useParams();
     const room = rooms?.find((room) => room.id.toString() === id);
-    console.log(id);
+
+    const navigate = useNavigate();
+    const [values, setValues] = useState({
+        name: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        date_in: "",
+        date_out: "",
+        room_id: id,
+        role_description: "guest",
+    });
+
+    // console.log(id);
+
+    const handleSubmit = async (event) => {
+        // prevent the default event behaviour
+        event.preventDefault();
+
+        const response = await axios.post("/room/submit", values);
+        const response_data = response.data;
+        console.log(response_data);
+        navigate("/reserved");
+    };
 
     const handleChange = (event) => {
         setValues((previous_values) => {
@@ -20,28 +39,6 @@ const RoomDetail = ({ rooms }) => {
                 [event.target.name]: event.target.value,
             };
         });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        console.log(values);
-
-        fetch("https://www.google.com/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-        })
-            .then((response) => response.json())
-            .then(() => {
-                console.log("Success:");
-                navigate("/reserved");
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
     };
 
     return (
@@ -69,22 +66,26 @@ const RoomDetail = ({ rooms }) => {
                         </strong>
                     </Info>
                     <div className="form">
-                        <form
-                            method="POST"
-                            onSubmit={(e) => {
-                                handleSubmit(e);
-                            }}
-                        >
+                        <form method="POST" onSubmit={handleSubmit}>
                             <h3>Fill the info</h3>
+                            {/* <input type="hidden" value={ id } name="room_id" id="hidden"/> */}
 
                             <p>Name</p>
                             <input
                                 type="text"
                                 name="name"
                                 id="name"
-                                onChange={(e) => {
-                                    handleChange(e);
-                                }}
+                                value={values.name}
+                                onChange={handleChange}
+                                required
+                            />
+                            <p>Last Name</p>
+                            <input
+                                type="text"
+                                name="lastname"
+                                id="lastname"
+                                value={values.lastname}
+                                onChange={handleChange}
                                 required
                             />
                             <p>Email</p>
@@ -92,9 +93,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="email"
                                 name="email"
                                 id="email"
-                                onChange={(e) => {
-                                    handleChange(e);
-                                }}
+                                value={values.email}
+                                onChange={handleChange}
                                 required
                             />
                             <p>Phone</p>
@@ -102,9 +102,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="text"
                                 id="phone"
                                 name="phone"
-                                onChange={(e) => {
-                                    handleChange(e);
-                                }}
+                                value={values.phone}
+                                onChange={handleChange}
                             />
                             <strong>
                                 <p>Enter a date FROM - TO</p>
@@ -114,25 +113,19 @@ const RoomDetail = ({ rooms }) => {
                                 className="date"
                                 type="date"
                                 id="from"
-                                name="from"
-                                onChange={(e) => {
-                                    handleChange(e);
-                                }}
+                                name="date_in"
+                                value={values.date_in}
+                                onChange={handleChange}
                             />
                             <input
                                 className="date"
                                 type="date"
                                 id="to"
-                                name="to"
-                                onChange={(e) => {
-                                    handleChange(e);
-                                }}
+                                name="date_out"
+                                value={values.date_out}
+                                onChange={handleChange}
                             />
-                            <input
-                                className="submitForm"
-                                type="submit"
-                                value="Book now!"
-                            />
+                            <button className="form-button">Book Now!</button>
                         </form>
                     </div>
                 </Wrap1>
