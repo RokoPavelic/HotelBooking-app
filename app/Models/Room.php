@@ -13,4 +13,11 @@ class Room extends Model
     {
         return $this->belongsToMany(Image::class);
     }
+
+    public function booking()
+    {
+        return $this->belongsToMany(Booking::class, 'booking_id');
+    }
+
+
 }

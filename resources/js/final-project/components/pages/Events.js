@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Events() {
+    const navigate = useNavigate();
     return (
         <div className="events">
             <div className="events-hero">
@@ -7,12 +10,12 @@ export default function Events() {
             <div className="content">
                 <h3> Let us host your events</h3>
                 <p>
-                    We count with experienced staff to make your event a one in a
-                    lifetime experience.
-                     Let our enchanting atmosphere be the setting
-                    for your special day,<br/>
-                     let our award winning chef add an
-                    all-involving sensory experience for your guests.
+                    We count with experienced staff to make your event a one in
+                    a lifetime experience. Let our enchanting atmosphere be the
+                    setting for your special day,
+                    <br />
+                    let our award winning chef add an all-involving sensory
+                    experience for your guests.
                 </p>
             </div>
             <div className="gallery_cont">
@@ -35,13 +38,17 @@ export default function Events() {
                     height="300px"
                 />
             </div>
-            <button className="events-btn">Book Consultation</button>
-  
+            <button
+                onClick={() => navigate("/eventbook")}
+                className="events-btn"
+            >
+                Book Consultation
+            </button>
+
             <div className="services">
-            <h3 className="services-title"> Our Services Include:</h3>
-           
+                <h3 className="services-title"> Our Services Include:</h3>
+
                 <div className="services-container">
-                   
                     <ul>
                         <li>Catering</li>
                         <li>Professional Chef</li>
@@ -65,7 +72,4 @@ export default function Events() {
             </div>
         </div>
     );
- }
-  
- 
- 
+}
