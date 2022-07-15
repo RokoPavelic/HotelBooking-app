@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('booking_room', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contact_info_id')->cascadeOnDelete();
+            $table->foreignId('booking_id')->cascadeOnDelete();
             $table->foreignId('room_id')->cascadeOnDelete();
             $table->timestamps();
         });

@@ -14,7 +14,10 @@ class Booking extends Model
     protected $fillable = [
         'date',
         'date_in',
-        'date_out', 
+        'date_out',
+        'contact_info_id',
+        'room_id',
+        'role_description',
     ];
 
     public function event()
@@ -25,5 +28,10 @@ class Booking extends Model
     public function contactsInfo()
     {
         return $this->belongsToMany(Contact::class);
+    }
+
+    public function room()
+    {
+        return $this->hasOne(Room::class, 'room_id');
     }
 }
