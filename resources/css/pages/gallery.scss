@@ -1,7 +1,7 @@
 @use "sass:color";
 @import "~compass-mixins/lib/compass/css3";
-@import "../components/colors";
-@import "../components/fonts";
+@import "../functions/colors";
+@import "../functions/fonts";
 
 *,
 *::before,
@@ -26,7 +26,7 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    color: white;
+    color: red;
     overflow: hidden;
 }
 
@@ -67,3 +67,38 @@
     color: #4f4f4f;
     max-width: 90%;
 }
+
+// @media (max-width: 700px){
+
+//     .gallery-page {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+
+//         padding: 5%;
+//         max-width: 100rem;}
+
+//     .gallery-header {
+//             margin: 0;
+//             max-width: 300px;
+//             max-height: 300px;
+//             opacity: 0.5;
+//             border-radius: 8px;
+//             position: static;
+//         }
+
+//         .pic-ctn{
+
+//           display:none;
+//         }
+//        .about-img{
+//             display: none;
+//         }
+
+//         .btn-gallery {
+//             margin: 2rem;
+//             display: flex;
+//             justify-content: center;
+//             position:static;
+//         }
+//  }

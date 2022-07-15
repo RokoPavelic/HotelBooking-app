@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 const Slide = styled.div`
     display: flex;
-    width: 100%;
+    width: ${(props) => `${props.setWidth}`};
     height: 80vh;
     transition: transform 0.6s ease-in-out;
     transform: ${(props) => `translateX(${props.xPosition}px)`}; // (*)
@@ -24,14 +24,15 @@ const Slide = styled.div`
 `;
 
 // const data = [
-//     {url: "../images/exterior_nightview.jpeg", width: 987},
-//     {url: "../images/exterior_backview.jpeg", width: 960},
+//     {url: "../images/exterior_nightview.jpeg", width: 2287},
+//     {url: "../images/exterior_backview.jpeg", width: 260},
 //     {url: "../images/events_gallery_garden.jpeg", width: 900},
 //     {url: "../images/events_gallery_gathering.jpeg"},
 //     {url: "../images/events_gallery_maids.jpg"},
 //     {url: "../images/events_gallery_table.jpg"},
 //     {url: "../images/events_gallery_toast.jpg"},
 // ];
+
 
 function ImageSlider({
     images,
@@ -63,3 +64,4 @@ function ImageSlider({
 }
 
 export default ImageSlider;
+

@@ -50,7 +50,9 @@ mix.sass('resources/css/style.scss', 'public/css')
    .sass('resources/css/pages/home.scss', 'public/css')
    .sass('resources/css/pages/burger-icon.scss', 'public/css')
    .sass('resources/css/components/navbar.scss', 'public/css')
-   .sass('resources/css/pages/events.scss', 'public/css');
+   .sass('resources/css/pages/events.scss', 'public/css')
+   .sass('resources/css/pages/about.scss', 'public/css')
+   .sass('resources/css/pages/gallery.scss', 'public/css');
 // mix.js('resources/js/library.js', 'public/js');
 // mix.js('resources/js/app.js', 'public/js').react();
 mix.js("resources/js/finalProject.js", "public/js").react();

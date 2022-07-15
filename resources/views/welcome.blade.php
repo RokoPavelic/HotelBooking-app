@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="./images/logo.png">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="
-        css/footer.css">
-    <link rel="stylesheet" href="css/contact-us.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/events.css">
+        <link rel="stylesheet" href={{ mix("css/style.css") }}>
+        <link rel="stylesheet" href={{ mix("css/footer.css") }}>
+        <link rel="stylesheet" href={{ mix("css/about.css") }}>
+        {{-- <link rel="stylesheet" href={{ mix("css/gallery.css") }}> --}}
+        <link rel="stylesheet" href={{ mix("css/contact-us.css") }}>
+        <link rel="stylesheet" href={{ mix("css/burger-icon.css") }}>
+        <link rel="stylesheet" href={{ mix("css/navbar.css") }}>
+        <link rel="stylesheet" href={{ mix("css/events.css") }}>
+        <link rel="stylesheet" href={{ mix("css/home.css") }}>
     <title>Château Třebešice</title>
 
 </head>

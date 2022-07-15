@@ -10,21 +10,21 @@ const Wrapper = styled.div`
     align-items: center;
     background-color: #white;
 `;
+
 export default function App() {
     const [index, setIndex] = useState(0);
     const [width, setWidth] = useState(0);
     const [xPosition, setXPosition] = useState(0);
 
     // const data = [
-    //     {url: "../images/exterior_nightview.jpeg", width: 343},
-    //     {url: "../images/exterior_backview.jpeg", width: 900},
-    //     {url: "../images/events_gallery_garden.jpeg", width: 800},
-    //     {url: "../images/events_gallery_gathering.jpeg", width: 343},
-    //     {url: "../images/events_gallery_maids.jpg", width: 987},
-    //     {url: "../images/events_gallery_table.jpg", width: 789},
-    //     {url: "../images/events_gallery_toast.jpg", width: 999},
+    //     {url: "../images/exterior_nightview.jpeg", width: 2287},
+    //     {url: "../images/exterior_backview.jpeg", width: 260},
+    //     {url: "../images/events_gallery_garden.jpeg", width: 900},
+    //     {url: "../images/events_gallery_gathering.jpeg"},
+    //     {url: "../images/events_gallery_maids.jpg"},
+    //     {url: "../images/events_gallery_table.jpg"},
+    //     {url: "../images/events_gallery_toast.jpg"},
     // ];
-
 
     const images = [
         "../images/exterior_nightview.jpeg",
@@ -35,6 +35,7 @@ export default function App() {
         "../images/events_gallery_table.jpg",
         "../images/events_gallery_toast.jpg",
     ];
+
 
     const handleClickPrev = () => {
         if (index === 0) return;
