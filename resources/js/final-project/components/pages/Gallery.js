@@ -25,10 +25,10 @@ export default function Gallery() {
 
         <Wrap>
             <Banner>
-                <p>Gallery</p>
+                <h1>Gallery</h1>
             </Banner>
             <Title>
-                <h1>Image Your Experience</h1>
+                <h2>Discover Unique Experience</h2>
             </Title>
             <Text>
                 <p>
@@ -65,15 +65,20 @@ const Banner = styled.div`
     color: white;
     overflow: hidden;
 
-    p {
-        font-size: 3em;
+    h1 {
+        font-family: "Koldby", serif;
+        font-weight: 100;
+        font-size: 2.5rem;
+        color: white;
+        
     }
 `;
 
 const Title = styled.div`
-    h1 {
-        text-align: center;
-        font-size: 2em;
+    h2 {
+        font-family: "Koldby", serif;
+        font-size: 1.5rem;
+        margin: 2em;
         margin: 2em;
         color: #4f4f4f;
     }
@@ -81,10 +86,13 @@ const Title = styled.div`
 
 const Text = styled.div`
     p {
-        text-align: center;
-        font-size: 1em;
+        font-family: "roboto", "Work Sans";
+        font-weight: 100;
+        font-style: italic;
+        font-size: 1rem;
         margin: 0 0 2em;
         color: #4f4f4f;
+    
     }
 `;
 

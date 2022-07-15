@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import leftBtn from "./logo-green.svg"; // Svg Icon
 import rightBtn from "./logo-green.svg"; // Svg Icon
+
+
 const Button = styled.img`
     height: 2em;
     position: absolute;

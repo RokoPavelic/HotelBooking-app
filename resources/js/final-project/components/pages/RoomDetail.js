@@ -6,44 +6,41 @@ import axios from "axios";
 
 
 const RoomDetail = ({ rooms }) => {
-
     const { id } = useParams();
     const room = rooms?.find((room) => room.id.toString() === id);
 
-        const navigate = useNavigate();
-        const [values, setValues] = useState({
-            name: "",
-            lastname: "",
-            email: "",
-            phone: "",
-            date_in: "",
-            date_out: "",
-            room_id: id,
-            role_description: "guest",
-        });
+    const navigate = useNavigate();
+    const [values, setValues] = useState({
+        name: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        date_in: "",
+        date_out: "",
+        room_id: id,
+        role_description: "guest",
+    });
 
-        
-        // console.log(id);
-    
-     
-        const handleSubmit = async (event) => {
-            // prevent the default event behaviour
-            event.preventDefault();
-    
-            const response = await axios.post("/room/submit", values);
-            const response_data = response.data;
-            console.log(response_data)
-            navigate("/feedback")
-        };
-        
-        const handleChange = (event) => {
-            setValues((previous_values) => {
-                return {
-                    ...previous_values,
-                    [event.target.name]: event.target.value,
-                };
-            });
-        };
+    // console.log(id);
+
+    const handleSubmit = async (event) => {
+        // prevent the default event behaviour
+        event.preventDefault();
+
+        const response = await axios.post("/room/submit", values);
+        const response_data = response.data;
+        console.log(response_data);
+        navigate("/reserved");
+    };
+
+    const handleChange = (event) => {
+        setValues((previous_values) => {
+            return {
+                ...previous_values,
+                [event.target.name]: event.target.value,
+            };
+        });
+    };
 
     return (
         <Wrapper>
@@ -70,12 +67,7 @@ const RoomDetail = ({ rooms }) => {
                         </strong>
                     </Info>
                     <div className="form">
-                        <form
-                            method="POST"
-                            onSubmit={
-                                handleSubmit
-                            }
-                        >
+                        <form method="POST" onSubmit={handleSubmit}>
                             <h3>Fill the info</h3>
                             {/* <input type="hidden" value={ id } name="room_id" id="hidden"/> */}
 
@@ -84,10 +76,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="text"
                                 name="name"
                                 id="name"
-                                value={ values.name }
-                                onChange={
-                                    handleChange
-                                }
+                                value={values.name}
+                                onChange={handleChange}
                                 required
                             />
                             <p>Last Name</p>
@@ -95,10 +85,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="text"
                                 name="lastname"
                                 id="lastname"
-                                value={ values.lastname }
-                                onChange={
-                                    handleChange
-                                }
+                                value={values.lastname}
+                                onChange={handleChange}
                                 required
                             />
                             <p>Email</p>
@@ -106,10 +94,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="email"
                                 name="email"
                                 id="email"
-                                value={ values.email }
-                                onChange={
-                                    handleChange
-                                }
+                                value={values.email}
+                                onChange={handleChange}
                                 required
                             />
                             <p>Phone</p>
@@ -117,10 +103,8 @@ const RoomDetail = ({ rooms }) => {
                                 type="text"
                                 id="phone"
                                 name="phone"
-                                value={ values.phone }
-                                onChange={
-                                    handleChange
-                                }
+                                value={values.phone}
+                                onChange={handleChange}
                             />
                             <strong>
                                 <p>Enter a date FROM - TO</p>
@@ -130,26 +114,19 @@ const RoomDetail = ({ rooms }) => {
                                 className="date"
                                 type="date"
                                 id="from"
-                                name="date_in"value={ values.date_in }
-                                onChange={
-                                    handleChange
-                                }
+                                name="date_in"
+                                value={values.date_in}
+                                onChange={handleChange}
                             />
                             <input
                                 className="date"
                                 type="date"
                                 id="to"
                                 name="date_out"
-                                value={ values.date_out }
-                                onChange={
-                                    handleChange
-                                }
+                                value={values.date_out}
+                                onChange={handleChange}
                             />
-                            <button
-                                className="form-button"
-                            >
-                                Book Now!
-                            </button>
+                            <button className="form-button">Book Now!</button>
                         </form>
                     </div>
                 </Wrap1>

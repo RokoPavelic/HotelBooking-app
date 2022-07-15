@@ -154,7 +154,7 @@ const Form = styled.div`
             .form-button {
                 background-color: #587563;
                 height: 30px;
-                width: 150px;
+                width: 80%;
                 color: white;
                 cursor: pointer;
                 font-weight: bold;
