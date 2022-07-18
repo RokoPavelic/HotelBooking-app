@@ -35,13 +35,11 @@ const RoomDetail = ({ rooms }) => {
 
         const response = await axios.post("/room/submit", values);
         const response_data = response.data;
-        if (response_data === "these dates are already taken") {
-            navigate("/sorry");
-        } else {
+        if (response_data?.success) {
             navigate("/reserved");
+        } else {
+            navigate("/sorry");
         }
-
-        console.log(response_data);
     };
 
     const handleChange = (event) => {
@@ -55,26 +53,41 @@ const RoomDetail = ({ rooms }) => {
 
     return (
         <Wrapper>
-            <Tittle>{room.name}</Tittle>
+            <Tittle>{room?.name}</Tittle>
             <Container>
                 <Wrap1>
                     <Info>
                         <p>
-                            <strong>Location: </strong> {room.location}
+                            <strong>Location: </strong> {room?.location}
                         </p>
                         <br />
                         <ul>
                             <strong>Amenities: </strong>
-                            <li> {room.amenities}</li>
+                            <li> {room?.amenities}</li>
                         </ul>
                         <br />
                         <ul>
                             <strong>Facilities: </strong>
-                            <li> {room.facilities}</li>
+                            <li> {room?.facilities}</li>
                         </ul>
                         <br />
+                        <strong>Capacity - {room?.capacity} people.</strong>
+                        <br />
                         <strong>
-                            <p>Price: 100$ per night</p>
+                            <p>
+                                Price Low Season - {room?.price_low} $ per
+                                night.
+                            </p>
+                            <br />
+                            <p>
+                                Price Medium Season - {room?.price_medium} $ per
+                                night.
+                            </p>
+                            <br />
+                            <p>
+                                Price High Season - {room?.price_high} $ per
+                                night.
+                            </p>
                         </strong>
                     </Info>
                     <div className="form">
@@ -108,17 +121,20 @@ const RoomDetail = ({ rooms }) => {
                                 value={values.email}
                                 onChange={handleChange}
                                 required
+                                placeholder="example@example.com"
                             />
                             <p>Phone</p>
+
                             <input
-                                type="text"
+                                type="tel"
                                 id="phone"
                                 name="phone"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 value={values.phone}
                                 onChange={handleChange}
-                                minlength="10"
+                                placeholder="xxx-xxx-xxxx"
                                 required
-                            />
+                            ></input>
                             <strong>
                                 <p>Enter a date FROM - TO</p>
                             </strong>
@@ -149,9 +165,9 @@ const RoomDetail = ({ rooms }) => {
                 </Wrap1>
 
                 <Wrap2>
-                    <img src={room.images[0].src} />
-                    <img src={room.images[2].src} />
-                    <img src={room.images[1].src} />
+                    <img src={room?.images[0].src} />
+                    <img src={room?.images[2].src} />
+                    <img src={room?.images[1].src} />
                 </Wrap2>
             </Container>
         </Wrapper>

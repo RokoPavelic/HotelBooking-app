@@ -113,6 +113,8 @@ export default function Contacts() {
                         name="phone"
                         value={values.phone}
                         onChange={handleChange}
+                        minlength="10"
+                        required
                     />
                     <p>Subject</p>
                     <input
@@ -122,6 +124,7 @@ export default function Contacts() {
                         id="subject"
                         value={values.subject}
                         onChange={handleChange}
+                        required
                     />
 
                     <textarea
@@ -131,12 +134,9 @@ export default function Contacts() {
                         cols="50"
                         value={values.message}
                         onChange={handleChange}
+                        required
                     ></textarea>
-                    <button
-                        className="form-button"
-                    >
-                        Submit
-                    </button>
+                    <button className="form-button">Submit</button>
                 </form>
             </div>
         </main>
