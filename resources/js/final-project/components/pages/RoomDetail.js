@@ -35,13 +35,11 @@ const RoomDetail = ({ rooms }) => {
 
         const response = await axios.post("/room/submit", values);
         const response_data = response.data;
-        if (response_data === "these dates are already taken") {
-            navigate("/sorry");
-        } else {
+        if (response_data?.success) {
             navigate("/reserved");
+        } else {
+            navigate("/sorry");
         }
-
-        console.log(response_data);
     };
 
     const handleChange = (event) => {
@@ -123,17 +121,20 @@ const RoomDetail = ({ rooms }) => {
                                 value={values.email}
                                 onChange={handleChange}
                                 required
+                                placeholder="example@example.com"
                             />
                             <p>Phone</p>
+
                             <input
-                                type="text"
+                                type="tel"
                                 id="phone"
                                 name="phone"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 value={values.phone}
                                 onChange={handleChange}
-                                minlength="10"
+                                placeholder="xxx-xxx-xxxx"
                                 required
-                            />
+                            ></input>
                             <strong>
                                 <p>Enter a date FROM - TO</p>
                             </strong>
