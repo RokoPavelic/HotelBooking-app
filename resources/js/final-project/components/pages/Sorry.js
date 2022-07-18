@@ -8,7 +8,7 @@ const Feedback = () => {
         <Container>
             <h1>Sorry those dates are alredy taken</h1>
             <p>please choose a different period or a different room</p>
-            <button onClick={() => navigate("/")}>Go back</button>
+            <button onClick={() => navigate("/rooms/*")}>Go back</button>
         </Container>
     );
 };
