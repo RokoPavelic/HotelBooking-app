@@ -2,7 +2,7 @@
 
 {{-- <title>{{$title}} </title> --}}
 
- @include('components/adminNav') 
+ {{-- @include('components/adminNav')  --}}
 
 
 

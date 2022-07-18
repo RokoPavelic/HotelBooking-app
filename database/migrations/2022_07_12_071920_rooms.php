@@ -23,6 +23,9 @@ return new class extends Migration
             $table->integer('capacity')->nullable();
             $table->text('amenities')->nullable();
             $table->string('facilities')->nullable();
+            $table->string('price_low')->nullable();
+            $table->string('price_medium')->nullable();
+            $table->string('price_high')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->index(['deleted_at']);

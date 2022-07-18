@@ -13,4 +13,6 @@ class RoomsController extends Controller
         
         return $rooms;
     }
+
+    
 }

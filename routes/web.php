@@ -9,6 +9,8 @@ use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminEventController;
+use App\Http\Controllers\AdminRoomController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,8 @@ Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
 Route::get('/admin/logout', [AdminController::class, 'logout']);
 
+Route::resource('/admin/rooms', AdminRoomController::class);
+Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
 // Route::get('/about', function() {
 //     return view('about');
 // });

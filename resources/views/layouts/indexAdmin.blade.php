@@ -8,6 +8,12 @@
     <link rel="stylesheet" href={{ mix("css/adminStyles.css") }}>
     @yield('styleLink')
     
+    <title>Admin Page</title>
+    @if(!Session::has('adminData'))
+    <script type="text/javascript">
+        window.location.href="{{url( 'admin/login' )}}";
+    </script>
+@endif
 </head>
 
 
@@ -15,7 +21,7 @@
 
 <body>
 
-
+    @include('components/adminNav') 
     <div class="main">
 
         @include('components/adminside')
