@@ -104,6 +104,8 @@ const RoomDetail = ({ rooms }) => {
                                 name="phone"
                                 value={values.phone}
                                 onChange={handleChange}
+                                minlength="10"
+                                required
                             />
                             <strong>
                                 <p>Enter a date FROM - TO</p>
@@ -116,6 +118,7 @@ const RoomDetail = ({ rooms }) => {
                                 name="date_in"
                                 value={values.date_in}
                                 onChange={handleChange}
+                                required
                             />
                             <input
                                 className="date"
@@ -124,6 +127,7 @@ const RoomDetail = ({ rooms }) => {
                                 name="date_out"
                                 value={values.date_out}
                                 onChange={handleChange}
+                                required
                             />
                             <button className="form-button">Book Now!</button>
                         </form>

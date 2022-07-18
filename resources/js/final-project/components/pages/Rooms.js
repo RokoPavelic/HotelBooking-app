@@ -13,7 +13,7 @@ const Rooms = ({ rooms }) => {
                 <p>Our Rooms</p>
             </Title>
             <Container>
-                {rooms.map((room, id) => (
+                {rooms.slice(0, 4).map((room, id) => (
                     <Room room={room} key={id} />
                 ))}
             </Container>
