@@ -76,6 +76,7 @@ const EventBook = () => {
                         name="phone"
                         value={values.phone}
                         onChange={handleChange}
+                        required
                     />
                     <p>Event Name</p>
                     <input
@@ -85,6 +86,7 @@ const EventBook = () => {
                         id="subject"
                         value={values.event_name}
                         onChange={handleChange}
+                        required
                     />
 
                     <input
@@ -94,6 +96,7 @@ const EventBook = () => {
                         value={values.date}
                         onChange={handleChange}
                         placeholder="Event Date"
+                        required
                     />
 
                     <textarea

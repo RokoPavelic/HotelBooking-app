@@ -28,10 +28,10 @@ const RoomDetail = ({ rooms }) => {
 
         const response = await axios.post("/room/submit", values);
         const response_data = response.data;
-        if (response_data === true) {
-            navigate("/reserved");
-        } else {
+        if (response_data === "these dates are already taken") {
             navigate("/sorry");
+        } else {
+            navigate("/reserved");
         }
 
         console.log(response_data);
