@@ -27,6 +27,19 @@ Route::get('/home', function() {
     return view('components/layout');
 });
 
+Route::get('/admin', function() {
+    return view('pages/admin/admin' );
+});
+Route::get('/adminbookings', function(){
+    return view('pages/admin/adminbookings');
+});
+Route::get('/adminrooms', function(){
+    return view('pages/admin/adminrooms');
+});
+Route::get('/adminevents', function(){
+    return view('pages/admin/adminevents');
+});
+
 // Route::get('/about', function() {
 //     return view('about');
 // });
