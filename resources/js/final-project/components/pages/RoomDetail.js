@@ -20,6 +20,13 @@ const RoomDetail = ({ rooms }) => {
         role_description: "guest",
     });
 
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 0).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
     // console.log(id);
 
     const handleSubmit = async (event) => {
@@ -123,6 +130,7 @@ const RoomDetail = ({ rooms }) => {
                                 name="date_in"
                                 value={values.date_in}
                                 onChange={handleChange}
+                                min={disablePastDate()}
                                 required
                             />
                             <input
@@ -132,6 +140,7 @@ const RoomDetail = ({ rooms }) => {
                                 name="date_out"
                                 value={values.date_out}
                                 onChange={handleChange}
+                                min={disablePastDate()}
                                 required
                             />
                             <button className="form-button">Book Now!</button>
