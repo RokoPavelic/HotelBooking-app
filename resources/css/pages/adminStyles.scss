@@ -1,0 +1,88 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&family=Roboto:ital,wght@0,100;0,400;0,700;1,100&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&family=Roboto:wght@300&display=swap);
+
+
+
+.adminNavbar {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  color: #4F4F4F;
+  padding: 1rem;
+}
+.adminNavbar  h3{
+    padding-right: 20%;
+    font-family: 'Roboto';
+    font-weight: lighter;
+    font-size: 2rem;
+ text-align: center;
+  }
+
+.navbar-icons{
+    padding: 2px; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.adminNavbar a {
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: #4F4F4F;
+  font-family: "Koldby", serif;
+  font-size: 1.5rem;
+  color: #4F4F4F;
+  padding: 0.1em 1.2em;
+  transition: 0.5s;
+}
+.adminNavbar a:hover {
+  color: #587563;
+  background-color: #D8EBE0;
+}
+.adminNavbar a:focus {
+  color: #587563;
+  background-color: #D8EBE0;
+}
+/* Main */
+.main{
+  display: flex;
+  text-align: center;
+}
+.main-content{
+width: 100%;
+}
+
+
+
+/* Sidebar */
+.sidebar {
+  font-family: 'Roboto';
+  background-color: #587563;
+  width: 15vw;
+  height: 90vh;
+  text-align: center;
+  padding: 3%;
+}
+
+.sidebar-links a:link{
+text-decoration: none;    
+display: flex;
+flex-direction: column;
+color: #EEEAE5;
+}
+.sidebar-links a{
+  font-weight: 200;
+  color: white;
+  padding: 3%;
+}
+
+
+
+.adminFooter{
+  grid-area: footer;
+  background-color: #4F4F4F;
+}
+
+
+
