@@ -8,7 +8,7 @@ use App\Http\Controllers\EventFormController;
 use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\AdminEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,22 +25,20 @@ use App\Http\Controllers\AdminController;
 //     return view('welcome');
 // });
 
-Route::get('/home', function() {
+Route::get('/home', function () {
     return view('components/layout');
 });
 
-Route::get('/admin', function() {
-    return view('pages/admin/admin' );
+Route::get('/admin', function () {
+    return view('pages/admin/admin');
 });
-Route::get('/adminbookings', function(){
+Route::get('/adminbookings', function () {
     return view('pages/admin/adminbookings');
 });
-Route::get('/adminrooms', function(){
+Route::get('/adminrooms', function () {
     return view('pages/admin/adminrooms');
 });
-Route::get('/adminevents', function(){
-    return view('pages/admin/adminevents');
-});
+Route::get('/adminevents', [AdminEventController::class, 'list']);
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);

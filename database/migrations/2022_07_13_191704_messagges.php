@@ -22,8 +22,6 @@ return new class extends Migration
             $table->text('message');
             $table->timestamps();
         });
-
-       
     }
 
     /**
@@ -33,6 +31,5 @@ return new class extends Migration
      */
     public function down()
     {
-        //
     }
 };
