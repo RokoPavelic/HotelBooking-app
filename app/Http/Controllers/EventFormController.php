@@ -13,6 +13,7 @@ class EventFormController extends Controller
     public function EventForm(Request $request) {
         // dd($request);
         // Form validation
+        
         $this->validate($request, [
             'name'                => 'required',
             'lastname'            => 'required',
@@ -23,21 +24,26 @@ class EventFormController extends Controller
             'event_description'   => 'required'
          ]
         );
+        
+    //    $events = Event::where('room_id', $request->room_id )->where('date', '=', $request->date)->get();
 
-        $events = Event::where('room_id', '=', $request->room_id )->whereDate('date_in', '<=', $request->date_out)
-        ->whereDate('date_out', '>=', $request->date_in)->get();
-        
-        $booking = Booking::create();
-        
         $contact_infos = ContactInfo::create([
-            'name'          =>$request->name,
-            'lastname'      =>$request->lastname,
-            'email'         =>$request->email,
-            'phone_number'  =>$request->phone,
+            'name'                =>$request->name,
+            'lastname'            =>$request->lastname,
+            'email'               =>$request->email,
+            'phone_number'        =>$request->phone,
+        ]);
+       
+        $booking = Booking::create([
+            'contact_info_id'     =>$contact_infos->id,   
+            'room_id'             =>$request->room_id,
+            'date_in'             =>$request->date,
+            'date_out'            =>$request->date,
+            'booked'              =>true,
         ]);
         
-        
         $event = Event::create([
+            'room_id'             =>$request->room_id,
             'event_name'          =>$request->event_name,
             'event_date'          =>$request->date,
             'event_description'   =>$request->event_description,

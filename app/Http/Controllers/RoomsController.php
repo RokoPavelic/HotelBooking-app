@@ -14,5 +14,13 @@ class RoomsController extends Controller
         return $rooms;
     }
 
+    public function events()
+    {
+        $events =Room::where('room_type', '=', 'event')->get();
+        
+        return $events;
+    }
+
+
     
 }

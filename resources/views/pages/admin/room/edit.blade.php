@@ -77,7 +77,11 @@
                                             </td>
                                         @endforeach
                                     </tr>
+                                    <p>Add new picture </p>
+                                    <input type="text" multiple name="imgs" />
+
                                 </table>
+                                
                             </td>
                         </tr>
                         <tr>

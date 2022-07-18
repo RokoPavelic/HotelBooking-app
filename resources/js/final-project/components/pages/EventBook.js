@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const EventBook = () => {
+   
     const navigate = useNavigate();
     const [values, setValues] = useState({
         name: "",
@@ -13,7 +14,10 @@ const EventBook = () => {
         event_name: "",
         date: "",
         event_description: "",
+        room_id: "",
     });
+
+    const [room, setRoom] = useState([]);
 
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
@@ -33,6 +37,20 @@ const EventBook = () => {
             };
         });
     };
+
+    const fetchRoom = async () => {
+        const response = await axios.get("api/room/event", values);
+        const response_data = response.data;
+        // console.log(response_data);
+        setRoom(response_data);
+    }
+
+    useEffect(()=>{
+        fetchRoom();
+    },[]);
+    
+
+    console.log(room)
 
     return (
         <Form>
@@ -88,6 +106,26 @@ const EventBook = () => {
                         onChange={handleChange}
                         required
                     />
+                    <p>Select Event Location </p>
+                    <select 
+                        id="room_id" 
+                        name='room_id' 
+                        value={values.room_id} 
+                        onChange={handleChange} 
+                        >
+                        <option>--- Select Location ---</option>
+                            {room.map((loc) =>{ 
+                                return (
+                                    <option 
+                                    id={loc.id}
+                                    value={loc.id} 
+                                    >
+                                    { loc.name }
+                                    
+                                    </option>
+                                    
+                                )})} 
+                    </select>
 
                     <input
                         type="date"
