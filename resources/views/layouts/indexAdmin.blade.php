@@ -19,7 +19,7 @@
 
 <body>
 
-
+    @include('components/adminNav') 
     <div class="main">
 
         @include('components/adminside')

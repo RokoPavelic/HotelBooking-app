@@ -8,6 +8,7 @@ use App\Http\Controllers\EventFormController;
 use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminRoomController;
 
 
 /*
@@ -32,20 +33,22 @@ Route::get('/home', function() {
 Route::get('/admin', function() {
     return view('pages/admin/admin' );
 });
-Route::get('/adminbookings', function(){
-    return view('pages/admin/adminbookings');
-});
-Route::get('/adminrooms', function(){
-    return view('pages/admin/adminrooms');
-});
-Route::get('/adminevents', function(){
-    return view('pages/admin/adminevents');
-});
+// Route::get('/adminbookings', function(){
+//     return view('pages/admin/adminbookings');
+// });
+// Route::get('/adminrooms', function(){
+//     return view('pages/admin/adminrooms');
+// });
+// Route::get('/adminevents', function(){
+//     return view('pages/admin/adminevents');
+// });
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
 Route::get('/admin/logout', [AdminController::class, 'logout']);
 
+Route::resource('/admin/rooms', AdminRoomController::class);
+Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
 // Route::get('/about', function() {
 //     return view('about');
 // });
