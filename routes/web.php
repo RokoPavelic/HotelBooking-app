@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventFormController;
 use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -40,6 +41,10 @@ Route::get('/adminrooms', function(){
 Route::get('/adminevents', function(){
     return view('pages/admin/adminevents');
 });
+
+Route::get('/admin/login', [AdminController::class, 'login']);
+Route::post('/admin/login', [AdminController::class, 'check_login']);
+Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 // Route::get('/about', function() {
 //     return view('about');

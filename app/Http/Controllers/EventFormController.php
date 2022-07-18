@@ -23,6 +23,9 @@ class EventFormController extends Controller
             'event_description'   => 'required'
          ]
         );
+
+        $events = Event::where('room_id', '=', $request->room_id )->whereDate('date_in', '<=', $request->date_out)
+        ->whereDate('date_out', '>=', $request->date_in)->get();
         
         $booking = Booking::create();
         
@@ -34,7 +37,7 @@ class EventFormController extends Controller
         ]);
         
         
-        $message = Event::create([
+        $event = Event::create([
             'event_name'          =>$request->event_name,
             'event_date'          =>$request->date,
             'event_description'   =>$request->event_description,

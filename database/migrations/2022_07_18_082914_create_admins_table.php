@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('contact_info_id')->cascadeOnDelete();
-            $table->foreignId('booking_id')->cascadeOnDelete();
-            $table->foreignId('room_event_id')->cascadeOnDelete();
-            $table->string('role');
-            $table->string('role_description');
+            $table->string('username');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('admins');
     }
 };
