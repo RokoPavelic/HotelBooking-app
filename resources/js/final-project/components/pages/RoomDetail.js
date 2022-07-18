@@ -55,26 +55,41 @@ const RoomDetail = ({ rooms }) => {
 
     return (
         <Wrapper>
-            <Tittle>{room.name}</Tittle>
+            <Tittle>{room?.name}</Tittle>
             <Container>
                 <Wrap1>
                     <Info>
                         <p>
-                            <strong>Location: </strong> {room.location}
+                            <strong>Location: </strong> {room?.location}
                         </p>
                         <br />
                         <ul>
                             <strong>Amenities: </strong>
-                            <li> {room.amenities}</li>
+                            <li> {room?.amenities}</li>
                         </ul>
                         <br />
                         <ul>
                             <strong>Facilities: </strong>
-                            <li> {room.facilities}</li>
+                            <li> {room?.facilities}</li>
                         </ul>
                         <br />
+                        <strong>Capacity - {room?.capacity} people.</strong>
+                        <br />
                         <strong>
-                            <p>Price: 100$ per night</p>
+                            <p>
+                                Price Low Season - {room?.price_low} $ per
+                                night.
+                            </p>
+                            <br />
+                            <p>
+                                Price Medium Season - {room?.price_medium} $ per
+                                night.
+                            </p>
+                            <br />
+                            <p>
+                                Price High Season - {room?.price_high} $ per
+                                night.
+                            </p>
                         </strong>
                     </Info>
                     <div className="form">
@@ -149,9 +164,9 @@ const RoomDetail = ({ rooms }) => {
                 </Wrap1>
 
                 <Wrap2>
-                    <img src={room.images[0].src} />
-                    <img src={room.images[2].src} />
-                    <img src={room.images[1].src} />
+                    <img src={room?.images[0].src} />
+                    <img src={room?.images[2].src} />
+                    <img src={room?.images[1].src} />
                 </Wrap2>
             </Container>
         </Wrapper>
