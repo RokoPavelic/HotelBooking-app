@@ -8,6 +8,7 @@ use App\Http\Controllers\EventFormController;
 use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminRoomController;
 
 
@@ -26,22 +27,21 @@ use App\Http\Controllers\AdminRoomController;
 //     return view('welcome');
 // });
 
-Route::get('/home', function() {
+Route::get('/home', function () {
     return view('components/layout');
 });
 
-Route::get('/admin', function() {
-    return view('pages/admin/admin' );
+Route::get('/admin', function () {
+    return view('pages/admin/admin');
 });
-// Route::get('/adminbookings', function(){
-//     return view('pages/admin/adminbookings');
-// });
-// Route::get('/adminrooms', function(){
-//     return view('pages/admin/adminrooms');
-// });
-// Route::get('/adminevents', function(){
-//     return view('pages/admin/adminevents');
-// });
+Route::get('/adminbookings', function () {
+    return view('pages/admin/adminbookings');
+});
+Route::get('/adminrooms', function () {
+    return view('pages/admin/adminrooms');
+});
+Route::resource('/admin/events', AdminEventController::class);
+Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
@@ -49,6 +49,7 @@ Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 Route::resource('/admin/rooms', AdminRoomController::class);
 Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
+
 // Route::get('/about', function() {
 //     return view('about');
 // });

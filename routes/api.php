@@ -27,3 +27,5 @@ Route::get('/room/event', [RoomsController::class, 'events']);
 
 Route::post('/book/event', [BookingController::class, 'store']);
 Route::get('/events', [EventController::class, 'index']);
+
+Route::get('/bookings', [BookingController::class, 'index']);

@@ -154,7 +154,6 @@ const EventBook = () => {
                         placeholder="Choose Date"
                         required
                     />
-
                     <textarea
                         id="textarea"
                         name="event_description"
