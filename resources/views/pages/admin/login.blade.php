@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('pages.admin.login_layout')
 
-<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Admin Login</title>
-
-    <!-- Custom fonts for this template-->
-    
-
-</head>
-
-<body>
+@section('content')
 
     <div class="container">
 
@@ -33,6 +18,9 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
+                                        @if(Session::has('success'))
+                                            <p class="text-success">{{ session('success') }}</p>
+                                        @endif
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <form class="user" method="post" action="{{url('admin/login')}}">
@@ -66,7 +54,8 @@
                                     @endif
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small mx-2" href="{{url('admin/register')}}">Register</a>
+                                        <a class="small" href="#">Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +69,4 @@
 
     </div>
 
-</body>
-
-</html>
+@endsection

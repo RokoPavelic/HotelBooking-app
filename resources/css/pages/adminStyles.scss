@@ -2,7 +2,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&family=Roboto:ital,wght@0,100;0,400;0,700;1,100&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&family=Roboto:wght@300&display=swap);
 
-
+body{
+  margin: 0;
+}
 
 .adminNavbar {
   display: flex;
@@ -57,12 +59,13 @@ width: 100%;
 
 /* Sidebar */
 .sidebar {
+  margin: 0%;
   font-family: 'Roboto';
   background-color: #587563;
-  width: 15vw;
+  width: 10%;
   height: 90vh;
   text-align: center;
-  padding: 3%;
+  padding: 1%;
 }
 
 .sidebar-links a:link{
@@ -81,7 +84,11 @@ color: #EEEAE5;
 
 .adminFooter{
   grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #4F4F4F;
+  height: 7rem;
 }
 
 
