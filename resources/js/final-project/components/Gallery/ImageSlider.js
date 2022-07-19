@@ -4,7 +4,8 @@ import Buttons from "./Buttons";
 
 const Wrapper = styled.div`
     position: relative;
-    width: 60%;
+    width: 65%;
+    aspectRatio: 3/2;
     overflow: hidden;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
     background-size: cover;
@@ -18,7 +19,7 @@ const Slide = styled.div`
     transition: transform 0.6s ease-in-out;
     transform: ${(props) => `translateX(${props.xPosition}px)`}; // (*)
     img {
-        aspectRatio: 3/2;
+        width: ${(props) => `${props.setImageWidth}px`};
         height: 100%;
     }
 `;
@@ -36,6 +37,7 @@ const Slide = styled.div`
 
 function ImageSlider({
     images,
+    setImageWidth,
     setWidth,
     xPosition,
     handleClickPrev,
@@ -50,9 +52,9 @@ function ImageSlider({
     }, [setWidth]);
     return (
         <Wrapper>
-            <Slide xPosition={xPosition} ref={slideRef}>
+            <Slide xPosition={xPosition} ref={slideRef} width={setImageWidth}>
                 {images.map((img, i) => (
-                    <img src={img} alt={"images"} key={i} />
+                    <img src={img} alt={"images"} key={i} width={setWidth}/>
                 ))}
             </Slide>
             <Buttons
