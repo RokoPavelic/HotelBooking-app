@@ -27,6 +27,7 @@ const RoomDetail = ({ rooms }) => {
         const yyyy = today.getFullYear();
         return yyyy + "-" + mm + "-" + dd;
     };
+
     // console.log(id);
 
     const handleSubmit = async (event) => {
