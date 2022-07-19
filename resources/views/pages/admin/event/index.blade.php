@@ -23,7 +23,7 @@
   <div class="card shadow mb-4">
       <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Events
-              <a href="{{url('admin/roomtype/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
+              <a href="{{url('admin/event/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
           </h6>
       </div>
       <div class="card-body">
