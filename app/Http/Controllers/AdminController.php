@@ -30,14 +30,14 @@ class AdminController extends Controller
             'username'     => 'required',
             'password'     => 'required',
         ]);
-        $admin = Admin::where([ 'username'=>$request->username, 'password'=>sha1( $request->password )])
+        $admin = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
             ->count();
-        if($admin > 0){
-            $adminData = Admin::where([ 'username'=>$request->username, 'password'=>sha1( $request->password )])
+        if ($admin > 0) {
+            $adminData = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
                 ->get();
-            session(['adminData'=>$adminData]);
+            session(['adminData' => $adminData]);
 
-            if($request->has('remember_me')) {
+            if ($request->has('remember_me')) {
                 Cookie::queue('adminuser', $request->username, 1440);
                 Cookie::queue('adminpwd', $request->password, 1440);
             }
@@ -84,7 +84,7 @@ class AdminController extends Controller
 
     function logout()
     {
-        session()->forget(['adminData']); 
+        session()->forget(['adminData']);
         return redirect('admin/login');
     }
 }
