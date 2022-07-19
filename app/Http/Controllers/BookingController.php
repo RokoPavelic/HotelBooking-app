@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
-
+use App\Models\Booking;
 class BookingController extends Controller
 {
+    public function index()
+    {
+        $rooms =Booking::get();
+
+        return $rooms;
+    }
+
     public function store(Event $event)
     {
         

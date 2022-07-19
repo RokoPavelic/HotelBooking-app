@@ -49,6 +49,7 @@ Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 Route::resource('/admin/rooms', AdminRoomController::class);
 Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
+
 // Route::get('/about', function() {
 //     return view('about');
 // });

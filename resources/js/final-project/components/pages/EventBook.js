@@ -141,16 +141,8 @@ const EventBook = () => {
                         name="date_in"
                         value={values.date_in}
                         onChange={handleChange}
-<<<<<<< HEAD
-                        placeholder="Choose a Date"
-=======
-                        placeholder="Event Date"
-                        min={disablePastDate()}
->>>>>>> 36679e0ea8084eb9940c0cb18cfaf65f070572b8
-                        required
                     />
                      <input
-                        type="date"
                         id="to"
                         name="date_out"
                         value={values.date_out}
@@ -158,8 +150,6 @@ const EventBook = () => {
                         placeholder="Choose Date"
                         required
                     />
-
-
                     <textarea
                         id="textarea"
                         name="event_description"
