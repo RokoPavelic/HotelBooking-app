@@ -52,8 +52,8 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
-                navlinks:true,
-                selectable:true,
+                navlinks: true,
+                selectable: true,
                 editable: true,
                 droppable: true, // this allows things to be dropped onto the calendar
                 drop: function(arg) {
@@ -62,10 +62,67 @@
                         // if so, remove the element from the "Draggable Events" list
                         arg.draggedEl.parentNode.removeChild(arg.draggedEl);
                     }
-                }
-                // eventDrop: function(){
+                },
+                eventResize: function(event) {
 
-                // }
+                    alert('Event rescheduled')
+
+                },
+                events: [{
+                        "title": "All Day Event",
+                        "start": "2022-09-01"
+                    },
+                    {
+                        "title": "Long Event",
+                        "start": "2020-09-07",
+                        "end": "2022-09-10"
+                    },
+                    {
+                        "id": "999",
+                        "title": "Repeating Event",
+                        "start": "2022-09-09T16:00:00-05:00"
+                    },
+                    {
+                        "id": "999",
+                        "title": "Repeating Event",
+                        "start": "2022-09-16T16:00:00-05:00"
+                    },
+                    {
+                        "title": "Conference",
+                        "start": "2022-09-11",
+                        "end": "2022-09-13"
+                    },
+                    {
+                        "title": "Meeting",
+                        "start": "2022-09-12T10:30:00-05:00",
+                        "end": "2022-09-12T12:30:00-05:00"
+                    },
+                    {
+                        "title": "Lunch",
+                        "start": "2022-09-12T12:00:00-05:00"
+                    },
+                    {
+                        "title": "Meeting",
+                        "start": "2022-09-12T14:30:00-05:00"
+                    },
+                    {
+                        "title": "Happy Hour",
+                        "start": "2022-09-12T17:30:00-05:00"
+                    },
+                    {
+                        "title": "Dinner",
+                        "start": "2022-09-12T20:00:00"
+                    },
+                    {
+                        "title": "Birthday Party",
+                        "start": "2022-09-13T07:00:00-05:00"
+                    },
+                    {
+                        "title": "Click for Google",
+                        "url": "http://google.com/",
+                        "start": "2022-09-28"
+                    }
+                ]
             });
             calendar.render();
 
@@ -83,7 +140,7 @@
             top: 20px;
             width: 150px;
             padding: 0 10px;
-    
+
             text-align: left;
         }
 
@@ -155,9 +212,11 @@
                     <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
                         <div class='fc-event-main'>Barn</div>
                     </div>
-                    <div class="type-res">  Type of reservations
-                        <div class="type-res-room"></div> <p>Room</p>
-                        <div class="type-res-event"></div> <p>Event</p>
+                    <div class="type-res"> Type of reservations
+                        <div class="type-res-room"></div>
+                        <p>Room</p>
+                        <div class="type-res-event"></div>
+                        <p>Event</p>
                     </div>
                 </div>
 
@@ -171,7 +230,7 @@
                 <div id='calendar'></div>
             </div>
 
-           
+
         </div>
     </body>
     @include('components/adminFooter')
