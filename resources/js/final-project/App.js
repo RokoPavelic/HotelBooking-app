@@ -61,7 +61,7 @@ export default function App() {
                 console.log(error);
             });
     }, []);
-    console.log(rooms);
+    // console.log(rooms);
 
     return (
         <>

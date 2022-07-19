@@ -8,6 +8,8 @@
     <link rel="stylesheet" href={{ mix("css/adminStyles.css") }}>
     @yield('styleLink')
     
+    <link href="{{asset('bs5/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <title>Admin Page</title>
     @if(!Session::has('adminData'))
     <script type="text/javascript">

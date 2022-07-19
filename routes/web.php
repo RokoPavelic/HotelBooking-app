@@ -49,17 +49,17 @@ Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 Route::resource('/admin/rooms', AdminRoomController::class);
 Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
+
 // Route::get('/about', function() {
 //     return view('about');
 // });
-Route::post('/event/submit', [EventFormController::class, 'EventForm']);
 
 Route::post('/room/submit', [RoomFormController::class, 'RoomForm']);
 
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
 Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
-
+Route::post('/event/submit/', [EventFormController::class, 'EventForm']);
 
 
 

@@ -33,6 +33,6 @@ class Booking extends Model
 
     public function room()
     {
-        return $this->hasOne(Room::class, 'room_id');
+        return $this->hasMany(Room::class, 'room_id');
     }
 }

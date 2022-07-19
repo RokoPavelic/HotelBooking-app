@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -11,9 +11,21 @@ const EventBook = () => {
         email: "",
         phone: "",
         event_name: "",
-        date: "",
+        date_in: "",
+        date_out: "",
         event_description: "",
+        room_id: "",
     });
+
+    const [room, setRoom] = useState([]);
+
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 0).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
 
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
@@ -33,6 +45,19 @@ const EventBook = () => {
             };
         });
     };
+
+    const fetchRoom = async () => {
+        const response = await axios.get("api/room/event", values);
+        const response_data = response.data;
+        // console.log(response_data);
+        setRoom(response_data);
+    };
+
+    useEffect(() => {
+        fetchRoom();
+    }, []);
+
+    console.log(room);
 
     return (
         <Form>
@@ -67,15 +92,18 @@ const EventBook = () => {
                         id="email"
                         value={values.email}
                         onChange={handleChange}
+                        placeholder="example@example.com"
                         required
                     />
                     <p>Phone</p>
                     <input
-                        type="text"
+                        type="tel"
                         id="phone"
                         name="phone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         value={values.phone}
                         onChange={handleChange}
+                        placeholder="xxx-xxx-xxxx"
                         required
                     />
                     <p>Event Name</p>
@@ -88,17 +116,40 @@ const EventBook = () => {
                         onChange={handleChange}
                         required
                     />
-
+                    <p>Select Event Location </p>
+                    <select
+                        id="room_id"
+                        name="room_id"
+                        value={values.room_id}
+                        onChange={handleChange}
+                    >
+                        <option>--- Select Location ---</option>
+                        <br />
+                        {room.map((loc) => {
+                            return (
+                                <option id={loc.id} value={loc.id}>
+                                    {loc.name}
+                                </option>
+                            );
+                        })}
+                    </select>
+                    <br />
+                    <p>Select the date</p>
                     <input
                         type="date"
                         id="to"
-                        name="date"
-                        value={values.date}
+                        name="date_in"
+                        value={values.date_in}
                         onChange={handleChange}
-                        placeholder="Event Date"
+                    />
+                     <input
+                        id="to"
+                        name="date_out"
+                        value={values.date_out}
+                        onChange={handleChange}
+                        placeholder="Choose Date"
                         required
                     />
-
                     <textarea
                         id="textarea"
                         name="event_description"
@@ -142,7 +193,7 @@ const Form = styled.div`
             width: 50%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             @media screen and (max-width: 720px) {
                 display: flex;
                 flex-direction: column;

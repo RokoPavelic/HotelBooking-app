@@ -12,6 +12,7 @@ class Event extends Model
     protected $guarded = [];
     
     protected $fillable = [
+        'room_id',
         'booking_id',
         'event_name', 
         'event_date',
@@ -28,5 +29,10 @@ class Event extends Model
     public function contact_info()
     {
         return $this->belongsTo(ContactInfo::class);
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
     }
 }
