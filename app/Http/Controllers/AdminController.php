@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\ContactInfo;
 use Cookie;
 
 // class Admin extends Controller
@@ -44,6 +45,40 @@ class AdminController extends Controller
         } else {
             return redirect('admin/login')->with('msg', 'Invalid username/Password!!!');
         }
+    }
+    public function create()
+    {
+        return view('pages.admin.register');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name'        => 'required|max:255',
+            'last_name'   => 'required|max:255',
+            'phone'       => 'required|max:255',
+            'username'    => 'required|min:3|max:255|unique:admins,username',
+            'email'       => 'required|email|max:255',
+            'password'    => 'required|min:7|max:255',
+        ]);
+
+        $contact_infos = ContactInfo::create([
+            'name'        => $request->name,
+            'last_name'   => $request->last_name,
+            'phone'       => $request->phone,
+            'email'       => $request->email,
+            'phone_number'=> $request->phone,
+        ]);
+
+        $admin = Admin::create([
+            'username'    => $request->username,
+            'password'    => $request->password === $request->password_verify ? sha1($request->password) : response()->json(["error"=>"Password is incorrect"]),
+        ]);
+
+        // auth()->login(ContactInfo::create($contact_infos));
+        // auth()->login(Admin::create($admin));
+
+        return redirect('/admin/login')->with('success', 'Your account has been created.');
     }
     // Logout
 
