@@ -18,6 +18,14 @@ const EventBook = () => {
 
     const [room, setRoom] = useState([]);
 
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 0).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
+
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
         event.preventDefault();
@@ -133,6 +141,7 @@ const EventBook = () => {
                         value={values.date}
                         onChange={handleChange}
                         placeholder="Event Date"
+                        min={disablePastDate()}
                         required
                     />
 
