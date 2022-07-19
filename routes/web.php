@@ -46,6 +46,8 @@ Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
 Route::get('/admin/logout', [AdminController::class, 'logout']);
+Route::get('/admin/register', [AdminController::class, 'create']);
+Route::post('/admin/register/store', [AdminController::class, 'store']);
 
 Route::resource('/admin/rooms', AdminRoomController::class);
 Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
