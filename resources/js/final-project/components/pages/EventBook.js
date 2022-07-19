@@ -12,7 +12,8 @@ const EventBook = () => {
         email: "",
         phone: "",
         event_name: "",
-        date: "",
+        date_in: "",
+        date_out: "",
         event_description: "",
         room_id: "",
     });
@@ -130,12 +131,22 @@ const EventBook = () => {
                     <input
                         type="date"
                         id="to"
-                        name="date"
-                        value={values.date}
+                        name="date_in"
+                        value={values.date_in}
                         onChange={handleChange}
-                        placeholder="Event Date"
+                        placeholder="Choose a Date"
                         required
                     />
+                     <input
+                        type="date"
+                        id="to"
+                        name="date_out"
+                        value={values.date_out}
+                        onChange={handleChange}
+                        placeholder="Choose Date"
+                        required
+                    />
+
 
                     <textarea
                         id="textarea"
