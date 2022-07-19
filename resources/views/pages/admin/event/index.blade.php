@@ -8,7 +8,7 @@
 
 {{-- <title>{{$title}} </title> --}}
 
- @include('components/adminNav') 
+ {{-- @include('components/adminNav')  --}}
 
 
 
@@ -19,7 +19,6 @@
     <div class="events-header">
         
         <h1>WELCOME TO THE EVENTS PAGE</h1>
-        <button>Add Event</button>
 
     </div>
         
@@ -27,22 +26,34 @@
         <table>
             <thead>
               <tr>
-                <th>Host Name</th>
-                <th>Nr. of Guests</th>
+                <th>Event ID</th>
+                <th>Event Name</th>
                 <th>Date</th>
+                <th>Start</th>
+                <th>End</th>
                 <th>Desription</th>
-                <th>Requirements</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                  @foreach ($events as $event)
-                <th>{{$event->$event_name}}</th>
-                <th>Nr. of Guests</th>
-                <th>{{$event->$event_date}}</th>
-                <th>{{$event->$event_description}}</th>
-                @endforeach
-              </tr>
+                @if($data)
+                            @foreach($data as $d)
+                                <tr>
+                                    <td>{{ $d->id }}</td>
+                                    <td>{{ $d->event_name }}</td>
+                                    <td>{{ $d->event_date }}</td>
+                                    <td>{{ $d->event_start }}</td>
+                                    <td>{{ $d->event_end }}</td>
+                                    <td>{{ $d->event_description }}</td>
+                                    
+                                    <td>
+                                        <a href="{{url('admin/events/' . $d->id )}}" class="button-show"><button>Show</button></a>
+                                        <a href="{{url('admin/events/' . $d->id . '/edit')}}" class="button-edit"><button>Edit</button></a>
+                                        <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/events/' . $d->id . '/delete' )}}" class="button-delete"><button>Delete</button></a>
+                                        </td>
+                                </tr>
+
+                            @endforeach
+                       @endif
             </tbody>
         </table>
     </div>

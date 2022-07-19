@@ -40,7 +40,8 @@ Route::get('/adminbookings', function () {
 Route::get('/adminrooms', function () {
     return view('pages/admin/adminrooms');
 });
-Route::get('/adminevents', [AdminEventController::class, 'list']);
+Route::resource('/admin/events', AdminEventController::class);
+Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
