@@ -9,6 +9,8 @@ use App\Http\Controllers\RoomFormController;
 use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminRoomController;
+use App\Http\Controllers\FullCalendarController;
+
 
 
 /*
@@ -42,6 +44,13 @@ Route::get('/admin', function() {
 // Route::get('/adminevents', function(){
 //     return view('pages/admin/adminevents');
 // });
+
+
+// fullcalender 
+Route::get('/cal', [FullCalendarController::class, 'index']);
+
+
+
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
