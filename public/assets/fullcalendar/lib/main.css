@@ -1,4 +1,6 @@
-
+body{
+  margin: 0%;
+}
 /* classes attached to <body> */
 /* TODO: make fc-event selector work when calender in shadow DOM */
 .fc-not-allowed,
@@ -573,12 +575,20 @@ a.fc-event:hover {
 /*
 A HORIZONTAL event
 */
+.fc-h-event-room { /* allowed to be top-level */
+  display: block;
+  border: 1px solid #B3A5EC;
+  border: 1px solid var(--fc-event-border-color, #B3A5EC);
+  background-color: #3788d8;
+  background-color: var(--fc-event-bg-color, #B3A5EC)
+
+}
 .fc-h-event { /* allowed to be top-level */
   display: block;
-  border: 1px solid #3788d8;
-  border: 1px solid var(--fc-event-border-color, #3788d8);
-  background-color: #3788d8;
-  background-color: var(--fc-event-bg-color, #3788d8)
+  border: 1px solid #DBB633;
+  border: 1px solid var(--fc-event-border-color, #DBB633);
+  background-color: #DBB633;
+  background-color: var(--fc-event-bg-color, #DBB633)
 
 }
 .fc-h-event .fc-event-main {
@@ -1496,5 +1506,19 @@ A VERTICAL event
 .container{
  display: flex;
  justify-content: center;
+ width: vw;
 }
 
+.type-res-room{
+  border-radius: 50%;
+  background-color: #B3A5EC;
+  width: 20px;
+  height: 20px;
+}
+
+.type-res-event{
+  border-radius: 50%;
+  background-color: #DBB633;
+  width: 20px;
+  height: 20px;
+}
