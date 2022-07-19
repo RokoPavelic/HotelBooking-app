@@ -1,10 +1,10 @@
 @extends('layouts.indexAdmin')
 
-@section('styleLink')
+{{-- @section('styleLink')
  
 <link rel="stylesheet" href={{ mix("css/admin-events.css") }}>
  
-@endsection
+@endsection --}}
 
 {{-- <title>{{$title}} </title> --}}
 
@@ -14,16 +14,22 @@
 
 @section('content')
 
-<main class="events-admin">
+<div class="container-fluid">
 
-    <div class="events-header">
-        
-        <h1>WELCOME TO THE EVENTS PAGE</h1>
+  <!-- Page Heading -->
+  
 
-    </div>
-        
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Events
+              <a href="{{url('admin/roomtype/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
+          </h6>
+      </div>
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <div class="events-table">
-        <table>
             <thead>
               <tr>
                 <th>Event ID</th>
