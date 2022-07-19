@@ -10,6 +10,6 @@ class AdminEventController extends Controller
     function list()
     {
         $events = Event::orderBy('event_date')->get();
-        return view('pages.admin.adminevents', compact('events'));
+        return view('pages.admin.event.index', compact('events'));
     }
 }

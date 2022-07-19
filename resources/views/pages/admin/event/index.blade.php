@@ -12,7 +12,7 @@
 
 
 
-    @section('content')
+@section('content')
 
 <main class="events-admin">
 
@@ -36,9 +36,12 @@
             </thead>
             <tbody>
               <tr>
-                <th>
-
-                </th>
+                  @foreach ($events as $event)
+                <th>{{$event->$event_name}}</th>
+                <th>Nr. of Guests</th>
+                <th>{{$event->$event_date}}</th>
+                <th>{{$event->$event_description}}</th>
+                @endforeach
               </tr>
             </tbody>
         </table>
@@ -46,4 +49,4 @@
 
 </main>
 
-    @endsection
+@endsection
