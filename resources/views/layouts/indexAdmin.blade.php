@@ -23,7 +23,8 @@
 
 <body>
 
-    @include('components/adminNav') 
+    @include('components/adminNav')  
+   
     <div class="main">
 
         @include('components/adminside')

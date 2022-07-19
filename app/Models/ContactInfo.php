@@ -14,8 +14,18 @@ class ContactInfo extends Model
     protected $fillable = [
         'name',
         'lastname', 
-        'email', 
+        'email',
+        'password', 
         'phone_number', 
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
     ];
 
     public function bookings()
