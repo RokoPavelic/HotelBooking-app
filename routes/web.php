@@ -10,6 +10,8 @@ use App\Http\Controllers\ReactAppController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminRoomController;
+use App\Http\Controllers\FullCalendarController;
+
 
 
 /*
@@ -42,6 +44,13 @@ Route::get('/adminrooms', function () {
 });
 Route::resource('/admin/events', AdminEventController::class);
 Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);
+
+
+// fullcalender 
+Route::get('/cal', [FullCalendarController::class, 'index']);
+
+
+
 
 Route::get('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/login', [AdminController::class, 'check_login']);
