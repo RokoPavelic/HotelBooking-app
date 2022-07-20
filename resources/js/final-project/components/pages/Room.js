@@ -61,12 +61,15 @@ const Container = styled.div`
         justify-content: center;
         width: 500px;
         h3 {
+            font-family: "Koldby", serif;
+            font-weight: 100;
             font-size: 2em;
             padding-bottom: 1em;
             padding-top: 1em;
             text-align: center;
             color: #4f4f4f;
         }
+       
 
         button {
             margin-top: 1em;
