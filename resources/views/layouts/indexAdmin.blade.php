@@ -27,7 +27,7 @@
    
     <div class="main">
 
-        @include('components/adminside')
+        @include('components/adminSide')
         <div class="main-content">
             @yield('content')
 

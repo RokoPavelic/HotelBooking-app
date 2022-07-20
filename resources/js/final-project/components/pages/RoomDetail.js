@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import DatePicker from "react-datepicker";
+import { addDays, subDays } from "date-fns";
+import "react-datepicker/dist/react-datepicker.css";
 
 const RoomDetail = ({ rooms }) => {
     const { id } = useParams();
@@ -19,21 +22,54 @@ const RoomDetail = ({ rooms }) => {
         room_id: id,
         role_description: "guest",
     });
+    const [bookedDays, setBookedDays] = useState([]);
+    const [filteredDates, setFilteredDates] = useState([]);
+    const [reservedDays, setReservedDays] = useState([]);
 
-    const disablePastDate = () => {
-        const today = new Date();
-        const dd = String(today.getDate() + 0).padStart(2, "0");
-        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-        const yyyy = today.getFullYear();
-        return yyyy + "-" + mm + "-" + dd;
-    };
-    // console.log(id);
+    const url = "http://localhost:3000/api/bookings";
+
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+                setBookedDays(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        if (!bookedDays) return;
+        let roomBookings = bookedDays.filter(
+            (room) => room.room_id.toString() === id
+        );
+        setFilteredDates(
+            roomBookings.map((booking) => {
+                return {
+                    start: subDays(new Date(booking.date_in), 1),
+                    end: new Date(booking.date_out),
+                };
+            })
+        );
+    }, [bookedDays]);
+
+    useEffect(() => console.log(values), [values]);
 
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
         event.preventDefault();
 
-        const response = await axios.post("/room/submit", values);
+        const response = await axios.post("/room/submit", {
+            name: values.name,
+            lastname: values.lastname,
+            email: values.email,
+            phone: values.phone,
+            date_in: new Date(values.date_in).toISOString().split("T")[0],
+            date_out: new Date(values.date_out).toISOString().split("T")[0],
+            room_id: id,
+            role_description: "guest",
+        });
         const response_data = response.data;
         if (response_data?.success) {
             navigate("/reserved");
@@ -42,11 +78,11 @@ const RoomDetail = ({ rooms }) => {
         }
     };
 
-    const handleChange = (event) => {
+    const handleChange = (name, value) => {
         setValues((previous_values) => {
             return {
                 ...previous_values,
-                [event.target.name]: event.target.value,
+                [name]: value,
             };
         });
     };
@@ -101,7 +137,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="name"
                                 id="name"
                                 value={values.name}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                             />
                             <p>Last Name</p>
@@ -110,7 +151,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="lastname"
                                 id="lastname"
                                 value={values.lastname}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                             />
                             <p>Email</p>
@@ -119,7 +165,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="email"
                                 id="email"
                                 value={values.email}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                                 placeholder="example@example.com"
                             />
@@ -131,7 +182,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="phone"
                                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 value={values.phone}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 placeholder="xxx-xxx-xxxx"
                                 required
                             ></input>
@@ -139,26 +195,25 @@ const RoomDetail = ({ rooms }) => {
                                 <p>Enter a date FROM - TO</p>
                             </strong>
                             <br />
-                            <input
-                                className="date"
-                                type="date"
-                                id="from"
-                                name="date_in"
-                                value={values.date_in}
-                                onChange={handleChange}
-                                min={disablePastDate()}
-                                required
+
+                            <DatePicker
+                                selected={values.date_in}
+                                onChange={(date) =>
+                                    handleChange("date_in", date)
+                                }
+                                placeholderText="Please select a date FROM"
+                                minDate={new Date()}
+                                excludeDateIntervals={filteredDates}
                             />
-                            <input
-                                className="date"
-                                type="date"
-                                id="to"
-                                name="date_out"
-                                value={values.date_out}
-                                onChange={handleChange}
-                                min={disablePastDate()}
-                                required
+                            <DatePicker
+                                selected={values.date_out}
+                                onChange={(date) =>
+                                    handleChange("date_out", date)
+                                }
+                                placeholderText="Please select a date TO"
+                                minDate={values.date_in}
                             />
+
                             <button className="form-button">Book Now!</button>
                         </form>
                     </div>

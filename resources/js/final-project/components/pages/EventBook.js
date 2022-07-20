@@ -141,13 +141,18 @@ const EventBook = () => {
                         name="date_in"
                         value={values.date_in}
                         onChange={handleChange}
+                        placeholder="Event Date"
+                        min={disablePastDate()}
+                        required
                     />
-                     <input
+                    <input
+                        type="date"
                         id="to"
                         name="date_out"
                         value={values.date_out}
                         onChange={handleChange}
                         placeholder="Choose Date"
+                        min={disablePastDate()}
                         required
                     />
                     <textarea
@@ -158,6 +163,7 @@ const EventBook = () => {
                         value={values.event_description}
                         onChange={handleChange}
                         placeholder="Event Description"
+                        required
                     ></textarea>
                     <button className="form-button">Submit</button>
                 </form>
