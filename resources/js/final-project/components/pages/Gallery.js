@@ -48,6 +48,7 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-botton: 3rem;
 `;
 
 const Banner = styled.div`
@@ -78,9 +79,12 @@ const Title = styled.div`
     h2 {
         font-family: "Koldby", serif;
         font-size: 1.5rem;
+        font-weight: 100;
         margin: 2em;
         margin: 2em;
         color: #4f4f4f;
+
+    
     }
 `;
 
