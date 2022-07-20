@@ -24,7 +24,7 @@ const RoomDetail = ({ rooms }) => {
     });
     const [bookedDays, setBookedDays] = useState([]);
     const [filteredDates, setFilteredDates] = useState([]);
-    const [reservedDays, setReservedDays] = useState([]);
+    // const [reservedDays, setReservedDays] = useState([]);
 
     const url = "http://localhost:3000/api/bookings";
 
@@ -54,6 +54,7 @@ const RoomDetail = ({ rooms }) => {
         );
     }, [bookedDays]);
 
+    useEffect(() => console.log(filteredDates), [filteredDates]);
     useEffect(() => console.log(values), [values]);
 
     const handleSubmit = async (event) => {
@@ -65,8 +66,8 @@ const RoomDetail = ({ rooms }) => {
             lastname: values.lastname,
             email: values.email,
             phone: values.phone,
-            date_in: new Date(values.date_in).toISOString().split("T")[0],
-            date_out: new Date(values.date_out).toISOString().split("T")[0],
+            date_in: new Date(values.date_in).toISOString().slice(0, 10) ,
+            date_out: new Date(values.date_out).toISOString().slice(0, 10),
             room_id: id,
             role_description: "guest",
         });
@@ -192,7 +193,7 @@ const RoomDetail = ({ rooms }) => {
                                 required
                             ></input>
                             <strong>
-                                <p>Enter a date FROM - TO</p>
+                                <p>Select a date</p>
                             </strong>
                             <br />
 
@@ -204,7 +205,10 @@ const RoomDetail = ({ rooms }) => {
                                 placeholderText="Please select a date FROM"
                                 minDate={new Date()}
                                 excludeDateIntervals={filteredDates}
+                                withPortal
+                                strictParsing
                             />
+
                             <DatePicker
                                 selected={values.date_out}
                                 onChange={(date) =>
@@ -212,6 +216,7 @@ const RoomDetail = ({ rooms }) => {
                                 }
                                 placeholderText="Please select a date TO"
                                 minDate={values.date_in}
+                                withPortal
                             />
 
                             <button className="form-button">Book Now!</button>
