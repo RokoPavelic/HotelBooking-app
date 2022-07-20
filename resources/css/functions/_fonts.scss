@@ -25,6 +25,12 @@ h1{
     font-size: 1.5rem;
     color: $clr-gray;
 }
+@mixin headline2-light {
+    font-family: "Koldby", serif;
+    font-size: 2rem;
+    font-weight: 100;
+    color: $clr-gray;
+}
 @mixin headline2-white {
     font-family: "Koldby", serif;
     font-size: 1rem;
@@ -125,7 +131,7 @@ h1{
     font-family: "roboto", "Work Sans";
     font-weight: 100;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: $clr-gray;
 }
 
@@ -135,4 +141,11 @@ h1{
     font-style: normal;
     font-size: 1rem;
     color: $clr-white;
+}
+
+@mixin headline4-green {
+    font-family: "Koldby", serif;
+    font-weight: 100;
+    font-size: 1.7rem;
+    color: $clr-d-green;
 }

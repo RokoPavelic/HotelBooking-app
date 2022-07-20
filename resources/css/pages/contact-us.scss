@@ -2,10 +2,11 @@
 @import "~compass-mixins/lib/compass/css3";
 @import "../functions/colors";
 @import "../functions/fonts";
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Roboto:wght@100;300&display=swap');
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-content: center;
     margin: 0;
     padding: 0;
     @media screen and (max-width: 720px) {
@@ -40,8 +41,11 @@
 .contact__contacts {
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto';
+    font-weight: 100;
     margin: 5rem 3rem;
-    width: 50%;
+    padding-left: 3rem;
+    width: 60%;
 
     img {
         margin-right: 1em;
