@@ -9,8 +9,3 @@
     @section('content')
         <h1>WELCOME TO THE ADMIN PAGE</h1>
     @endsection
-
-
-
-
-

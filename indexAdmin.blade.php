@@ -9,12 +9,17 @@
     {{-- @yield('styleLink') --}}
     
     <link href="{{asset('bs5/bootstrap.min.css')}}" rel="stylesheet" />
-    {{-- <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css"> --}}
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <title>Admin Page</title>
-  
+    @if(!Session::has('adminData'))
+    <script type="text/javascript">
+        window.location.href="{{url( 'admin/login' )}}";
+    </script>
+@endif
 </head>
+
+
+
 
 <body>
 
@@ -22,7 +27,7 @@
    
     <div class="main">
 
-        @include('components/adminSide')
+        @include('components/adminside')
         <div class="main-content">
             @yield('content')
 

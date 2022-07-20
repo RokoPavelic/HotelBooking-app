@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Hash;
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\ContactInfo;
@@ -16,75 +18,49 @@ use Cookie;
 
 class AdminController extends Controller
 {
-    // Login
-    function login()
+
+    public function index() 
     {
-        return view('pages.admin.login');
+        
+
+        return view('pages/admin/admin');
+    
     }
 
-    // Check Login
 
-    function check_login(Request $request)
-    {
-        $request->validate([
-            'username'     => 'required',
-            'password'     => 'required',
-        ]);
-        $admin = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
-            ->count();
-        if ($admin > 0) {
-            $adminData = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
-                ->get();
-            session(['adminData' => $adminData]);
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
 
-            if ($request->has('remember_me')) {
-                Cookie::queue('adminuser', $request->username, 1440);
-                Cookie::queue('adminpwd', $request->password, 1440);
-            }
-            return redirect('admin');
-        } else {
-            return redirect('admin/login')->with('msg', 'Invalid username/Password!!!');
-        }
-    }
-    public function create()
+    public function main() 
     {
-        return view('pages.admin.register');
+        $data = ContactInfo::all();
+       
+        return view('pages/admin/main/main', [ 'data' => $data ]);
+    
     }
 
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name'        => 'required|max:255',
-            'last_name'   => 'required|max:255',
-            'phone'       => 'required|max:255',
-            'username'    => 'required|min:3|max:255|unique:admins,username',
-            'email'       => 'required|email|max:255',
-            'password'    => 'required|min:7|max:255',
-        ]);
-
-        $contact_infos = ContactInfo::create([
-            'name'        => $request->name,
-            'last_name'   => $request->last_name,
-            'phone'       => $request->phone,
-            'email'       => $request->email,
-            'phone_number'=> $request->phone,
-        ]);
-
-        $admin = Admin::create([
-            'username'    => $request->username,
-            'password'    => $request->password === $request->password_verify ? sha1($request->password) : response()->json(["error"=>"Password is incorrect"]),
-        ]);
-
-        // auth()->login(ContactInfo::create($contact_infos));
-        // auth()->login(Admin::create($admin));
-
-        return redirect('/admin/login')->with('success', 'Your account has been created.');
-    }
+  
     // Logout
 
-    function logout()
+    public function logout(Request $request)
     {
-        session()->forget(['adminData']);
+
+        Auth::logout();
+       
         return redirect('admin/login');
     }
+
+    public function destroy($id)
+    {
+        
+        
+        Admin::where($id)->delete();
+
+        return redirect('admin/login')->with('success', 'Account has been deleted.');
+    }
 }
+
