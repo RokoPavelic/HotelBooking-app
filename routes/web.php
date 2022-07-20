@@ -96,10 +96,12 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])
 
 // Main Admin 
 Route::get('/admin/main', [AdminController::class, 'main'])->middleware('can:admin');
-Route::get('/admin/main/show', [AdminController::class, 'show'])->middleware('can:admin');
-Route::get('/admin/main/create', [AdminController::class, 'edit'])->middleware('can:admin');
-Route::get('/admin/main/edit', [AdminController::class, 'edit'])->middleware('can:admin');
-Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
+Route::get('/admin/employee/{id}', [AdminController::class, 'show'])->middleware('can:admin');
+Route::get('/admin/main/create', [AdminController::class, 'create'])->middleware('can:admin');
+Route::post('/admin/main/store', [AdminController::class, 'store'])->middleware('can:admin');
+Route::get('/admin/main/{id}/edit', [AdminController::class, 'edit'])->middleware('can:admin');
+Route::put('/admin/main/{id}/edit', [AdminController::class, 'edit'])->middleware('can:admin');
+Route::get('/admin/main/{id}/delete', [AdminController::class, 'destroy']);
 
 // Admin Events
 

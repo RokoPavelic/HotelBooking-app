@@ -50,7 +50,7 @@
                                         <a href="{{url('admin/employee/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
                                         <a href="{{url('admin/employee/' . $d->id . '/edit')}}" ><button class="btn-primary btn btn-sm">Edit</button></a>
                                         @can('admin')
-                                            <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/rooms/' . $d->id . '/delete' )}}" class="btn btn-danger btn-sm">Fire</a>
+                                            <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/rooms/' . $d->id . '/delete' )}}" class="btn btn-danger btn-sm">Delete</a>
                                         @endcan
                                     </td>
                                 </tr>
