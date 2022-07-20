@@ -53,7 +53,10 @@ const Banner = styled.div`
     overflow: hidden;
 
     p {
-        font-size: 3em;
+        font-family: "Koldby", serif;
+        font-weight: 100;
+        font-size: 2.5rem;
+        color: white;
     }
     @media screen and (max-width: 720px) {
         display: flex;
@@ -65,8 +68,9 @@ const Banner = styled.div`
 
 const Title = styled.div`
     p {
+        font-family: "Koldby", serif;
         text-align: center;
-        font-size: 3em;
+        font-size: 2.5em;
         margin: 2em;
         color: #4f4f4f;
     }
@@ -80,8 +84,8 @@ const Title = styled.div`
 
 const Container = styled.div`
     display: flex;
-    width: 80%;
-    margin-bottom: 4em;
+    max-width: 70%;
+    margin-bottom: 10rem;
     flex-wrap: wrap;
     justify-content: space-around;
     @media screen and (max-width: 720px) {

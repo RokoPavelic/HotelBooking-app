@@ -1,5 +1,6 @@
 body{
   margin: 0%;
+  color: black;
 }
 /* classes attached to <body> */
 /* TODO: make fc-event selector work when calender in shadow DOM */
@@ -430,6 +431,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-col-header-cell-cushion {
     display: inline-block; /* x-browser for when sticky (when multi-tier header) */
     padding: 2px 4px;
+    color: black;
   }
 .fc .fc-bg-event,
   .fc .fc-non-business,
@@ -577,18 +579,18 @@ A HORIZONTAL event
 */
 .fc-h-event-room { /* allowed to be top-level */
   display: block;
-  border: 1px solid #B3A5EC;
-  border: 1px solid var(--fc-event-border-color, #B3A5EC);
-  background-color: #3788d8;
-  background-color: var(--fc-event-bg-color, #B3A5EC)
+  font-family: "Roboto";
+  border: 1px solid #898AA6;
+  /* border: 1px solid var(--fc-event-border-color, #898AA6); */
+  background-color: var(--fc-event-bg-color, #898AA6)
 
 }
 .fc-h-event { /* allowed to be top-level */
+  font-family: "Roboto";
   display: block;
-  border: 1px solid #DBB633;
-  border: 1px solid var(--fc-event-border-color, #DBB633);
-  background-color: #DBB633;
-  background-color: var(--fc-event-bg-color, #DBB633)
+  border: 1px solid #E0C152;
+  background-color: #E0C152;
+  background-color: var(#E0C152)
 
 }
 .fc-h-event .fc-event-main {
@@ -739,6 +741,9 @@ A HORIZONTAL event
   }
 .fc .fc-day-other .fc-daygrid-day-top {
     opacity: 0.3;
+  }
+  .fc-daygrid-day-top a{
+    color: #151e27;
   }
 .fc {
 
@@ -1503,22 +1508,22 @@ A VERTICAL event
   background-color: var(--bs-gray-200);
 }
 
-.container{
+.container-calendar{
  display: flex;
  justify-content: center;
- width: vw;
+ width: 100vw;
 }
 
 .type-res-room{
   border-radius: 50%;
-  background-color: #B3A5EC;
+  background-color: #898AA6;
   width: 20px;
   height: 20px;
 }
 
 .type-res-event{
   border-radius: 50%;
-  background-color: #DBB633;
+  background-color: #E0C152;
   width: 20px;
   height: 20px;
 }

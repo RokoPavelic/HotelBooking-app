@@ -48,6 +48,7 @@ use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 
 // Admin Starts Here
 
+
 // Login - Logout
 Route::get('/admin/login', [AuthenticatedSessionController::class, 'create'])
 ->middleware(['guest:'.config('fortify.guard')])
@@ -101,6 +102,17 @@ Route::get('/admin/main/edit', [AdminController::class, 'edit'])->middleware('ca
 Route::get('/admin/rooms/{id}/delete', [AdminRoomController::class, 'destroy']);
 
 // Admin Events
+
+Route::get('/admin', function () {
+    return view('pages/admin/admin');
+});
+// Route::get('/adminbookings', function () {
+//     return view('pages/admin/adminbookings');
+//});
+Route::get('/adminrooms', function () {
+    return view('pages/admin/adminrooms');
+});
+
 Route::resource('/admin/events', AdminEventController::class);
 Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');

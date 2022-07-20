@@ -48,6 +48,7 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-botton: 3rem;
 `;
 
 const Banner = styled.div`
@@ -77,10 +78,13 @@ const Banner = styled.div`
 const Title = styled.div`
     h2 {
         font-family: "Koldby", serif;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        font-weight: 100;
         margin: 2em;
         margin: 2em;
         color: #4f4f4f;
+
+    
     }
 `;
 
@@ -89,7 +93,7 @@ const Text = styled.div`
         font-family: "roboto", "Work Sans";
         font-weight: 100;
         font-style: italic;
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: 0 0 2em;
         color: #4f4f4f;
     
@@ -99,7 +103,7 @@ const Text = styled.div`
 const Container = styled.div`
     display: flex;
     width: 100%;
-    margin-bottom: 4em;
+    margin-bottom: 15rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
 `;

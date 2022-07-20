@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import DatePicker from "react-datepicker";
+import { addDays, subDays } from "date-fns";
+import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 
 const RoomDetail = ({ rooms }) => {
     const { id } = useParams();
@@ -19,21 +23,55 @@ const RoomDetail = ({ rooms }) => {
         room_id: id,
         role_description: "guest",
     });
+    const [bookedDays, setBookedDays] = useState([]);
+    const [filteredDates, setFilteredDates] = useState([]);
+    // const [reservedDays, setReservedDays] = useState([]);
 
-    const disablePastDate = () => {
-        const today = new Date();
-        const dd = String(today.getDate() + 0).padStart(2, "0");
-        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-        const yyyy = today.getFullYear();
-        return yyyy + "-" + mm + "-" + dd;
-    };
-    // console.log(id);
+    const url = "http://localhost:3000/api/bookings";
+
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+                setBookedDays(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        if (!bookedDays) return;
+        let roomBookings = bookedDays.filter(
+            (room) => room.room_id.toString() === id
+        );
+        setFilteredDates(
+            roomBookings.map((booking) => {
+                return {
+                    start: subDays(new Date(booking.date_in), 1),
+                    end: new Date(booking.date_out),
+                };
+            })
+        );
+    }, [bookedDays]);
+
+    useEffect(() => console.log(filteredDates), [filteredDates]);
+    useEffect(() => console.log(values), [values]);
 
     const handleSubmit = async (event) => {
         // prevent the default event behaviour
         event.preventDefault();
 
-        const response = await axios.post("/room/submit", values);
+        const response = await axios.post("/room/submit", {
+            name: values.name,
+            lastname: values.lastname,
+            email: values.email,
+            phone: values.phone,
+            date_in: moment(values.date_in).format("YYYY-MM-DD"),
+            date_out: moment(values.date_out).format("YYYY-MM-DD"),
+            room_id: id,
+            role_description: "guest",
+        });
         const response_data = response.data;
         if (response_data?.success) {
             navigate("/reserved");
@@ -42,18 +80,21 @@ const RoomDetail = ({ rooms }) => {
         }
     };
 
-    const handleChange = (event) => {
+    const handleChange = (name, value) => {
         setValues((previous_values) => {
             return {
                 ...previous_values,
-                [event.target.name]: event.target.value,
+                [name]: value,
             };
         });
     };
 
     return (
         <Wrapper>
-            <Tittle>{room?.name}</Tittle>
+            <Tittle>
+                {room?.name}
+                <div className="title-border"></div>
+            </Tittle>
             <Container>
                 <Wrap1>
                     <Info>
@@ -101,7 +142,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="name"
                                 id="name"
                                 value={values.name}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                             />
                             <p>Last Name</p>
@@ -110,7 +156,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="lastname"
                                 id="lastname"
                                 value={values.lastname}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                             />
                             <p>Email</p>
@@ -119,7 +170,12 @@ const RoomDetail = ({ rooms }) => {
                                 name="email"
                                 id="email"
                                 value={values.email}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 required
                                 placeholder="example@example.com"
                             />
@@ -131,34 +187,42 @@ const RoomDetail = ({ rooms }) => {
                                 name="phone"
                                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 value={values.phone}
-                                onChange={handleChange}
+                                onChange={(event) =>
+                                    handleChange(
+                                        event.target.name,
+                                        event.target.value
+                                    )
+                                }
                                 placeholder="xxx-xxx-xxxx"
                                 required
                             ></input>
                             <strong>
-                                <p>Enter a date FROM - TO</p>
+                                <p>Select a date</p>
                             </strong>
                             <br />
-                            <input
-                                className="date"
-                                type="date"
-                                id="from"
-                                name="date_in"
-                                value={values.date_in}
-                                onChange={handleChange}
-                                min={disablePastDate()}
-                                required
+
+                            <DatePicker
+                                selected={values.date_in}
+                                onChange={(date) =>
+                                    handleChange("date_in", date)
+                                }
+                                placeholderText="Please select a date FROM"
+                                minDate={new Date()}
+                                excludeDateIntervals={filteredDates}
+                                withPortal
+                                strictParsing
                             />
-                            <input
-                                className="date"
-                                type="date"
-                                id="to"
-                                name="date_out"
-                                value={values.date_out}
-                                onChange={handleChange}
-                                min={disablePastDate()}
-                                required
+
+                            <DatePicker
+                                selected={values.date_out}
+                                onChange={(date) =>
+                                    handleChange("date_out", date)
+                                }
+                                placeholderText="Please select a date TO"
+                                minDate={values.date_in}
+                                withPortal
                             />
+
                             <button className="form-button">Book Now!</button>
                         </form>
                     </div>
@@ -283,7 +347,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3.5em;
+    margin-bottom: 15rem;
     width: 100%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -294,11 +358,18 @@ const Wrapper = styled.div`
     }
 `;
 const Tittle = styled.div`
-    font-size: 2em;
-    padding-bottom: 3em;
-    padding-top: 1em;
+    font-family: "Koldby", serif;
+    font-size: 2.5em;
+    margin-bottom: 2.2em;
+    padding-top: 2em;
     text-align: center;
     color: #4f4f4f;
+
+    div {
+        border-bottom: solid 2px #587563;
+        margin-top: 2rem;
+    }
+
     @media screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
@@ -311,7 +382,7 @@ const Tittle = styled.div`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
-
+    
     width: 80%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -319,5 +390,12 @@ const Info = styled.div`
         align-items: center;
         justify-content: center;
         width: 100%;
+        
+        p{
+            color:587563;
+        }
+      
+    
+        }
     }
 `;
