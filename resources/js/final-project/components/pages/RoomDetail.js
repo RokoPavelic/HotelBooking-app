@@ -6,6 +6,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import { addDays, subDays } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 
 const RoomDetail = ({ rooms }) => {
     const { id } = useParams();
@@ -66,8 +67,8 @@ const RoomDetail = ({ rooms }) => {
             lastname: values.lastname,
             email: values.email,
             phone: values.phone,
-            date_in: new Date(values.date_in).toISOString().slice(0, 10) ,
-            date_out: new Date(values.date_out).toISOString().slice(0, 10),
+            date_in: moment(values.date_in).format("YYYY-MM-DD"),
+            date_out: moment(values.date_out).format("YYYY-MM-DD"),
             room_id: id,
             role_description: "guest",
         });
