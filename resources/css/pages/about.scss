@@ -39,7 +39,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     overflow: hidden;
-    margin: 0;
+    margin-bottom: 8rem;
 
     @media screen and (max-width: 720px) {
         display: flex;
@@ -51,8 +51,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0.5rem;
-    padding-bottom: 8rem;
+    padding: 1rem 0.2rem;
+    padding-bottom: 6rem;
 
     img {
         max-width: 40rem;

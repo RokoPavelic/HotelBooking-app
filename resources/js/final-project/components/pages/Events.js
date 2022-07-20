@@ -38,13 +38,6 @@ export default function Events() {
                     height="300px"
                 />
             </div>
-            <button
-                onClick={() => navigate("/eventbook")}
-                className="events-btn"
-            >
-                Book Consultation
-            </button>
-
             <div className="services">
                 <h3 className="services-title"> Our Services Include:</h3>
 
@@ -69,7 +62,15 @@ export default function Events() {
                         <li>Hosting services</li>
                     </ul>
                 </div>
+                
             </div>
+
+            <button
+                onClick={() => navigate("/eventbook")}
+                className="events-btn"
+            >
+                Book Consultation
+            </button>
         </div>
     );
 }

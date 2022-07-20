@@ -63,11 +63,12 @@
     }
 }
 
-button {
+.events-btn {
     width: 150px;
     height: 30px;
     padding: 6px;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
     background-color: $clr-d-green;
     text-align: center;
     border: none;
@@ -83,7 +84,6 @@ button {
     display: flex;
     align-items: baseline;
     margin-top: 4rem;
-    margin-bottom: 6rem;
     
     h3 {
         @include headline4-green;
