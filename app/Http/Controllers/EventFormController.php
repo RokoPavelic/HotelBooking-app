@@ -12,9 +12,6 @@ use App\Models\Booking;
 class EventFormController extends Controller
 {
     public function EventForm(Request $request) {
-        // dd($request);
-        // Form validation
-        // return ['message' => 'controller reached'];
 
         $this->validate($request, [
             'name'                => 'required',
@@ -35,9 +32,7 @@ class EventFormController extends Controller
         if ($events->count()) {
         return response()->json(["message"=>"Date is already booked.","errors"=>["phone"=>["Date is already booked"]]], 422);
          }
-        // $a_events=DB::SELECT("SELECT * FROM rooms WHERE id NOT IN (SELECT room_id FROM bookings WHERE '$date_in' BETWEEN checking_date AND checkout_date)");
 
-    
         $contact_infos = ContactInfo::create([
             'name'                =>$request->name,
             'lastname'            =>$request->lastname,
@@ -70,8 +65,6 @@ class EventFormController extends Controller
             'success' => true
         ];
         
-        // ->with('success', 'Your message was sent
-        // Our staff will contact you shortly');
     }
 
 }
