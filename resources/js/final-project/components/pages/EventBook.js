@@ -49,7 +49,7 @@ const EventBook = () => {
     const fetchRoom = async () => {
         const response = await axios.get("api/room/event", values);
         const response_data = response.data;
-        // console.log(response_data);
+        console.log(response_data);
         setRoom(response_data);
     };
 

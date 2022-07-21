@@ -16,7 +16,6 @@ class BookingController extends Controller
 
     public function store(Event $event)
     {
-        
 
         $event->bookings()->create([
             'guest_id'          => request()->guest()->id,

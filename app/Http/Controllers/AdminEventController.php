@@ -15,8 +15,10 @@ class AdminEventController extends Controller
      */
     public function index()
     {
+
         $data = Event::all();
         return view('pages.admin.event.index', ['data' => $data]);
+
     }
 
     /**
@@ -38,32 +40,23 @@ class AdminEventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'     => 'required',
+            'name'           => 'required',
             'description'    => 'required',
         ]);
 
 
         $data = new Event;
-        $data->booking_id = $request->booking_id;
-        $data->room_id = $request->room_id;
-        $data->event_name = $request->event_name;
-        $data->event_date = $request->event_date;
-        $data->event_start = $request->event_start;
-        $data->event_end = $request->event_end;
+        $data->booking_id        = $request->booking_id;
+        $data->room_id           = $request->room_id;
+        $data->event_name        = $request->event_name;
+        $data->event_date        = $request->event_date;
+        $data->event_start       = $request->event_start;
+        $data->event_end         = $request->event_end;
         $data->event_description = $request->event_description;
         $data->save();
 
-        // foreach ($request->imgs as $room_id => $room_images)
-        // {
-        //     foreach ($room_images as $room_image)
-        //     {
-        //         $image= Image::create($room_image);
-        //         $image->rooms()->attach($room_id);
-        //     };
-
-        // }
-
         return redirect('admin/events/create')->with('success', 'Data has been added');
+
     }
 
     /**
@@ -103,12 +96,12 @@ class AdminEventController extends Controller
     public function update(Request $request, $id)
     {
         $data = Event::find($id);
-        $data->booking_id = $request->booking_id;
-        $data->room_id = $request->room_id;
-        $data->event_name = $request->event_name;
-        $data->event_date = $request->event_date;
-        $data->event_start = $request->event_start;
-        $data->event_end = $request->event_end;
+        $data->booking_id        = $request->booking_id;
+        $data->room_id           = $request->room_id;
+        $data->event_name        = $request->event_name;
+        $data->event_date        = $request->event_date;
+        $data->event_start       = $request->event_start;
+        $data->event_end         = $request->event_end;
         $data->event_description = $request->event_description;
         $data->save();
 

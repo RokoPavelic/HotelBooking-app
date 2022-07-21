@@ -57,7 +57,7 @@ class RoomSeeder extends Seeder
         ]);
 
         Room::create([
-            "room_type"   => "main_hall",
+            "room_type"   => "event",
             "name"        => "Main Hall",
             "location"    => "indoors",
             "size"        => "125.00 meter²",
@@ -65,7 +65,7 @@ class RoomSeeder extends Seeder
         ]);
 
         Room::create([
-            "room_type"   => "barn",
+            "room_type"   => "event",
             "name"        => "Barn",
             "location"    => "indoors",
             "size"        => "250.00 meter²",
@@ -73,7 +73,7 @@ class RoomSeeder extends Seeder
         ]);
 
         Room::create([
-            "room_type"   => "east_garden",
+            "room_type"   => "event",
             "name"        => "East Garden",
             "location"    => "outdoors",
             "size"        => "500.00 meter²",
@@ -81,7 +81,7 @@ class RoomSeeder extends Seeder
         ]);
 
         Room::create([
-            "room_type"   => "pond",
+            "room_type"   => "event",
             "name"        => "Pond",
             "location"    => "outdoors",
             "size"        => "500.00 meter²",

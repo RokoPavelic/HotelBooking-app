@@ -4,9 +4,10 @@
 
  {{-- @include('components/adminNav')  --}}
 
-
+ <script src={{ asset('assets/fullcalendar/lib/script.js') }}></script>
 
     @section('content')
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -62,12 +63,58 @@
                     alert('Event rescheduled')
 
                 },
-                events: '',
+                
+                events: [
+                    {
+                    "title": "Classic Monochrome Mr Smith" ,
+                    "start": "2022-07-01 11:00:00",
+                    "end": "2022-07-02 23:00:00",  
+                },
+                    {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-31T19:00:00",
+                    "end": "2022-07-31T21:00:00",
+                },
+                {
+                    "title": "Geographical Suite" ,
+                    "start": "2022-07-24T08:00:00",
+                    "end": "2022-07-24 11:00:00",  
+                },
+                {
+                    "title": "Golden Sunrise" ,
+                    "start": "2022-07-23 17:00:00",
+                    "end": "2022-07-23 23:00:00",  
+                },
+                {
+                    "title": "Classic Monochrome" ,
+                    "start": "2022-08-25T08:00:00",
+                  
+                },
+                {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-29 17:00:00",  
+                },
+                {
+                    "title": "Golden Sunrise" ,
+                    "start": "2022-07-11 17:00:00",
+                    "end": "2022-07-14 23:00:00",  
+                },
+                {
+                    "title": "Classic Monochrome" ,
+                    "start": "2022-07-16T08:00:00",
+                  
+                },
+                {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-23 17:00:00",  
+                },
+                ],
                 
             });
             calendar.render();
 
         });
+        
     </script>
     <style>
         body {
@@ -119,7 +166,7 @@
             height: 90vh;
         }
     </style>
-    </head>
+
 
     <body>
         <div id='wrap' class="container-calendar">
@@ -158,10 +205,13 @@
                         <p>Event</p>
                     </div>
                 </div>
-
+                <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>remove after drop</label>
+                </p>
             </div>
 
-            <div id='calendar-wrap'>
+            <div id='calendar-wrap' data-route-load-events="{{route('loadEvents')}}">
                 <div id='calendar'></div>
             </div>
 

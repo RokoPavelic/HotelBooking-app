@@ -58,8 +58,6 @@ class RoomFormController extends Controller
         return [
             'success' => true
         ];
-        
-        // ->with('success', 'Your message was sent
-        // Our staff will contact you shortly');
+
     }
 }

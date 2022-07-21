@@ -32,21 +32,11 @@ use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Admin Starts Here
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
 |
 */
 
-
-// Route::get('/home', function () {
-//     return view('components/layout');
-// });
-
-// Admin Starts Here
 
 
 // Login - Logout
@@ -69,6 +59,7 @@ Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 
 // Register
+
 Route::get('/admin/register', [RegisteredUserController::class, 'create'])
 ->middleware(['guest:'.config('fortify.guard')])
 ->name('register');
@@ -92,32 +83,27 @@ Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
                 ->middleware(['guest:'.config('fortify.guard')])
                 ->name('password.update');
-                        
+    
+// Admin and Main Admin 
 
-// Main Admin 
-Route::get('/admin/main', [AdminController::class, 'main'])->middleware('can:admin');
-Route::get('/admin/employee/{id}', [AdminController::class, 'show'])->middleware('can:admin');
-Route::get('/admin/main/create', [AdminController::class, 'create'])->middleware('can:admin');
-Route::post('/admin/main/store', [AdminController::class, 'store'])->middleware('can:admin');
-Route::get('/admin/main/{id}/edit', [AdminController::class, 'edit'])->middleware('can:admin');
-Route::put('/admin/main/{id}/edit', [AdminController::class, 'edit'])->middleware('can:admin');
-Route::get('/admin/main/{id}/delete', [AdminController::class, 'destroy']);
+Route::controller(AdminController::class)->middleware('can:admin')->middleware('auth')->group(function () {
+    Route::get('/admin', 'index');
+    Route::get('/admin/main', 'main');
+    Route::get('/admin/main/create', 'create');
+    Route::post('/admin/main/store', 'store');
+    Route::get('/admin/main/{id}', 'show');
+    Route::get('/admin/main/{id}/edit', 'edit');
+    Route::put('/admin/main/{id}/edit', 'edit');
+    Route::get('/admin/main/{id}/delete', 'destroy');
+});
+
 
 // Admin Events
-
-Route::get('/admin', function () {
-    return view('pages/admin/admin');
-});
-// Route::get('/adminbookings', function () {
-//     return view('pages/admin/adminbookings');
-//});
-Route::get('/adminrooms', function () {
-    return view('pages/admin/adminrooms');
-});
+Route::get('/load-events',[EventController::class, 'loadEvents'])->name('loadEvents');
 
 Route::resource('/admin/events', AdminEventController::class);
 Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);
-Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');
+
 
 // Admin Rooms
 Route::resource('/admin/rooms', AdminRoomController::class);
@@ -135,82 +121,4 @@ Route::post('/contact/submit', [ContactUsFormController::class, 'ContactUsForm']
 // React Routes
 Route::get('/{path?}', [ReactAppController::class, 'app'])->where('path', '.*');
 
-// Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
-//     $enableViews = config('fortify.views', true);
 
-//     
-
-//     // Registration...
- 
-
-//     // Email Verification...
-//     if (Features::enabled(Features::emailVerification())) {
-//         if ($enableViews) {
-//             Route::get('/email/verify', [EmailVerificationPromptController::class, '__invoke'])
-//                 ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
-//                 ->name('verification.notice');
-//         }
-
-//         Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-//             ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard'), 'signed', 'throttle:'.$verificationLimiter])
-//             ->name('verification.verify');
-
-//         Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-//             ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard'), 'throttle:'.$verificationLimiter])
-//             ->name('verification.send');
-//     }
-
-//     // Profile Information...
-//     if (Features::enabled(Features::updateProfileInformation())) {
-//         Route::put('/user/profile-information', [ProfileInformationController::class, 'update'])
-//             ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
-//             ->name('user-profile-information.update');
-//     }
-
-//     // Passwords...
-//     if (Features::enabled(Features::updatePasswords())) {
-//         Route::put('/user/password', [PasswordController::class, 'update'])
-//             ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
-//             ->name('user-password.update');
-//     }
-
-//     // Password Confirmation...
-//     if ($enableViews) {
-//         Route::get('/user/confirm-password', [ConfirmablePasswordController::class, 'show'])
-//             ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')]);
-//     }
-
-//     Route::get('/user/confirmed-password-status', [ConfirmedPasswordStatusController::class, 'show'])
-//         ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
-//         ->name('password.confirmation');
-
-//     Route::post('/user/confirm-password', [ConfirmablePasswordController::class, 'store'])
-//         ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
-//         ->name('password.confirm');
-
-//     // Two Factor Authentication...
-    
-// }
-      
-
-     
- 
-
-
-
-
-
-
-
-
-
-
-// Route::get('/admin/login', [AdminController::class, 'login']);
-// Route::post('/admin/login', [AdminController::class, 'check_login']);
-
-// Route::get('/admin/register', [AdminController::class, 'create']);
-// Route::post('/admin/register/store', [AdminController::class, 'store']);
-
-
-
-// Route::get('/admin/delete', [AdminController::class, 'destroy']);

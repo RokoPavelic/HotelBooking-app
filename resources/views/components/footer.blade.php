@@ -18,9 +18,6 @@
             <p> © 2022 Chateau Trebesice Zámek -Třebešice  -28601 Čáslav -Czech Republic
                 info@ct.com +420 732 7977 <br>
                 <br>
-                
-
-
             </p>
         </div>
 @endsection

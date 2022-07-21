@@ -17,8 +17,8 @@ use App\Http\Controllers\EventController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->get('/admin', function (Request $request) {
+    return $request->admin();
 });
 
 Route::get('/rooms', [RoomsController::class, 'index']);

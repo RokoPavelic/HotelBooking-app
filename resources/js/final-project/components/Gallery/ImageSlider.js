@@ -57,7 +57,7 @@ function ImageSlider({
         <Wrapper>
             <Slide xPosition={xPosition} ref={slideRef} width={setImageWidth}>
                 {images.map((img, i) => (
-                    <img src={img} alt={"images"} key={i} width={setWidth}/>
+                    <img src={img} alt={"images"} key={i} width={setImageWidth}/>
                 ))}
             </Slide>
             <Buttons

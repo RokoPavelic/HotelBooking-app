@@ -9,19 +9,13 @@ use App\Models\Admin;
 use App\Models\ContactInfo;
 use Cookie;
 
-// class Admin extends Controller
-// {
-//     public function adminHome(){
-//         return view('pages.admin');
-//     }
-// }
+
 
 class AdminController extends Controller
 {
 
     public function index() 
     {
-        
 
         return view('pages/admin/admin');
     
@@ -39,7 +33,7 @@ class AdminController extends Controller
     {
         $data = ContactInfo::all();
        
-        return view('pages/admin/main/main', [ 'data' => $data ]);
+        return view('pages.admin.main.main', [ 'data' => $data ]);
     
     }
 
@@ -81,8 +75,8 @@ class AdminController extends Controller
         $data->helth_insurance = $request->helth_insurance;
         $data->save();
 
-        $admin        = new Admin;
-        $admin->email = $request->email;
+        $admin           = new Admin;
+        $admin->email    = $request->email;
         $admin->password = $request->password;
         $admin->save();
 
@@ -93,11 +87,11 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        
 
         $data = ContactInfo::find($id);
         return view('pages.admin.main.edit',['data' => $data]);
         return redirect('admin/main/' . $id . '/edit')->with('success', 'Data has been updated.');
+
     }
 
 
@@ -111,6 +105,7 @@ class AdminController extends Controller
     {
         $data = ContactInfo::find($id);
         return view('pages.admin.main.show',['data' => $data]);
+        
     }
 
   

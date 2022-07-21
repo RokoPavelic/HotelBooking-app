@@ -10,6 +10,9 @@
     <meta name="author" content="">
     <link href="{{asset('bs5/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <script src={{ asset('assets/fullcalendar/lib/script.js') }}></script>
+    <script src={{ asset('assets/fullcalendar/lib/main.js') }}></script>
+    
     <title>Admin Login</title>
 
     <!-- Custom fonts for this template-->
