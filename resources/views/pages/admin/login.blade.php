@@ -14,34 +14,25 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-image"><img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" /></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        @if(Session::has('success'))
-                                            <p class="text-success">{{ session('success') }}</p>
-                                        @endif
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" method="post" action="{{url('admin/login')}}">
+                                    <form class="user" method="post" action="{{url('/admin/login')}}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control form-control-user"
+                                            <input type="email" name="email" class="form-control form-control-user"
                                                 id="username" aria-describedby="emailHelp"
-                                                placeholder="username" @if(Cookie::has('adminuser')) value="{{Cookie::get('adminuser')}}"@endif>
+                                                placeholder="Email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" @if(Cookie::has('adminpwd')) value="{{Cookie::get('adminpwd')}}"@endif>
+                                            <input type="password" name="password" class="form-control form-control-user mt-2"
+                                                id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" name="remember_me" class="custom-control-input" id="customCheck" @if(Cookie::has('adminuser')) checked @endif>
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
+                                        
+                                        <input type="submit" class="btn btn-primary btn-user btn-block mt-2" value="Login" />
                                             
                                     </form>
                                     @if($errors->any())
@@ -49,13 +40,10 @@
                                             <p class="text-danger">{{ $error }}</p>
                                         @endforeach
                                     @endif
-                                    @if(Session::has('msg'))
-                                        <p class="text-danger">{{ session('msg') }}</p>
-                                    @endif
                                     <hr>
                                     <div class="text-center">
                                         <a class="small mx-2" href="{{url('admin/register')}}">Register</a>
-                                        <a class="small" href="#">Forgot Password?</a>
+                                        <a class="small" href="/forgot-password">Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>

@@ -7,9 +7,8 @@
         <h3>Admin Dashboard</h3>
         <img src="./images/user.png" alt="User" width="30px" height="30px">
         <a class="nav-link" href="{{ url('admin/logout') }}">
-            <span>Logout</span>
+        Logout
         </a>
-        
     </div>
 </header>
 

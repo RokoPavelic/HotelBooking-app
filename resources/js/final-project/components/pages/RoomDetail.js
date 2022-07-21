@@ -91,7 +91,10 @@ const RoomDetail = ({ rooms }) => {
 
     return (
         <Wrapper>
-            <Tittle>{room?.name}</Tittle>
+            <Tittle>
+                {room?.name}
+                <div className="title-border"></div>
+            </Tittle>
             <Container>
                 <Wrap1>
                     <Info>
@@ -343,7 +346,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3.5em;
+    margin-bottom: 15rem;
     width: 100%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -354,11 +357,18 @@ const Wrapper = styled.div`
     }
 `;
 const Tittle = styled.div`
-    font-size: 2em;
-    padding-bottom: 3em;
-    padding-top: 1em;
+    font-family: "Koldby", serif;
+    font-size: 2.5em;
+    margin-bottom: 2.2em;
+    padding-top: 2em;
     text-align: center;
     color: #4f4f4f;
+
+    div {
+        border-bottom: solid 2px #587563;
+        margin-top: 2rem;
+    }
+
     @media screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
@@ -371,7 +381,7 @@ const Tittle = styled.div`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
-
+    
     width: 80%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -379,5 +389,12 @@ const Info = styled.div`
         align-items: center;
         justify-content: center;
         width: 100%;
+        
+        p{
+            color:587563;
+        }
+      
+    
+        }
     }
 `;

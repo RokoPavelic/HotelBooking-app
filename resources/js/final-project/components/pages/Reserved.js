@@ -7,7 +7,7 @@ const Reserved = () => {
     return (
         <Container>
             <p>
-                Your room at <span> Hotel Château Třebešice</span> is booked
+                Your room at <span> Hotel Château Třebešice</span> is booked 
             </p>
 
             <button onClick={() => navigate("/")}>Go back</button>
@@ -34,6 +34,7 @@ const Container = styled.div`
     background-repeat: no-repeat;
     margin-top: 5em;
     margin-bottom: 5em;
+    
 
     button {
         width: 250px;
@@ -41,7 +42,7 @@ const Container = styled.div`
         background-color: #587563;
         color: white;
         font-size: 20px;
-        font-weight: bold;
+       
         border: none;
         cursor: pointer;
         margin-top: 2em;
@@ -54,8 +55,9 @@ const Container = styled.div`
     }
 
     p {
+        font-family: "Koldby", serif;
         color: white;
-        font-weight: bold;
+        font-weight: 100;
         font-size: 2em;
     }
 
