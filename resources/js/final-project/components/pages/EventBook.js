@@ -247,6 +247,8 @@ const Banner = styled.div`
 
     p {
         font-size: 3em;
+        font-weight: bold;
+        color: white;
     }
     @media screen and (max-width: 720px) {
         display: flex;

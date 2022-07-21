@@ -298,10 +298,10 @@ const Wrap1 = styled.div`
             }
         }
 
-        .submitForm {
+        button {
             background-color: #587563;
-            height: 50px;
-            width: 150px;
+            height: 30px;
+            width: 80%;
             color: white;
             cursor: pointer;
             font-weight: bold;
