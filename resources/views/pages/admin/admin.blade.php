@@ -63,7 +63,52 @@
                     alert('Event rescheduled')
 
                 },
-                events: routeEvents('loadEvents'),
+                
+                events: [
+                    {
+                    "title": "Classic Monochrome Mr Smith" ,
+                    "start": "2022-07-01 11:00:00",
+                    "end": "2022-07-02 23:00:00",  
+                },
+                    {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-31T19:00:00",
+                    "end": "2022-07-31T21:00:00",
+                },
+                {
+                    "title": "Geographical Suite" ,
+                    "start": "2022-07-24T08:00:00",
+                    "end": "2022-07-24 11:00:00",  
+                },
+                {
+                    "title": "Golden Sunrise" ,
+                    "start": "2022-07-23 17:00:00",
+                    "end": "2022-07-23 23:00:00",  
+                },
+                {
+                    "title": "Classic Monochrome" ,
+                    "start": "2022-08-25T08:00:00",
+                  
+                },
+                {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-29 17:00:00",  
+                },
+                {
+                    "title": "Golden Sunrise" ,
+                    "start": "2022-07-11 17:00:00",
+                    "end": "2022-07-14 23:00:00",  
+                },
+                {
+                    "title": "Classic Monochrome" ,
+                    "start": "2022-07-16T08:00:00",
+                  
+                },
+                {
+                    "title": "Cyan Room" ,
+                    "start": "2022-07-23 17:00:00",  
+                },
+                ],
                 
             });
             calendar.render();
