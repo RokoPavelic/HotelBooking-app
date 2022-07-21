@@ -9,7 +9,6 @@
         <link rel="stylesheet" href={{ mix("css/style.css") }}>
         <link rel="stylesheet" href={{ mix("css/footer.css") }}>
         <link rel="stylesheet" href={{ mix("css/about.css") }}>
-        {{-- <link rel="stylesheet" href={{ mix("css/gallery.css") }}> --}}
         <link rel="stylesheet" href={{ mix("css/contact-us.css") }}>
         <link rel="stylesheet" href={{ mix("css/burger-icon.css") }}>
         <link rel="stylesheet" href={{ mix("css/navbar.css") }}>
@@ -75,7 +74,6 @@
             </p>
         </div>
    </footer>
-    
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
 </body>

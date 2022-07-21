@@ -1,12 +1,8 @@
 @extends('layouts.indexAdmin')  
 
 @section('content')
+
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-    
-
-    <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Room types
@@ -47,8 +43,8 @@
                                     <td>{{ $d->price_medium}}</td>
                                     <td>{{ $d->price_high }}</td>
                                     <td>
-                                        <a href="{{url('admin/employee/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
-                                        <a href="{{url('admin/employee/' . $d->id . '/edit')}}" ><button class="btn-primary btn btn-sm">Edit</button></a>
+                                        <a href="{{url('admin/rooms/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
+                                        <a href="{{url('admin/rooms/' . $d->id . '/edit')}}" ><button class="btn-primary btn btn-sm">Edit</button></a>
                                         @can('admin')
                                             <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/rooms/' . $d->id . '/delete' )}}" class="btn btn-danger btn-sm">Delete</a>
                                         @endcan
@@ -64,10 +60,6 @@
     </div>
 
 </div>
-
-
- <!-- Page level plugins -->
-
 
 @endsection
 

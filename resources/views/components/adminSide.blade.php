@@ -10,8 +10,6 @@
                 <a class="collapse-item" href="{{url('admin/main/create')}}">Add New Employee</a>
             @endcan
 
-            {{-- <a href="/adminbookings">Bookings</a> --}}
-
             <a href="/admin/rooms">Rooms</a>
             <a href="/admin/events">Event Planner</a>
         
