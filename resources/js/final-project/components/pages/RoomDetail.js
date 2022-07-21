@@ -207,7 +207,6 @@ const RoomDetail = ({ rooms }) => {
                                 minDate={new Date()}
                                 excludeDateIntervals={filteredDates}
                                 withPortal
-                                strictParsing
                             />
 
                             <DatePicker
