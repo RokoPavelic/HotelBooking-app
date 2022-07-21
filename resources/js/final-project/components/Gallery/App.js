@@ -20,7 +20,7 @@ export default function App() {
 
 
     const images = [
-        "../images/exterior_nightview_resized.jpeg",
+        "../images/exterior_nightview.jpeg",
         "../images/exterior_garden.jpeg",
         "../images/interior_library.jpeg",
         "../images/events_gallery_garden.jpeg",

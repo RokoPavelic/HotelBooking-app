@@ -19,10 +19,12 @@ const Slide = styled.div`
     transition: transform 0.6s ease-in-out;
     transform: ${(props) => `translateX(${props.xPosition}px)`}; // (*)
     img {
-        width: ${(props) => `${props.setImageWidth}px`};
+        max-width: ${(props) => `${props.setImageWidth}px`};
         height: 100%;
     }
 `;
+
+const imageWidthData = [683, 998, 2000, 1000, 3000];
 
 // const data = [
 //     {url: "../images/exterior_nightview.jpeg", width: 2287},
@@ -48,6 +50,7 @@ function ImageSlider({
         if (slideRef.current) {
             const width = slideRef.current.clientWidth;
             setWidth(width);
+            
         }
     }, [setWidth]);
     return (
