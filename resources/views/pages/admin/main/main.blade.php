@@ -18,7 +18,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Employee
+                <h6 class="m-0 font-weight-bold text-primary">Employees
                     <a href="{{url('admin/main/create')}}" class="float-right btn btn-success btn-sm">Add New</a>
                 </h6>
             </div>
@@ -30,9 +30,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Lastname</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -40,9 +38,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Lastname</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                               
+                                <th>Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -54,7 +50,7 @@
                                         <td>{{ $d->name }}</td>
                                         <td>{{ $d->lastname }}</td>
                                         <td>
-                                            <a href="{{url('admin/employee/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
+                                            <a href="{{url('admin/main/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
                                             <a href="{{url('admin/main/' . $d->id . '/edit')}}" ><button class="btn-primary btn btn-sm">Edit</button></a>
                                             @can('admin')
                                                 <a onclick="return confirm('Are you sure that you want to fire {{ $d->name }}?')"href="{{url('admin/main/' . $d->id . '/delete' )}}" class="btn btn-danger btn-sm">Fire</a>

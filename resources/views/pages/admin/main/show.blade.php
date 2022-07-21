@@ -9,7 +9,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Employees
+            <h6 class="m-0 font-weight-bold text-primary">{{ ucfirst($data->name) }}<span>s Page</span>
                 <a href="{{url('admin/main')}}" class="float-right btn btn-success btn-sm">View All</a>
             </h6>
         </div>
