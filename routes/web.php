@@ -99,6 +99,7 @@ Route::controller(AdminController::class)->middleware('can:admin')->middleware('
 
 
 // Admin Events
+Route::get('/load-events',[EventController::class, 'loadEvents'])->name('loadEvents');
 
 Route::resource('/admin/events', AdminEventController::class);
 Route::get('/admin/events/{id}/delete', [AdminEventController::class, 'destroy']);

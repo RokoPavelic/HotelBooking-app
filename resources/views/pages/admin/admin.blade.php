@@ -4,9 +4,10 @@
 
  {{-- @include('components/adminNav')  --}}
 
-
+ <script src={{ asset('assets/fullcalendar/lib/script.js') }}></script>
 
     @section('content')
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -62,12 +63,13 @@
                     alert('Event rescheduled')
 
                 },
-                events: '',
+                events: routeEvents('loadEvents'),
                 
             });
             calendar.render();
 
         });
+        
     </script>
     <style>
         body {
@@ -119,7 +121,7 @@
             height: 90vh;
         }
     </style>
-    </head>
+
 
     <body>
         <div id='wrap' class="container-calendar">
@@ -158,10 +160,13 @@
                         <p>Event</p>
                     </div>
                 </div>
-
+                <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>remove after drop</label>
+                </p>
             </div>
 
-            <div id='calendar-wrap'>
+            <div id='calendar-wrap' data-route-load-events="{{route('loadEvents')}}">
                 <div id='calendar'></div>
             </div>
 

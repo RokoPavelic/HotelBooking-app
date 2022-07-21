@@ -1,3 +1,3 @@
 function routeEvents(route){
-return document.getElementById('calendar').dataset;
+return document.getElementById('calendar').dataset[route];
 }
