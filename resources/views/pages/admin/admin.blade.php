@@ -159,10 +159,6 @@
                     </div>
                 </div>
 
-                <p>
-                    <input type='checkbox' id='drop-remove' />
-                    <label for='drop-remove'>remove after drop</label>
-                </p>
             </div>
 
             <div id='calendar-wrap'>

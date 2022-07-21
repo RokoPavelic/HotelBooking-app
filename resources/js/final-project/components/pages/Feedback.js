@@ -27,6 +27,10 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    h1{
+        color:#4F4F4F;
+    }
+
     button {
         width: 150px;
         height: 30px;
