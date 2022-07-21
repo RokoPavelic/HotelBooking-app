@@ -4,6 +4,7 @@ import App from "../Gallery/App";
 import styled from "styled-components";
 
 
+
 export default function Gallery() {
     return (
         //     <main className="gallery-page">
@@ -40,7 +41,7 @@ export default function Gallery() {
                 </p>
             </Text>
             <Container>
-                <App />
+            <App />
             </Container>
         </Wrap>       
     );
@@ -109,3 +110,4 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
 `;
+
