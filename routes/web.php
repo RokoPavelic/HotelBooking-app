@@ -104,6 +104,7 @@ Route::put('/admin/main/{id}/edit', [AdminController::class, 'edit'])->middlewar
 Route::get('/admin/main/{id}/delete', [AdminController::class, 'destroy']);
 
 // Admin Events
+Route::get('/load-events',[EventController::class, 'loadEvents'])->name('loadEvents');
 
 Route::get('/admin', function () {
     return view('pages/admin/admin');
