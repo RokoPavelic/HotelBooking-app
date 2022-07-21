@@ -20,4 +20,23 @@ body {
 
 h1 {
     font-family: "Koldby";
+    color: #4F4F4F;
+    font-weight: 200;
+}
+
+p{
+    font-family: "roboto", "Work Sans";
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+    color: $clr-gray;
+}
+
+button{
+
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: $clr-white;
 }
