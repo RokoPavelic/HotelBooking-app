@@ -42,7 +42,7 @@ import Sorry from "./components/pages/Sorry";
 //         name: "Golden Sunrise",
 //         description:
 //             "The main interest of renaud is geography for the art.The large circular installation in the middle.",
-//         id: "goldenSunriseaaaaa",
+//         id: "goldenSunrisaaaaaa",
 //     },
 // ];
 
