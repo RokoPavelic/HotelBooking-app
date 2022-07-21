@@ -32,17 +32,19 @@
 
 //  dont edit styles
 .content {
+    border-bottom: $clr-d-green solid 2px;
     padding: 5%;
     display: flex;
     flex-direction: column;
+    max-width: 900px;
     text-align: center;
 
+
     h3 {
-        @include headline2;
+        @include headline2-light;
         margin-bottom: 5%;
     }
     p {
-        margin-left: 5%;
         margin-left: 5%;
         @include subtext-roboto;
     }
@@ -61,11 +63,12 @@
     }
 }
 
-button {
+.events-btn {
     width: 150px;
     height: 30px;
     padding: 6px;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
     background-color: $clr-d-green;
     text-align: center;
     border: none;
@@ -79,9 +82,11 @@ button {
 
 .services {
     display: flex;
-    margin: 4rem;
+    align-items: baseline;
+    margin-top: 4rem;
+    
     h3 {
-        @include roboto-title1;
+        @include headline4-green;
     }
 }
 

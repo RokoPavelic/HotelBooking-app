@@ -6,6 +6,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import { addDays, subDays } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 
 const RoomDetail = ({ rooms }) => {
     const { id } = useParams();
@@ -24,7 +25,7 @@ const RoomDetail = ({ rooms }) => {
     });
     const [bookedDays, setBookedDays] = useState([]);
     const [filteredDates, setFilteredDates] = useState([]);
-    const [reservedDays, setReservedDays] = useState([]);
+    // const [reservedDays, setReservedDays] = useState([]);
 
     const url = "http://localhost:3000/api/bookings";
 
@@ -54,6 +55,7 @@ const RoomDetail = ({ rooms }) => {
         );
     }, [bookedDays]);
 
+    useEffect(() => console.log(filteredDates), [filteredDates]);
     useEffect(() => console.log(values), [values]);
 
     const handleSubmit = async (event) => {
@@ -65,8 +67,8 @@ const RoomDetail = ({ rooms }) => {
             lastname: values.lastname,
             email: values.email,
             phone: values.phone,
-            date_in: new Date(values.date_in).toISOString().split("T")[0],
-            date_out: new Date(values.date_out).toISOString().split("T")[0],
+            date_in: moment(values.date_in).format("YYYY-MM-DD"),
+            date_out: moment(values.date_out).format("YYYY-MM-DD"),
             room_id: id,
             role_description: "guest",
         });
@@ -89,7 +91,10 @@ const RoomDetail = ({ rooms }) => {
 
     return (
         <Wrapper>
-            <Tittle>{room?.name}</Tittle>
+            <Tittle>
+                {room?.name}
+                <div className="title-border"></div>
+            </Tittle>
             <Container>
                 <Wrap1>
                     <Info>
@@ -192,7 +197,7 @@ const RoomDetail = ({ rooms }) => {
                                 required
                             ></input>
                             <strong>
-                                <p>Enter a date FROM - TO</p>
+                                <p>Select a date</p>
                             </strong>
                             <br />
 
@@ -204,7 +209,9 @@ const RoomDetail = ({ rooms }) => {
                                 placeholderText="Please select a date FROM"
                                 minDate={new Date()}
                                 excludeDateIntervals={filteredDates}
+                                withPortal
                             />
+
                             <DatePicker
                                 selected={values.date_out}
                                 onChange={(date) =>
@@ -212,6 +219,7 @@ const RoomDetail = ({ rooms }) => {
                                 }
                                 placeholderText="Please select a date TO"
                                 minDate={values.date_in}
+                                withPortal
                             />
 
                             <button className="form-button">Book Now!</button>
@@ -290,10 +298,10 @@ const Wrap1 = styled.div`
             }
         }
 
-        .submitForm {
+        button {
             background-color: #587563;
-            height: 50px;
-            width: 150px;
+            height: 30px;
+            width: 80%;
             color: white;
             cursor: pointer;
             font-weight: bold;
@@ -338,7 +346,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3.5em;
+    margin-bottom: 15rem;
     width: 100%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -349,11 +357,18 @@ const Wrapper = styled.div`
     }
 `;
 const Tittle = styled.div`
-    font-size: 2em;
-    padding-bottom: 3em;
-    padding-top: 1em;
+    font-family: "Koldby", serif;
+    font-size: 2.5em;
+    margin-bottom: 2.2em;
+    padding-top: 2em;
     text-align: center;
     color: #4f4f4f;
+
+    div {
+        border-bottom: solid 2px #587563;
+        margin-top: 2rem;
+    }
+
     @media screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
@@ -366,7 +381,7 @@ const Tittle = styled.div`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
-
+    
     width: 80%;
     @media screen and (max-width: 720px) {
         display: flex;
@@ -374,5 +389,12 @@ const Info = styled.div`
         align-items: center;
         justify-content: center;
         width: 100%;
+        
+        p{
+            color:587563;
+        }
+      
+    
+        }
     }
 `;

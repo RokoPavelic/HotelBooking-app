@@ -47,10 +47,12 @@
                                     <td>{{ $d->price_medium}}</td>
                                     <td>{{ $d->price_high }}</td>
                                     <td>
-                                        <a href="{{url('admin/rooms/' . $d->id )}}" class="button-show"><button>Show</button></a>
-                                        <a href="{{url('admin/rooms/' . $d->id . '/edit')}}" class="button-edit"><button>Edit</button></a>
-                                        <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/rooms/' . $d->id . '/delete' )}}" class="button-delete"><button>Delete</button></a>
-                                        </td>
+                                        <a href="{{url('admin/rooms/' . $d->id )}}" ><button class="btn btn-info btn-sm">Show</button></a>
+                                        <a href="{{url('admin/rooms/' . $d->id . '/edit')}}" ><button class="btn-primary btn btn-sm">Edit</button></a>
+                                        @can('admin')
+                                            <a onclick="return confirm('Are you sure that you want to delete this data?')"href="{{url('admin/rooms/' . $d->id . '/delete' )}}" class="btn btn-danger btn-sm">Delete</a>
+                                        @endcan
+                                    </td>
                                 </tr>
 
                             @endforeach

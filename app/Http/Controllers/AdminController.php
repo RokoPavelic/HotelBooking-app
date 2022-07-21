@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Hash;
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\ContactInfo;
@@ -16,75 +18,118 @@ use Cookie;
 
 class AdminController extends Controller
 {
-    // Login
-    function login()
+
+    public function index() 
     {
-        return view('pages.admin.login');
+        
+
+        return view('pages/admin/admin');
+    
     }
 
-    // Check Login
 
-    function check_login(Request $request)
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function main() 
     {
-        $request->validate([
-            'username'     => 'required',
-            'password'     => 'required',
-        ]);
-        $admin = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
-            ->count();
-        if ($admin > 0) {
-            $adminData = Admin::where(['username' => $request->username, 'password' => sha1($request->password)])
-                ->get();
-            session(['adminData' => $adminData]);
-
-            if ($request->has('remember_me')) {
-                Cookie::queue('adminuser', $request->username, 1440);
-                Cookie::queue('adminpwd', $request->password, 1440);
-            }
-            return redirect('admin');
-        } else {
-            return redirect('admin/login')->with('msg', 'Invalid username/Password!!!');
-        }
+        $data = ContactInfo::all();
+       
+        return view('pages/admin/main/main', [ 'data' => $data ]);
+    
     }
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('pages.admin.register');
+        return view('pages.admin.main.create');
     }
 
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'        => 'required|max:255',
-            'last_name'   => 'required|max:255',
-            'phone'       => 'required|max:255',
-            'username'    => 'required|min:3|max:255|unique:admins,username',
-            'email'       => 'required|email|max:255',
-            'password'    => 'required|min:7|max:255',
+        $request->validate([
+            'name'           => 'required',
+            'lastname'       => 'required',
+            'email'          => 'required',
+            'phone_number'   => 'required',
+
         ]);
 
-        $contact_infos = ContactInfo::create([
-            'name'        => $request->name,
-            'last_name'   => $request->last_name,
-            'phone'       => $request->phone,
-            'email'       => $request->email,
-            'phone_number'=> $request->phone,
-        ]);
+        
+        $data                  = new ContactInfo;
+        $data->name            = $request->name;
+        $data->lastname        = $request->lastname;
+        $data->email           = $request->email;
+        $data->phone_number    = $request->phone_number;
+        $data->address         = $request->address;
+        $data->id_number       = $request->id_number;
+        $data->bank_account    = $request->bank_account;
+        $data->helth_insurance = $request->helth_insurance;
+        $data->save();
 
-        $admin = Admin::create([
-            'username'    => $request->username,
-            'password'    => $request->password === $request->password_verify ? sha1($request->password) : response()->json(["error"=>"Password is incorrect"]),
-        ]);
+        $admin        = new Admin;
+        $admin->email = $request->email;
+        $admin->password = $request->password;
+        $admin->save();
 
-        // auth()->login(ContactInfo::create($contact_infos));
-        // auth()->login(Admin::create($admin));
+    
 
-        return redirect('/admin/login')->with('success', 'Your account has been created.');
+        return redirect('admin/main/create')->with('success', 'New Employee has been added');
     }
+
+    public function edit($id)
+    {
+        
+
+        $data = ContactInfo::find($id);
+        return view('pages.admin.main.edit',['data' => $data]);
+        return redirect('admin/main/' . $id . '/edit')->with('success', 'Data has been updated.');
+    }
+
+
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $data = ContactInfo::find($id);
+        return view('pages.admin.main.show',['data' => $data]);
+    }
+
+  
     // Logout
 
-    function logout()
+    public function logout(Request $request)
     {
-        session()->forget(['adminData']);
+
+        Auth::logout();
+       
         return redirect('admin/login');
     }
+
+    public function destroy($id)
+    {
+
+        ContactInfo::where('id', '=', $id)->delete();
+
+        return redirect('/admin/main')->with('success', 'Account has been deleted.');
+    }
 }
+

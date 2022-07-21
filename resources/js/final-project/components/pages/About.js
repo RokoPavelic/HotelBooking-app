@@ -16,8 +16,7 @@ export default function About() {
         <p className="about__text">
             The first written mention of the fortress in "trebesiz"
             dates back to 1309, when it was owned by konrad kutner, a
-            rich citizen of Kutna Hora. <br />
-            <br />
+            rich citizen of Kutna Hora.
             From the Middle Ages we have only a few material traces of
             precise history : ground entrance to the north side with
             sandstone Gothic arc and several frescoes in the room above
@@ -27,7 +26,8 @@ export default function About() {
             </p>
         </div>
     <div className="images">
-        <div className="image"><img src="/images/about_maincourt.png" alt="" /><br />
+        <div className="image">
+           <img src="/images/about_maincourt.png" alt="" /> <br />
           <h3>Maincourt</h3></div>
         <div className="image"><img src="/images/about_interior_before.jpeg" alt="" /><br />
           <h3>Interior before reconstruction</h3></div>

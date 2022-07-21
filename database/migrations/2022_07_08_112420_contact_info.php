@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('lastname')->nullable();
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
             $table->string('phone_number');
+            $table->string('id_number')->nullable();
+            $table->text('address')->nullable();
+            $table->string('bank_account')->nullable();
+            $table->string('helth_insurance')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
