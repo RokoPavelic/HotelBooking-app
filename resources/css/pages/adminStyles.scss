@@ -27,21 +27,20 @@
     a {
       letter-spacing: 0.01em;
       text-decoration: none;
-      color: #4F4F4F;
+      color: $clr-gray;
       font-family: "Koldby", serif;
       font-size: 1.5rem;
-      color: #4F4F4F;
       padding: 0.1em 1.2em;
       transition: 0.5s;
 
         &:hover {
-          color: #587563;
-          background-color: #D8EBE0;
+          color: $clr-d-green;
+          background-color: $clr-l-green;
         }
 
         &:focus {
-          color: #587563;
-          background-color: #D8EBE0;
+          color: $clr-d-green;
+          background-color: $clr-l-green;
         }
     }
 }
@@ -66,20 +65,20 @@
 /* Sidebar */
 .sidebar {
   font-family: 'Roboto';
-  background-color: #587563;
+  background-color: $clr-d-green;
   width: 10vw;
   height: 90vh;
   text-align: center;
   padding: 10px;
   &-links a:hover{
-    background-color: #D8EBE0;
-    color: #587563;
+    background-color: $clr-l-green;
+    color: $clr-d-green;
     }
   &-links a:link{
     text-decoration: none;    
     display: flex;
     flex-direction: column;
-    color: #EEEAE5;
+    color: $clr-smokewhite;
     }
   &-links a{
     font-weight: 200;
@@ -89,8 +88,8 @@
 }
  /* Footer */
 .adminFooter{
-  grid-area: footer;
-  background-color: #4F4F4F;
+  // grid-area: footer;
+  background-color: $clr-gray;
 }
 
 

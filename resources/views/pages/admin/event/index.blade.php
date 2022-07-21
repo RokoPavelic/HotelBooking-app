@@ -1,25 +1,10 @@
 @extends('layouts.indexAdmin')
 
-{{-- @section('styleLink')
- 
-<link rel="stylesheet" href={{ mix("css/admin-events.css") }}>
- 
-@endsection --}}
-
-{{-- <title>{{$title}} </title> --}}
-
- {{-- @include('components/adminNav')  --}}
-
-
 
 @section('content')
 
 <div class="container-fluid">
 
-  <!-- Page Heading -->
-  
-
-  <!-- DataTales Example -->
   <div class="card shadow mb-4">
       <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Events
