@@ -9,12 +9,7 @@ use App\Models\Admin;
 use App\Models\ContactInfo;
 use Cookie;
 
-// class Admin extends Controller
-// {
-//     public function adminHome(){
-//         return view('pages.admin');
-//     }
-// }
+
 
 class AdminController extends Controller
 {

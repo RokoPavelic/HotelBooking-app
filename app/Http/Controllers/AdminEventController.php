@@ -53,17 +53,8 @@ class AdminEventController extends Controller
         $data->event_description = $request->event_description;
         $data->save();
 
-        // foreach ($request->imgs as $room_id => $room_images)
-        // {
-        //     foreach ($room_images as $room_image)
-        //     {
-        //         $image= Image::create($room_image);
-        //         $image->rooms()->attach($room_id);
-        //     };
-
-        // }
-
         return redirect('admin/events/create')->with('success', 'Data has been added');
+        
     }
 
     /**
