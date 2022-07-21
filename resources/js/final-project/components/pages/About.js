@@ -37,7 +37,6 @@ export default function About() {
           <h3>Bridge before reconstruction</h3></div>
 
     </div>
-          
 </main>
 
     );

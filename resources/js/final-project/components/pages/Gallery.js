@@ -3,6 +3,7 @@ import React from "react";
 import App from "../Gallery/App";
 import styled from "styled-components";
 
+
 export default function Gallery() {
     return (
         //     <main className="gallery-page">
@@ -23,6 +24,7 @@ export default function Gallery() {
 
         //     </main>
 
+
         <Wrap>
             <Banner>
                 <h1>Gallery</h1>
@@ -40,7 +42,7 @@ export default function Gallery() {
             <Container>
                 <App />
             </Container>
-        </Wrap>
+        </Wrap>       
     );
 }
 

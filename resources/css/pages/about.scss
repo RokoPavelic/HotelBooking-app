@@ -60,7 +60,8 @@
     }
 
     h3 {
-        @include headline5;
+        color: #4f4f4f;
+        @include subtext-roboto;
     }
 }
 
