@@ -298,7 +298,7 @@ const Wrap1 = styled.div`
             }
         }
 
-        button {
+        .form-button {
             background-color: #587563;
             height: 30px;
             width: 80%;
