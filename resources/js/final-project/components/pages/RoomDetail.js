@@ -185,7 +185,6 @@ const RoomDetail = ({ rooms }) => {
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 value={values.phone}
                                 onChange={(event) =>
                                     handleChange(
@@ -193,7 +192,7 @@ const RoomDetail = ({ rooms }) => {
                                         event.target.value
                                     )
                                 }
-                                placeholder="xxx-xxx-xxxx"
+                                placeholder="xxxxxxxxxx"
                                 required
                             ></input>
                             <strong>
