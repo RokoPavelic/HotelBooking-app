@@ -49,16 +49,24 @@ const Picture = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
     }
 `;
 const Container = styled.div`
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     padding: 0.2em;
+    @media screen and (max-width: 720px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
     div {
         display: flex;
@@ -74,6 +82,7 @@ const Container = styled.div`
             padding-top: 1em;
             text-align: center;
             color: #4f4f4f;
+            width: 100%;
         }
     }
     @media screen and (max-width: 720px) {
@@ -81,6 +90,10 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        p {
+            width: 50%;
+        }
     }
 
     .roomButton {
