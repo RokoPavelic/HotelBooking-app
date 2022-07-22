@@ -100,11 +100,9 @@ const EventBook = () => {
                         type="tel"
                         id="phone"
                         name="phone"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         value={values.phone}
                         onChange={handleChange}
-                        placeholder="xxx-xxx-xxxx"
-                        required
+                        placeholder="xxxxxxxxxx"
                     />
                     <p>Event Name</p>
                     <input

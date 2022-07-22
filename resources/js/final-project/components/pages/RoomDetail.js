@@ -193,7 +193,6 @@ const RoomDetail = ({ rooms }) => {
                                     )
                                 }
                                 placeholder="xxxxxxxxxx"
-                                required
                             ></input>
                             <strong>
                                 <p>Select a date</p>
