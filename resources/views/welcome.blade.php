@@ -43,7 +43,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/rooms">Rooms</a></li>
                 <li><a href="/events">Events</a></li>
-                <li><a href="/experience">Experience</a></li>
                 <li><a href="/gallery">Gallery</a></li>
                 <li><a href="/contacts">Contacts</a></li>
             </ul>
